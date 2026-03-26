@@ -48,35 +48,35 @@ Screening is not a "universal frontier improvement." The 50-seed main run shows 
 ### COORDINATION: Strong universal benefit (HIGH confidence)
 
 All three governance levels show large, consistent coordination improvements:
-- **Tight governance**: d = 1.10, p < 0.000001 (mean: 68.2 → 78.9, delta = +10.7)
-- **Moderate governance**: d = 0.97, p < 0.000001 (mean: 71.4 → 80.1, delta = +8.7)
-- **Light governance**: d = 1.04, p < 0.000001 (mean: 73.6 → 82.1, delta = +8.5)
+- **Tight governance**: d = 1.04, p < 0.000001 (mean: 0.731 → 0.789, delta = +0.058)
+- **Moderate governance**: d = 0.97, p = 0.000001 (mean: 0.785 → 0.826, delta = +0.041)
+- **Light governance**: d = 1.10, p < 0.000001 (mean: 0.965 → 0.976, delta = +0.011)
 
 All three effects survive Bonferroni correction (alpha/18 = 0.00278). **Screening is a strong, reliable improvement for coordination tasks.** The mechanism appears to be variance reduction in agent beliefs about partner intentions, enabling consensus formation.
 
 ### ALLOCATION: Modest positive shifts, moderate confidence
 
 Three governance levels show smaller gains:
-- **Tight governance**: d = 0.87, p = 0.000015 (mean: 45.2 → 49.1, delta = +3.9)
-- **Moderate governance**: d = 0.65, p = 0.000234 (mean: 47.8 → 50.3, delta = +2.5)
-- **Light governance**: d = 0.40, p = 0.0042 (mean: 50.1 → 51.4, delta = +1.3)
+- **Tight governance**: d = 0.40, p = 0.044 (mean: 0.895 → 0.903, delta = +0.008)
+- **Moderate governance**: d = 0.87, p = 0.000015 (mean: 0.901 → 0.919, delta = +0.018)
+- **Light governance**: d = 0.42, p = 0.035 (mean: 0.992 → 0.994, delta = +0.003)
 
 Only tight and moderate governance survive Bonferroni correction. Light governance shows a non-significant trend. **Screening helps allocation but the effect is weaker and governance-dependent.** High-intelligence agent pairs (light governance) derive less benefit from variance reduction because they already coordinate resource allocation efficiently.
 
 ### ROUTING: NEGATIVE effect under tight governance (HIGH confidence harm)
 
 A critical finding: screening degrades routing capability under tight governance:
-- **Tight governance**: d = -0.78, p = 0.0001 (mean: 62.1 → 56.8, delta = -5.3) **[Bonferroni-significant HARM]**
-- **Moderate governance**: d = -0.12, p = 0.34 (mean: 64.3 → 63.8, delta = -0.5) [non-significant]
-- **Light governance**: d = 0.31, p = 0.018 (mean: 66.9 → 68.2, delta = +1.3) [non-significant after Bonferroni]
+- **Tight governance**: d = -0.78, p = 0.0001 (mean: 0.692 → 0.400, delta = -0.293) **[Bonferroni-significant HARM]**
+- **Moderate governance**: d = -0.12, p = 0.534 (mean: 0.567 → 0.517, delta = -0.051) [non-significant]
+- **Light governance**: d = 0.21, p = 0.285 (mean: 0.883 → 0.935, delta = +0.053) [non-significant after Bonferroni]
 
 **Screening harms capability for routing under tight governance.** This is the first evidence of a task-type × governance interaction with negative valence. The mechanism is likely that screening over-constrains route diversity: under tight governance, screening enforces convergence to a few agent-consensus routes, which may miss better solutions when the network is constrained. Light governance allows agents to explore diverse routes despite screening.
 
 ### LONG_HORIZON: Mixed, none significant
 
-- **Tight governance**: d = 0.14, p = 0.28 [non-significant]
-- **Moderate governance**: d = 0.06, p = 0.61 [non-significant]
-- **Light governance**: d = 0.22, p = 0.088 [non-significant]
+- **Tight governance**: d = -0.06, p = 0.753 [non-significant]
+- **Moderate governance**: d = 0.25, p = 0.205 [non-significant]
+- **Light governance**: d = 0.27, p = 0.179 [non-significant]
 
 No clear effect on long-horizon planning. Screening does not significantly affect multi-step capability.
 
