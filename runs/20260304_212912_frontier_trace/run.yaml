@@ -1,0 +1,58 @@
+run_id: 20260304_212912_frontier_trace
+slug: frontier_trace
+tags:
+- sweep
+- governance
+- pareto-frontier
+- capability-safety
+created_utc: '2026-03-04T21:29:12+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: hypotheses/frontier_trace
+  seeds: 50
+  hypothesis: >
+    Governance imposes a monotonic capability-safety tradeoff that traces a Pareto
+    frontier. Seven governance configurations from oracle (no governance, no adversaries)
+    to tight (full governance stack) map the efficient frontier across routing,
+    coordination, allocation, and long-horizon tasks with 20% adversarial fraction.
+  parameters:
+    governance.config:
+    - oracle
+    - loose
+    - light
+    - moderate-light
+    - moderate
+    - tight-moderate
+    - tight
+    task_type:
+    - routing
+    - coordination
+    - allocation
+    - long_horizon
+results:
+  status: completed
+  total_runs: 350
+  param_combinations: 7
+  seeds_per_config: 50
+  n_agents: 10
+  adversarial_fraction: 0.2
+artifacts:
+  routing_summary: csv/routing_summary.csv
+  coordination_summary: csv/coordination_summary.csv
+  allocation_summary: csv/allocation_summary.csv
+  long_horizon_summary: csv/long_horizon_summary.csv
+  routing_raw: csv/routing_raw.csv
+  coordination_raw: csv/coordination_raw.csv
+  allocation_raw: csv/allocation_raw.csv
+  long_horizon_raw: csv/long_horizon_raw.csv
+links:
+  parent_runs: []
+  child_runs:
+  - 20260304_213700_screening
+  - 20260304_232817_screening
+  - 20260304_232823_screening
+  claims: []
