@@ -1,0 +1,49 @@
+run_id: 20260304_232823_screening
+slug: screening_long_horizon_replication
+tags:
+- sweep
+- screening
+- long-horizon
+- replication
+created_utc: '2026-03-04T23:28:23+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: hypotheses/screening_frontier_shift
+  seeds: 20
+  hypothesis: >
+    Replication of screening frontier shift effect on long-horizon task type with
+    independent seed set to verify baseline vs screening capability gap.
+  parameters:
+    governance.config:
+    - tight_uniform
+    - moderate_uniform
+    - light_uniform
+    - tight_screen_0.5
+    - moderate_screen_0.5
+    - light_screen_0.5
+    governance.screening_strength:
+    - 0.0
+    - 0.5
+    task_type:
+    - long_horizon
+    condition:
+    - baseline
+    - screening
+results:
+  status: completed
+  total_runs: 120
+  param_combinations: 6
+  seeds_per_config: 20
+  adversarial_fraction: 0.2
+artifacts:
+  long_horizon_raw: csv/long_horizon_raw.csv
+  long_horizon_plot: plots/long_horizon_screening.png
+links:
+  parent_runs:
+  - 20260304_213700_screening
+  child_runs: []
+  claims: []
