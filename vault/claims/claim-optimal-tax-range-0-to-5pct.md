@@ -12,6 +12,9 @@ evidence:
   - run: 20260213-202050_baseline_governance_v2
     metric: welfare
     detail: "5% vs 7.5%: d=0.87, Bonferroni-sig. Phase transition begins above 5%. Peak welfare at 2.5% (59.1)"
+  - run: 20260304_212912_frontier_trace
+    metric: "loose governance efficiency"
+    detail: "50 seeds. Loose governance (audit_rate=0.05, no CB, no staking) achieves >99.7% capability across all task types with <0.3% capability loss. This is near-zero cost for governance initiation, extending the safe range concept: 0-5% tax establishes one boundary; loose governance config establishes another orthogonal safe entry point on the capability frontier."
   weakening: []
   boundary_conditions:
   - 8 agents, small-world topology k=4 p=0.15, 50 seeds
@@ -34,8 +37,12 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-tax-cb-interact-on-quality-gap
 - claim-tax-and-penalty-effects-are-orthogonal
+- claim: claim-loose-governance-is-near-costless-entry-on-safety-frontier
+  relation: supports
+- claim: claim-governance-capability-cost-is-monotonic-and-task-universal
+  relation: supports
 created: 2026-02-20
-updated: 2026-02-20
+updated: 2026-03-25
 aliases:
 - optimal-tax-range-0-to-5pct
 cssclasses:

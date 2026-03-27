@@ -15,6 +15,9 @@ evidence:
     - run: research-mechanism-design-screening-2026-02-22
       source_type: research
       detail: "Rothschild-Stiglitz (1976) screening equilibrium theory predicts perfect type separation with discrete type spaces, consistent with SWARM's honest/deceptive/opportunistic classification. R-S also predicts fragility when types are close — adaptive adversaries who learn to mimic honest behavior may degrade separation. The 6.7x payoff premium is consistent with classical information rent theory"
+    - run: 20260304_213700_screening
+      metric: "coordination capability improvement"
+      detail: "50 seeds. Screening universally improves coordination across all governance levels: tight d=1.04, moderate d=0.97, light d=1.10 (all Bonferroni-sig at alpha/18=0.00278). Perfect type separation enables better coordination because agents self-assort to compatible pools and can execute coordinated strategies."
   weakening: []
   boundary_conditions:
     - "10-agent population (5 honest, 3 opportunistic, 2 deceptive); scaling untested"
@@ -33,8 +36,12 @@ related_claims:
   - claim-prompt-level-governance-fails-in-multi-agent-systems
   - claim-leniency-whistleblowing-is-untested-governance-lever
   - claim-quadratic-staking-may-solve-sybil-cost-inversion
+  - claim: claim-screening-improves-coordination-capability-universally
+    relation: supports
+  - claim: claim-screening-effect-is-task-type-dependent
+    relation: supports
 created: 2026-02-21
-updated: 2026-02-22
+updated: 2026-03-25
 aliases:
   - contract-screening-achieves-perfect-type-separation
 cssclasses:

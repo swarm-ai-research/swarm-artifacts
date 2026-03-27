@@ -27,7 +27,7 @@ related_claims:
 - claim: claim-screening-effect-is-task-type-dependent
   relation: supports
 - claim: claim-screening-harms-routing-under-tight-governance
-  relation: contradicted_by
+  relation: contradicts
 created: 2026-03-25
 updated: 2026-03-25
 aliases:

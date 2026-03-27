@@ -12,6 +12,9 @@ evidence:
   - run: 20260226_mesa_game_structures_study
     metric: sweet_spots
     detail: "Sweet spots file shows regime-game interactions: PD adaptive optimal rho=0 (welfare 1141), PD adaptive_learning optimal rho=1.0 (welfare 807). Stag hunt scales 2.3x higher welfare than PD at same rho. Hawk-dove welfare roughly half of PD"
+  - run: 20260304_212912_frontier_trace
+    metric: "task-type governance sensitivity"
+    detail: "50 seeds × 4 task types. Task complexity amplifies governance cost 4.4x: allocation -10.4%, coordination -29.0%, routing -37.2%, long_horizon -45.7% (oracle vs tight). Different tasks respond to governance differently, confirming that task structure determines optimal regime. Extends game-structure finding to multi-agent task types."
   weakening: []
   boundary_conditions:
   - "Three game structures only (prisoner's dilemma, stag hunt, hawk-dove) — other structures untested"
@@ -29,8 +32,12 @@ related_claims:
 - claim-adaptive-learning-narrows-quality-gap-by-converting-selfish-agents
 - claim-governance-cost-paradox
 - claim-tax-welfare-direction-is-scenario-dependent
+- claim: claim-task-complexity-amplifies-governance-capability-cost
+  relation: supports
+- claim: claim-screening-effect-is-task-type-dependent
+  relation: supports
 created: 2026-02-27
-updated: 2026-02-27
+updated: 2026-03-25
 aliases:
 - game-structure-governance-regime
 cssclasses:

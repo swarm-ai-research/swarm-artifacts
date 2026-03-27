@@ -22,6 +22,9 @@ evidence:
     metric: welfare
     detail: "Reputation decay: full persistence (1.0) + zero stake maximizes welfare. Decay rate 0.85 catches farming in 6 epochs but sacrifices welfare. N=3 seeds per config"
     source_type: synthesis
+  - run: 20260304_212912_frontier_trace
+    metric: "governance regime monotonicity"
+    detail: "50 seeds × 7 configs. Monotonic ordering (oracle→loose→light→moderate-light→moderate→tight-moderate≈tight) holds universally across all 4 task types. No inversions or non-monotonic regimes observed. This reveals an underlying structural principle: governance stacks have strict, non-negotiable ordering. Each additional constraint (audit→CB→staking→gates→bandwidth) creates new cliffs."
   weakening:
   - run: 20260227_203024_composition_boundary_study
     metric: regime
@@ -48,8 +51,12 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-tax-welfare-direction-is-scenario-dependent
 - claim-moderate-governance-extends-cooperative-regime-to-50pct-adversarial
+- claim: claim-governance-capability-cost-is-monotonic-and-task-universal
+  relation: extends
+- claim: claim-screening-harms-routing-under-tight-governance
+  relation: supports
 created: 2026-02-22
-updated: 2026-02-28
+updated: 2026-03-25
 cssclasses:
 - claim
 - claim-low

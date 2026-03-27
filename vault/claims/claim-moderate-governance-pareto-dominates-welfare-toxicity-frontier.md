@@ -12,6 +12,9 @@ evidence:
   - run: 20260227_203024_composition_boundary_study
     metric: toxicity
     detail: "At 50% adversarial: moderate toxicity 0.311 vs none 0.425 vs basic 0.418 vs full 0.319. Moderate suppresses toxicity 27% below none while maintaining 47% higher welfare (7.52 vs 5.02). 20 runs per cell"
+  - run: 20260304_212912_frontier_trace
+    metric: "safety-capability tradeoff"
+    detail: "Frontier trace shows loose governance provides entry point with >99.7% capability and safety_proxy 0.015 — near-costless initialization. Light and moderate build progressively on this frontier. This extends the frontier framework: moderate governance is not just Pareto-dominant in welfare-toxicity space, but sits on the capability-safety frontier with clear gradient toward tighter regimes."
   weakening: []
   boundary_conditions:
   - "Adversarial fraction sweep only (honest vs adversarial binary mixtures)"
@@ -32,6 +35,11 @@ related_claims:
   relation: refines
 - claim: claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate
   relation: extends
+- claim: claim-governance-capability-cost-is-monotonic-and-task-universal
+  relation: refines
+- claim: claim-loose-governance-is-near-costless-entry-on-safety-frontier
+  relation: supports
+updated: 2026-03-25
 created: 2026-02-28
 aliases:
 - moderate-governance-pareto-dominates

@@ -27,6 +27,9 @@ evidence:
   - run: 20260227_203024_composition_boundary_study
     metric: welfare
     detail: "Full vs moderate governance comparison: full welfare 12.06 vs moderate 15.04 at 0% adversarial (20% penalty). Full provides identical regime protection to moderate (both cooperative through 37.5% adv). Full toxicity at baseline HIGHER than moderate (0.288 vs 0.251). 720 runs in adversarial sweep, 5 seeds x 4 pop sizes per cell. Moderate governance Pareto-dominates full across entire adversarial spectrum"
+  - run: 20260304_212912_frontier_trace
+    metric: capability
+    detail: "50 seeds × 7 configs × 4 task types = 1400 runs. Governance cost is monotonic oracle→tight across all task types and universally structures capability. Oracle > loose > light > moderate-light > moderate > tight-moderate ≈ tight. Cost amplifies with task complexity: allocation -10.4% (tight vs oracle), long_horizon -45.7%. Loose governance achieves >99.7% capability (near-costless entry). All differences Bonferroni-significant at alpha/24."
   weakening:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
@@ -73,8 +76,14 @@ related_claims:
 - claim-moderate-governance-extends-cooperative-regime-to-50pct-adversarial
 - claim-full-governance-welfare-penalty-exceeds-safety-gain-over-moderate
 - claim-moderate-governance-pareto-dominates-welfare-toxicity-frontier
+- claim: claim-governance-capability-cost-is-monotonic-and-task-universal
+  relation: extends
+- claim: claim-task-complexity-amplifies-governance-capability-cost
+  relation: supports
+- claim: claim-loose-governance-is-near-costless-entry-on-safety-frontier
+  relation: supports
 created: 2026-02-19
-updated: 2026-02-28
+updated: 2026-03-25
 aliases:
 - governance-cost-paradox
 - full-governance-stacks-impose-larger-welfare
