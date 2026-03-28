@@ -1,11 +1,11 @@
-generated_utc: '2026-03-05T12:16:26.059417+00:00'
-total_runs: 146
+generated_utc: '2026-03-28T13:37:24.342168+00:00'
+total_runs: 152
 by_type:
   calibration: 2
   redteam: 13
   single: 66
   study: 33
-  sweep: 29
+  sweep: 35
   unknown: 3
 runs:
 - id: 20260208-214018_baseline_seed42
@@ -1330,18 +1330,76 @@ runs:
   - claim-cb-threshold-05-maximizes-welfare-in-small-world-topology
   - claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05
   - claim-aggressive-cb-threshold-harms-honest-agents-through-false-positive-freezing
+- id: 20260304_212912_frontier_trace
+  slug: frontier_trace
+  type: sweep
+  tags:
+  - sweep
+  - governance
+  - pareto-frontier
+  - capability-safety
+  date: '2026-03-04'
+  status: completed
+- id: 20260304_213700_screening
+  slug: screening_frontier_shift
+  type: sweep
+  tags:
+  - sweep
+  - screening
+  - contract-screening
+  - pareto-frontier
+  date: '2026-03-04'
+  status: completed
 - id: 20260304_232817_screening
-  type: unknown
+  slug: screening_routing_replication
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - sweep
+  - screening
+  - routing
+  - replication
+  date: '2026-03-04'
+  status: completed
 - id: 20260304_232823_screening
-  type: unknown
+  slug: screening_long_horizon_replication
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - sweep
+  - screening
+  - long-horizon
+  - replication
+  date: '2026-03-04'
+  status: completed
+- id: 20260326_screening_strength_sweep
+  slug: screening_strength_sweep
+  type: sweep
+  tags:
+  - sweep
+  - screening
+  - dose-response
+  - diversity-consensus
+  - routing
+  - coordination
+  date: '2026-03-26'
+  status: completed
+  claims:
+  - claim-screening-effect-is-task-type-dependent
+  - claim-screening-improves-coordination-capability-universally
+  - claim-screening-harms-routing-under-tight-governance
+  - claim-coordination-capability-increases-monotonically-with-screening-strength
+  - claim-routing-screening-dose-response-is-u-shaped-under-tight-governance
+  - claim-screening-signal-reliability-determines-routing-outcome
+- id: 20260328_long_horizon_screening_replication
+  slug: long_horizon_screening_replication
+  type: sweep
+  tags:
+  - sweep
+  - screening
+  - long-horizon
+  - replication
+  - dose-response
+  date: '2026-03-28'
+  status: completed
 - id: agent_tree_demo
   slug: agent_tree_demo
   type: single
@@ -1384,6 +1442,18 @@ runs:
   claims:
   - claim-contract-screening-achieves-perfect-type-separation
   - claim-screening-equilibrium-generates-honest-payoff-premium
+- id: dynamic_toxicity_2026-03-28
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: escalation_asymmetric_info
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
 - id: frontier_all_20260304_232812
   type: unknown
   tags:
@@ -1471,27 +1541,4 @@ runs:
   - single
   - untagged
   date: unknown
-  status: completed
-- id: 20260304_212912_frontier_trace
-  slug: frontier_trace
-  type: sweep
-  tags:
-  - pareto-frontier
-  - governance-sweep
-  - benchmark
-  - routing
-  - coordination
-  - allocation
-  - long-horizon
-  date: '2026-03-04'
-  status: completed
-- id: 20260304_213700_screening
-  slug: screening_frontier
-  type: sweep
-  tags:
-  - screening-protocol
-  - pareto-frontier
-  - governance-sweep
-  - benchmark
-  date: '2026-03-04'
   status: completed
