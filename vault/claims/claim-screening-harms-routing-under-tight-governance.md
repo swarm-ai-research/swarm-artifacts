@@ -1,7 +1,7 @@
 ---
 description: "Contract screening reduces routing capability by 29 percentage points under tight governance (d=-0.78, Bonferroni-sig); over-constrains path diversity"
 type: claim
-status: active
+status: weakened
 confidence: medium
 domain: market
 evidence:
