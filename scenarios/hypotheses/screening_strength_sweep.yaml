@@ -1,0 +1,125 @@
+# Hypothesis: Screening strength crossover for routing
+#
+# Tests claim-screening-effect-is-task-type-dependent and the
+# diversity-consensus mechanism proposed in screening_frontier_shift.md.
+#
+# The core prediction: screening reduces agent belief variance, which
+# helps coordination (consensus-dependent) and harms routing under tight
+# governance (diversity-dependent). If the mechanism is correct, there
+# exists a crossover strength for routing where low screening helps
+# (reducing wasteful disagreement) and high screening harms (eliminating
+# path diversity). Coordination should improve monotonically.
+#
+# Design: 11 screening strengths × 3 governance levels × 2 task types
+# × 30 seeds = 1,980 runs. Focused on routing + coordination (the two
+# task types with significant effects) to maximize statistical power.
+#
+# We include 2 additional task types (allocation, long_horizon) at
+# reduced seed count (10 seeds) as confirmatory checks = 660 extra runs.
+# Total: 2,640 runs.
+#
+# Directional predictions:
+#   - Coordination: monotonic improvement with screening strength
+#   - Routing (tight): negative at strength ≥ 0.4, positive at ≤ 0.2
+#   - Routing (light): positive or null across all strengths
+#   - Crossover point for tight-routing: predicted at strength 0.2-0.3
+#
+# Falsification: If routing capability under tight governance is
+# monotonically positive with screening strength, the diversity-consensus
+# mechanism is wrong.
+
+scenario_id: hypothesis_screening_strength_sweep
+description: "Screening strength dose-response to locate diversity-consensus crossover"
+motif: "Screening strength calibration"
+hypothesis: claim-screening-effect-is-task-type-dependent
+
+agents:
+  - type: honest
+    count: 8
+  - type: adversarial
+    count: 2
+
+governance:
+  circuit_breaker_enabled: true
+  freeze_threshold_toxicity: 0.5
+  freeze_threshold_violations: 2
+  freeze_duration_epochs: 3
+  audit_enabled: true
+  audit_probability: 0.10
+  collusion_detection_enabled: false
+  staking_enabled: false
+  screening_strength: 0.0
+  transaction_tax_rate: 0.0
+
+network:
+  topology: small_world
+  params:
+    k: 4
+    p: 0.15
+  dynamic: false
+
+simulation:
+  n_epochs: 30
+  steps_per_epoch: 10
+
+payoff:
+  s_plus: 3.0
+  s_minus: 1.5
+  h: 3.0
+  theta: 0.5
+  w_rep: 2.5
+
+sweep:
+  type: factorial
+  seeds: [42, 7, 123, 256, 999, 2024, 314, 577, 1337, 8080,
+          11, 22, 33, 44, 55, 66, 77, 88, 99, 100,
+          201, 202, 203, 204, 205, 206, 207, 208, 209, 210]
+  parameters:
+    governance.screening_strength:
+      [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+    governance.config:
+      [tight, moderate, light]
+    task_type:
+      [routing, coordination]
+
+  # Confirmatory arm: allocation + long_horizon at 10 seeds
+  confirmatory:
+    seeds: [42, 7, 123, 256, 999, 2024, 314, 577, 1337, 8080]
+    parameters:
+      governance.screening_strength:
+        [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+      governance.config:
+        [tight, moderate, light]
+      task_type:
+        [allocation, long_horizon]
+
+analysis:
+  primary_metrics:
+    - capability: "Composite capability score"
+    - safety_score: "Governance safety signal"
+    - completion_rate: "Binary task completion"
+    - fidelity: "Output quality measure"
+    - efficiency: "Resource utilization"
+  primary_comparisons:
+    - routing_tight_dose_response: "One-way ANOVA on screening_strength for routing × tight governance"
+    - coordination_dose_response: "One-way ANOVA on screening_strength for coordination (all gov levels)"
+    - crossover_detection: "Contrast: screening 0.0-0.2 vs 0.4-1.0 for routing × tight"
+    - interaction: "Two-way ANOVA screening_strength × governance for routing"
+  correction: bonferroni
+  n_comparisons: 8
+  expected_effects:
+    - "Coordination capability increases monotonically with screening strength"
+    - "Routing capability under tight governance is non-monotonic (inverted U)"
+    - "Crossover point for routing × tight at screening strength 0.2-0.3"
+    - "Routing under light governance is monotonically positive or flat"
+    - "Long horizon remains null across all screening strengths"
+  falsification:
+    - "Routing × tight is monotonically positive → diversity-consensus mechanism is wrong"
+    - "Coordination shows non-monotonic pattern → mechanism needs revision"
+    - "Crossover above 0.5 → our strength=0.5 finding was not in the harmful regime"
+
+success_criteria:
+  min_seeds: 30
+  significance_level: 0.05
+  power_target: 0.80
+  minimum_detectable_effect: 0.50  # Cohen's d
