@@ -9,17 +9,17 @@ evidence:
   - run: 20260304_213700_screening
     metric: "capability (coordination)"
     detail: "50 seeds × 3 governance levels. Tight: 0.731→0.789, d=1.04, p<0.000001. Moderate: 0.785→0.826, d=0.97, p=0.000001. Light: 0.965→0.976, d=1.10, p<0.000001. All Bonferroni-significant at alpha/18=0.00278."
-  weakening:
   - run: 20260326_screening_strength_sweep
     metric: "coordination dose-response"
     detail: "30 seeds × 11 strengths × 3 gov levels. Monotonic increase confirmed (rho=0.96-0.98). Effect sizes grow continuously: d=0.13 at strength 0.1 to d=2.57 at strength 1.0. No plateau detected. Extends original finding from single strength (0.5) to full dose-response curve."
+  weakening: []
   boundary_conditions:
   - "Coordination tasks only, 20% adversarial, 10 agents, screening_strength=0.5"
   - "Effect uniform across all three governance tightness levels"
   - "Absolute gains modest (1-6 percentage points) but effect sizes are large (d=0.97-1.10)"
   - "Does not generalize to routing or long_horizon tasks"
 sensitivity:
-  screening_strength: "tested at 0.5 only; unknown if 0.25 or 0.75 produce different gains"
+  screening_strength: "monotonic improvement confirmed across 0.0-1.0 range (rho=0.96-0.98, no plateau)"
   task_type: "coordination-specific; routing and long_horizon show different response profiles"
   adversarial_fraction: "tested at 20% only"
 supersedes: []
