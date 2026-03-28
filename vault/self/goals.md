@@ -7,12 +7,13 @@ type: moc
 
 ## Active Threads
 
-- **84 claims** (82 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil, mesa, evolutionary-game domains
-- **Confidence distribution:** 10 high, 34 medium, 40 low (3 new claims from CB threshold sweep, 1 upgrade low->medium)
+- **93 claims** (90 active, 3 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil, mesa, evolutionary-game, screening domains
+- **Confidence distribution:** 15 high, 39 medium, 39 low (9 new claims this session: 6 from frontier trace/screening, 3 from dose-response; 1 weakened)
 - **3 theories** (all proposed): governance-cost-universality, tax-phase-transition, architecture-over-governance
 - **6 predictions** (all open): tax-hysteresis, critical-slowing-down, governance-diminishing-returns, diversity-threshold, topology-shifts-critical-tax, architecture-specific-tax-sensitivity
-- **Pipeline queue:** 143/143 completed — fully drained, 0 pending
+- **Pipeline queue:** fully drained, 0 pending
 - **8 sweep series** — contract-screening sweep note added
+- **1 mechanism falsified** — diversity-consensus mechanism falsified by 2,640-run dose-response; replaced by selective-relaxation mechanism
 - **3 emergent meta-patterns** — evaluated and dispositioned:
   1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
   2. Governance interaction universality — **rejected**: contradictory evidence (orthogonality finding vs interaction claims). Not a universal pattern.
@@ -174,6 +175,29 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
     - claim-delegation-completion-requires-handoff-budget-above-15 — no monotonic effect in 128-run replication
 
 - **Index updated:** 68 claims, 120 experiment notes
+
+## Completed (2026-03-26/28 session, frontier trace + screening pipeline + dose-response)
+
+- **4 runs seeded** from March 4 data: frontier_trace (1400 runs), 3 screening runs (1440 total)
+- **Phase 1: Frontier trace** — 50 seeds × 7 governance configs × 4 task types:
+  - Governance capability cost is perfectly monotonic and task-universal
+  - Cost amplifies 4.4× with task complexity: allocation -10%, long_horizon -46%
+  - Loose governance is near-costless (<0.3% capability loss)
+  - **6 new claims** extracted (4 high, 2 medium), 6 existing claims enriched
+- **Phase 2: Screening A/B** — 50 seeds × 6 configs × 4 task types + 2 replications:
+  - Screening improves coordination (d=0.97-1.10, Bonferroni-sig), harms routing under tight gov (d=-0.78)
+  - Proposed diversity-consensus mechanism
+  - **3 new claims** extracted (2 high, 1 medium)
+- **Phase 3: Dose-response sweep** — 2,640 runs, 11 screening strengths:
+  - **FALSIFIED** diversity-consensus mechanism: routing shows U-shape, not inverted-U
+  - Routing baseline 0.623 → minimum 0.368 at strength 0.4 → recovery to 0.778 at strength 1.0
+  - Coordination confirmed monotonic (rho=0.96-0.98)
+  - Long_horizon shows surprise large effect (d=2.75, 10 seeds — needs replication)
+  - **Revised mechanism**: screening as selective relaxation via trust signal reliability
+  - **3 new claims** extracted, 1 existing claim weakened, 2 refined
+- **Paper written**: papers/screening_frontier_shift.md — "Screening as Selective Relaxation" with honest falsification narrative
+- **Vault state**: 93 claims (0 errors), 151 experiment notes, 5,480 total runs across 5 linked experiments
+- **Key insight**: Phase 2 measurement at strength 0.5 happened to capture the U-curve valley. The actual optimal screening strength is 1.0 for all task types.
 
 ## Completed (2026-03-01 session, CB threshold sweep pipeline)
 

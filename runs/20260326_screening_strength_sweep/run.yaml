@@ -45,7 +45,7 @@ experiment:
     - allocation
     - long_horizon
 results:
-  status: pending
+  status: completed
   total_runs: 2640
   primary_runs: 1980
   confirmatory_runs: 660
@@ -54,7 +54,12 @@ results:
   confirmatory_seeds: 10
   n_agents: 10
   adversarial_fraction: 0.2
-artifacts: {}
+artifacts:
+  routing_raw: csv/routing_raw.csv
+  coordination_raw: csv/coordination_raw.csv
+  allocation_raw: csv/allocation_raw.csv
+  long_horizon_raw: csv/long_horizon_raw.csv
+  summary: summary.json
 links:
   parent_runs:
   - 20260304_213700_screening
@@ -64,3 +69,6 @@ links:
   - claim-screening-effect-is-task-type-dependent
   - claim-screening-improves-coordination-capability-universally
   - claim-screening-harms-routing-under-tight-governance
+  - claim-coordination-capability-increases-monotonically-with-screening-strength
+  - claim-routing-screening-dose-response-is-u-shaped-under-tight-governance
+  - claim-screening-signal-reliability-determines-routing-outcome

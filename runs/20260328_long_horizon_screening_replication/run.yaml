@@ -1,0 +1,49 @@
+run_id: 20260328_long_horizon_screening_replication
+slug: long_horizon_screening_replication
+tags:
+- sweep
+- screening
+- long-horizon
+- replication
+- dose-response
+created_utc: '2026-03-28T00:00:00+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: hypotheses/screening_strength_sweep
+  seeds: 50
+  hypothesis: >
+    Replication of the surprising d=2.75 long-horizon improvement at screening
+    strength 1.0 from the 10-seed confirmatory arm of the dose-response sweep.
+    Focused design: 5 strengths (baseline + valley + recovery) × 3 gov levels × 50 seeds.
+  parameters:
+    governance.screening_strength:
+    - 0.0
+    - 0.3
+    - 0.5
+    - 0.7
+    - 1.0
+    governance.config:
+    - tight
+    - moderate
+    - light
+    task_type:
+    - long_horizon
+results:
+  status: completed
+  total_runs: 750
+  param_combinations: 15
+  seeds_per_config: 50
+  n_agents: 10
+  adversarial_fraction: 0.2
+artifacts:
+  long_horizon_raw: csv/long_horizon_raw.csv
+  summary: summary.json
+links:
+  parent_runs:
+  - 20260326_screening_strength_sweep
+  child_runs: []
+  claims: []
