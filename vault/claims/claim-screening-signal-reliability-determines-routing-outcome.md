@@ -51,6 +51,8 @@ The empirical U-shaped dose-response for routing (minimum at strength 0.4, recov
 
 The mechanism operates via SWARM's multiplicative friction model: friction_effective = base_friction * (1 - agent_trust * screening_strength). When screening_strength is low (0.1-0.4), the product agent_trust * screening_strength is small for all agents—honest and adversarial alike—producing negligible and noisy friction reduction. When screening_strength is high (0.7-1.0), honest agents (trust 0.7-1.0) experience large friction reductions (0.7-1.0 discount) while adversarial agents (trust 0.0-0.3) experience minimal reduction.
 
+**Note (2026-03-28):** The U-shaped routing mechanism replicates at 50 seeds (run 20260328_long_horizon_screening_replication). The initial 10-seed estimate inflated the magnitude of long-horizon effects; however, the signal-reliability principle holds for the primary routing mechanism across the full screening-strength range.
+
 ## Mechanism detail
 
 **At low screening strength (0.1-0.4): noisy signal regime**

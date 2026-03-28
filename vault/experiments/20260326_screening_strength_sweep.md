@@ -56,13 +56,14 @@ The diversity-consensus mechanism predicted an inverted-U with harm at high stre
 
 Routing under light governance shows no clear monotonic trend. Strengths 0.5 and 0.8 achieve perfect 1.000 capability, but 0.2 drops to 0.811. Variance too high for confident trend detection at N=30.
 
-### Prediction 4 FALSIFIED: Long horizon shows large effects at high screening
+### Prediction 4 PARTIALLY FALSIFIED: Long horizon shows modest moderate-governance effect
 
-Long horizon × tight shows massive improvement at high screening strength:
-- Baseline (0.0): capability = 0.319
-- Strength 1.0: capability = 0.971 (d = 2.75)
+Long horizon × tight showed apparent massive improvement at high screening strength in the 10-seed confirmatory arm (d = 2.75). However, this **did NOT replicate** at 50 seeds (run 20260328_long_horizon_screening_replication, 750 runs):
+- Tight governance: d = 0.38, p = 0.058 (NOT significant, Bonferroni threshold α/12 = 0.004)
+- Moderate governance: d = 0.76, p = 0.0001 (Bonferroni-significant)
+- Light governance: d = 0.05, p = 0.811 (null, ceiling effect)
 
-This contradicts the null prediction. However, variance is very high (SD = 0.33-0.45) across most strengths, and this is the confirmatory arm (10 seeds only). The effect is suggestive but requires replication at 30+ seeds.
+The 10-seed estimate was inflated due to high variance and small sample size. There IS a real effect for moderate governance (medium confidence), but it is modest and governance-specific, not the large tight-governance effect suggested by the initial measurement. The null prediction is only partially falsified.
 
 ### Revised mechanism: Screening as selective relaxation
 
@@ -87,7 +88,7 @@ This mechanism is mechanistically grounded in the `_differentiated_friction` fun
 | Routing × moderate | Non-monotonic | +0.34 | Ambiguous |
 | Routing × light | Non-monotonic | +0.49 | Ambiguous |
 | Allocation × all | Gradual increase | +0.72-1.65 | Consistent with both |
-| Long horizon × tight | Large increase (noisy) | +2.75 | Falsifies null prediction (10 seeds, needs replication) |
+| Long horizon × tight | Modest moderate effect | +0.76 (moderate only) | Partial falsification — d=2.75 (10 seeds) did not replicate at 50 seeds |
 
 ## Claims affected
 
