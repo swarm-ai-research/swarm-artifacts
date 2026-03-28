@@ -1,0 +1,66 @@
+run_id: 20260326_screening_strength_sweep
+slug: screening_strength_sweep
+tags:
+- sweep
+- screening
+- dose-response
+- diversity-consensus
+- routing
+- coordination
+created_utc: '2026-03-26T00:00:00+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: hypotheses/screening_strength_sweep
+  seeds: 30
+  hypothesis: >
+    The diversity-consensus mechanism predicts that screening strength has
+    a non-monotonic (inverted-U) dose-response on routing capability under
+    tight governance, with a crossover at strength 0.2-0.3, while coordination
+    capability increases monotonically. This sweep tests that prediction
+    with 11 screening strengths from 0.0 to 1.0.
+  parameters:
+    governance.screening_strength:
+    - 0.0
+    - 0.1
+    - 0.2
+    - 0.3
+    - 0.4
+    - 0.5
+    - 0.6
+    - 0.7
+    - 0.8
+    - 0.9
+    - 1.0
+    governance.config:
+    - tight
+    - moderate
+    - light
+    task_type:
+    - routing
+    - coordination
+    - allocation
+    - long_horizon
+results:
+  status: pending
+  total_runs: 2640
+  primary_runs: 1980
+  confirmatory_runs: 660
+  param_combinations: 66
+  primary_seeds: 30
+  confirmatory_seeds: 10
+  n_agents: 10
+  adversarial_fraction: 0.2
+artifacts: {}
+links:
+  parent_runs:
+  - 20260304_213700_screening
+  - 20260304_212912_frontier_trace
+  child_runs: []
+  claims:
+  - claim-screening-effect-is-task-type-dependent
+  - claim-screening-improves-coordination-capability-universally
+  - claim-screening-harms-routing-under-tight-governance
