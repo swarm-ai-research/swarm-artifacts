@@ -15,7 +15,10 @@ evidence:
   - run: 20260304_232823_screening
     metric: "long_horizon replication"
     detail: "20 seeds. All null (d=-0.04 to +0.54). Confirms no long_horizon effect."
-  weakening: []
+  weakening:
+  - run: 20260326_screening_strength_sweep
+    metric: "dose-response across 4 task types"
+    detail: "The task-type dependence is real but dose-dependent. Routing harm is NOT categorical — it reverses at high screening strength (U-shaped curve under tight governance). The proposed diversity-consensus mechanism is falsified. Revised mechanism: signal reliability determines outcome."
   boundary_conditions:
   - "10 agents, 20% adversarial, screening_strength=0.5, 3 governance levels tested"
   - "Single screening strength (0.5) tested; task-type interaction may change at other strengths"
@@ -35,8 +38,10 @@ related_claims:
   relation: extends
 - claim: claim-task-complexity-amplifies-governance-capability-cost
   relation: extends
+- claim: claim-screening-signal-reliability-determines-routing-outcome
+  relation: refines
 created: 2026-03-25
-updated: 2026-03-25
+updated: 2026-03-28
 aliases:
 - screening-task-type-specialization
 cssclasses:

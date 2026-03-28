@@ -12,7 +12,10 @@ evidence:
   - run: 20260304_232817_screening
     metric: "capability (routing replication)"
     detail: "20 seeds. Tight: 0.636→0.449, d=-0.47, p=0.141. Direction replicates but underpowered at N=20."
-  weakening: []
+  weakening:
+  - run: 20260326_screening_strength_sweep
+    metric: "routing capability dose-response"
+    detail: "30 seeds × 11 strengths. The harm is specific to intermediate screening strength (0.1-0.5). At high strength (0.7-1.0), screening HELPS routing under tight governance: strength 1.0 capability=0.778 vs baseline 0.623, d=+0.41. The U-shaped dose-response shows that the original finding at strength 0.5 captured the valley, not the full curve."
   boundary_conditions:
   - "Routing tasks, tight governance only"
   - "Moderate and light governance show null/positive trends"
@@ -32,8 +35,10 @@ related_claims:
   relation: supports
 - claim: claim-governance-parameters-have-narrow-safe-operating-envelopes
   relation: supports
+- claim: claim-routing-screening-dose-response-is-u-shaped-under-tight-governance
+  relation: refines
 created: 2026-03-25
-updated: 2026-03-25
+updated: 2026-03-28
 aliases:
 - screening-routing-tight-gov-harm
 cssclasses:

@@ -9,7 +9,10 @@ evidence:
   - run: 20260304_213700_screening
     metric: "capability (coordination)"
     detail: "50 seeds × 3 governance levels. Tight: 0.731→0.789, d=1.04, p<0.000001. Moderate: 0.785→0.826, d=0.97, p=0.000001. Light: 0.965→0.976, d=1.10, p<0.000001. All Bonferroni-significant at alpha/18=0.00278."
-  weakening: []
+  weakening:
+  - run: 20260326_screening_strength_sweep
+    metric: "coordination dose-response"
+    detail: "30 seeds × 11 strengths × 3 gov levels. Monotonic increase confirmed (rho=0.96-0.98). Effect sizes grow continuously: d=0.13 at strength 0.1 to d=2.57 at strength 1.0. No plateau detected. Extends original finding from single strength (0.5) to full dose-response curve."
   boundary_conditions:
   - "Coordination tasks only, 20% adversarial, 10 agents, screening_strength=0.5"
   - "Effect uniform across all three governance tightness levels"
@@ -28,8 +31,10 @@ related_claims:
   relation: supports
 - claim: claim-screening-harms-routing-under-tight-governance
   relation: contradicts
+- claim: claim-coordination-capability-increases-monotonically-with-screening-strength
+  relation: extends
 created: 2026-03-25
-updated: 2026-03-25
+updated: 2026-03-28
 aliases:
 - screening-coordination-universal-improvement
 cssclasses:
