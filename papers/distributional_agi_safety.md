@@ -821,8 +821,8 @@ Allocation Processes. In Arrow, K.J., Karlin, S., & Suppes, P. (Eds.),
 *Mathematical Methods in the Social Sciences*, 27-46. Stanford University
 Press.
 
-[3] Kenton, Z., Filos, A., Evans, O., & Gal, Y. (2025). Distributional Safety
-in Agentic Systems. *arXiv preprint* arXiv:2512.16856.
+[3] Tomašev, N., Franklin, M., Jacobs, J., Krier, S., & Osindero, S. (2025).
+Distributional AGI Safety. *arXiv preprint* arXiv:2512.16856.
 
 [4] Tomasev, N., Franklin, J., Leibo, J.Z., Jacobs, A.Z., Cunningham, T.,
 Gabriel, I., & Osindero, S. (2025). Virtual Agent Economies. *arXiv preprint*

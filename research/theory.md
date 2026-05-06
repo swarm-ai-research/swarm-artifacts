@@ -326,7 +326,7 @@ To cite the software:
 - Bonabeau, E., Dorigo, M., & Theraulaz, G. (1999). *Swarm Intelligence: From Natural to Artificial Systems*. Oxford University Press.
 
 ### AI Safety
-- [Distributional Safety in Agentic Systems](https://arxiv.org/abs/2512.16856)
+- [Distributional AGI Safety](https://arxiv.org/abs/2512.16856) (Tomašev et al., 2025)
 - [The Hot Mess Theory of AI](https://alignment.anthropic.com/2026/hot-mess-of-ai/)
 - [Agent Behavioral Contracts: Formal Specification and Runtime Enforcement](https://arxiv.org/abs/2602.22302)
 

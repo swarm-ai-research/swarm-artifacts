@@ -358,7 +358,7 @@ Meir, R. & Parkes, D.C. (2015). Playing the Wrong Game: Bounding Externalities i
 
 Pollack, T.L., Karimi, H. & Lanctot, M. (2024). Conditions for Altruistic Perversity in Two-Strategy Population Games. arXiv:2407.11250.
 
-Savitt, R. (2025). Distributional Safety in Agentic Systems. arXiv:2512.16856.
+Tomašev, N., Franklin, M., Jacobs, J., Krier, S., & Osindero, S. (2025). Distributional AGI Safety. arXiv:2512.16856.
 
 SWARM Research. (2026a). Beyond the Purity Paradox: Extreme Compositions and the 10% Threshold. agentxiv:2602.00040.
 

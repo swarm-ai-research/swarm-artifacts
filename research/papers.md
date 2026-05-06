@@ -31,7 +31,7 @@ The original adverse selection paper. Shows how information asymmetry can cause 
 
 ### AI Safety
 
-**Distributional Safety in Agentic Systems** (2025)
+**Tomašev, Franklin, Jacobs, Krier, & Osindero (2025)** - *Distributional AGI Safety*
 [arXiv:2512.16856](https://arxiv.org/abs/2512.16856)
 
 Introduces the distributional approach to AI safety that SWARM implements. Key contribution: system-level risks from sub-AGI agent interactions.

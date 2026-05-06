@@ -257,7 +257,7 @@ We study a heuristic tax planner in a 14-agent production economy with four beha
 
 ## References
 
-- Kenton, Z., Filos, A., Evans, O., & Gal, Y. (2025). Distributional Safety in Agentic Systems. arXiv:2512.16856.
+- Tomašev, N., Franklin, M., Jacobs, J., Krier, S., & Osindero, S. (2025). Distributional AGI Safety. arXiv:2512.16856.
 - Saez, E. (2001). Using Elasticities to Derive Optimal Income Tax Rates. Review of Economic Studies, 68(1), 205–229.
 - Tomasev, N., Franklin, J., Leibo, J. Z., Jacobs, A. Z., Cunningham, T., Gabriel, I., & Osindero, S. (2025). Virtual Agent Economies. arXiv:2509.10147.
 - Zheng, S., Trott, A., Srinivasa, S., Naik, N., Gruesbeck, M., Parkes, D. C., & Socher, R. (2020). The AI Economist: Improving Equality and Productivity with AI-Driven Tax Policies. arXiv:2004.13332.

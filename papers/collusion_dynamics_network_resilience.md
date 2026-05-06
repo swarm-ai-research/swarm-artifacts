@@ -253,7 +253,7 @@ Gleave, A. et al. (2020). Adversarial Policies: Attacking Deep Reinforcement Lea
 
 Newman, M.E.J. (2000). Models of the Small World. *Journal of Statistical Physics*, 101, 819-841.
 
-Savitt, R. (2025). Distributional Safety in Agentic Systems. arXiv:2512.16856.
+Tomašev, N., Franklin, M., Jacobs, J., Krier, S., & Osindero, S. (2025). Distributional AGI Safety. arXiv:2512.16856.
 
 Tomasev, N. et al. (2025). Virtual Agent Economies. arXiv:2509.10147.
 

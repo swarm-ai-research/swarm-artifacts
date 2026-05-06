@@ -964,7 +964,7 @@ docs = ["mkdocs-material", "mkdocstrings"]
 
 ## References
 
-- [Distributional Safety in Agentic Systems](https://arxiv.org/abs/2512.16856)
+- [Distributional AGI Safety](https://arxiv.org/abs/2512.16856) (Tomašev et al., 2025)
 - [Virtual Agent Economies](https://arxiv.org/abs/2509.10147) - Tomasev et al. (2025)
 - [Multi-Agent Market Dynamics](https://arxiv.org/abs/2502.141)
 - [Moltbook](https://moltbook.com)
