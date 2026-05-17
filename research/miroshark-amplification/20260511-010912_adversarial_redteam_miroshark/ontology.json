@@ -1,0 +1,337 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent audited by governance auditor",
+      "name": "AUDITED_BY",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "Auditor"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "Auditor"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "Auditor"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent reputation monitored by tracker",
+      "name": "MONITORED_BY",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "ReputationTracker"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "ReputationTracker"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Collusion pair flagged by detector",
+      "name": "FLAGGED_BY",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "CollusionDetector"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "CollusionDetector"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent frozen by circuit breaker",
+      "name": "FROZEN_BY",
+      "source_targets": [
+        {
+          "source": "AdaptiveAdversary",
+          "target": "CircuitBreaker"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Interaction taxed by collector",
+      "name": "TAXED_BY",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "TaxCollector"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "TaxCollector"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Adversarial coalition formation between agents",
+      "name": "COLLUDES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AdaptiveAdversary"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "AdversarialAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Prosocial coordination between honest agents",
+      "name": "COOPERATES_WITH",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Defection interaction by adversarial agents",
+      "name": "DEFECTS_AGAINST",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "HonestAgent"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "HonestAgent"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Current reputation level",
+          "name": "reputation_score",
+          "type": "number"
+        },
+        {
+          "description": "Units staked for participation",
+          "name": "staked_units",
+          "type": "number"
+        }
+      ],
+      "description": "Well-intentioned participants who follow governance norms",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "HonestAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Number of defections recorded",
+          "name": "defection_count",
+          "type": "number"
+        },
+        {
+          "description": "Total payoff from defections",
+          "name": "payoff_accumulated",
+          "type": "number"
+        }
+      ],
+      "description": "Agents that knowingly defect to extract surplus",
+      "examples": [
+        "Nico Nagi",
+        "Oakley Ueda"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Learned adaptation to mechanisms",
+          "name": "adaptation_level",
+          "type": "number"
+        },
+        {
+          "description": "Current toxicity measurement",
+          "name": "toxicity_score",
+          "type": "number"
+        }
+      ],
+      "description": "Adversaries that learn and route around governance signals",
+      "examples": [
+        "Umi Ito",
+        "Vale Park"
+      ],
+      "name": "AdaptiveAdversary"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Unique audit identifier",
+          "name": "audit_id",
+          "type": "text"
+        },
+        {
+          "description": "Penalty applied (default 2.5)",
+          "name": "penalty_multiplier",
+          "type": "number"
+        }
+      ],
+      "description": "Entity conducting random audits with 0.15 probability",
+      "examples": [
+        "Governance Auditor A",
+        "Random Audit Bot"
+      ],
+      "name": "Auditor"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Reputation decay percentage",
+          "name": "decay_rate",
+          "type": "number"
+        },
+        {
+          "description": "Reputation weight (default 2.5)",
+          "name": "weight_factor",
+          "type": "number"
+        }
+      ],
+      "description": "System tracking reputation with 5% decay per epoch",
+      "examples": [
+        "RepDecay Monitor",
+        "Influence Tracker"
+      ],
+      "name": "ReputationTracker"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Collusion detection threshold",
+          "name": "threshold_score",
+          "type": "number"
+        },
+        {
+          "description": "List of flagged agent pairs",
+          "name": "flagged_pairs",
+          "type": "text"
+        }
+      ],
+      "description": "Detector flagging coordinated pairs above score 0.4",
+      "examples": [
+        "Collusion Scanner",
+        "Coordination Flag Bot"
+      ],
+      "name": "CollusionDetector"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Toxicity trigger level",
+          "name": "toxicity_threshold",
+          "type": "number"
+        },
+        {
+          "description": "Epochs of freeze (default 3)",
+          "name": "freeze_duration",
+          "type": "number"
+        }
+      ],
+      "description": "Mechanism freezing agents for 3 epochs if toxicity > 0.6",
+      "examples": [
+        "Toxicity Breaker",
+        "Freeze Enforcer"
+      ],
+      "name": "CircuitBreaker"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Transaction tax percentage",
+          "name": "tax_rate",
+          "type": "number"
+        },
+        {
+          "description": "Misconduct slashing rate (15%)",
+          "name": "slash_rate",
+          "type": "number"
+        }
+      ],
+      "description": "Entity imposing 5% transaction tax on interactions",
+      "examples": [
+        "Transaction Tax Bot",
+        "Stake Slasher"
+      ],
+      "name": "TaxCollector"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Person's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "General role or archetype",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Fallback for any individual agent or participant",
+      "examples": [
+        "Jordan Laine",
+        "Yuri Kovac"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization's name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Primary function or mechanism",
+          "name": "function",
+          "type": "text"
+        }
+      ],
+      "description": "Fallback for any governance or simulation organization",
+      "examples": [
+        "SWARM Benchmark",
+        "Governance Council"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Adversarial defection targeting another agent",
+      "name": "DEFECTS_AGAINST",
+      "source_targets": [
+        {
+          "source": "Injector",
+          "target": "Relayer"
+        },
+        {
+          "source": "Amplifier",
+          "target": "Relayer"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Opportunistic amplification of false claims",
+      "name": "AMPLIFIES_CLAIM",
+      "source_targets": [
+        {
+          "source": "Amplifier",
+          "target": "Injector"
+        },
+        {
+          "source": "Amplifier",
+          "target": "Relayer"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Honest relaying of information through trust network",
+      "name": "RELAYS_CONTENT",
+      "source_targets": [
+        {
+          "source": "Relayer",
+          "target": "Relayer"
+        },
+        {
+          "source": "Relayer",
+          "target": "Amplifier"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Random audit conducted on agent behavior",
+      "name": "AUDITS_AGENT",
+      "source_targets": [
+        {
+          "source": "Auditor",
+          "target": "Injector"
+        },
+        {
+          "source": "Auditor",
+          "target": "Amplifier"
+        },
+        {
+          "source": "Auditor",
+          "target": "Relayer"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Collusion detection between adversarial agents",
+      "name": "FLAGS_COLLUSION",
+      "source_targets": [
+        {
+          "source": "CollusionDetector",
+          "target": "Injector"
+        },
+        {
+          "source": "CollusionDetector",
+          "target": "Amplifier"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Security quarantine of manipulation propagation chain",
+      "name": "QUARANTINES_CHAIN",
+      "source_targets": [
+        {
+          "source": "SecurityLayer",
+          "target": "Relayer"
+        },
+        {
+          "source": "SecurityLayer",
+          "target": "Amplifier"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Coalition formation between agent archetypes",
+      "name": "FORMS_COALITION",
+      "source_targets": [
+        {
+          "source": "Injector",
+          "target": "Amplifier"
+        },
+        {
+          "source": "Amplifier",
+          "target": "Relayer"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Trust relationship in the agent network",
+      "name": "TRUSTS_AGENT",
+      "source_targets": [
+        {
+          "source": "Relayer",
+          "target": "Relayer"
+        },
+        {
+          "source": "Relayer",
+          "target": "Amplifier"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Full name of the injector",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Frequency of deliberate defections",
+          "name": "defection_rate",
+          "type": "text"
+        },
+        {
+          "description": "Amount of surplus gained from defections",
+          "name": "surplus_extracted",
+          "type": "text"
+        }
+      ],
+      "description": "Adversarial agents that knowingly defect to extract surplus",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider",
+        "Casey Ortiz"
+      ],
+      "name": "Injector"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Full name of the amplifier",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Payoff level triggering defection",
+          "name": "payoff_threshold",
+          "type": "text"
+        },
+        {
+          "description": "Current reputation cost incurred",
+          "name": "reputation_cost",
+          "type": "text"
+        }
+      ],
+      "description": "Opportunistic agents that defect when payoff exceeds reputation cost",
+      "examples": [
+        "Ellis Mbeki",
+        "Finley Tahir",
+        "Gray Achebe"
+      ],
+      "name": "Amplifier"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Full name of the relayer",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Level of adherence to governance norms",
+          "name": "norm_adherence",
+          "type": "text"
+        },
+        {
+          "description": "Network influence in the trust graph",
+          "name": "influence_score",
+          "type": "text"
+        }
+      ],
+      "description": "Honest agents who follow stated norms and relay information",
+      "examples": [
+        "Logan Haider",
+        "Morgan Ortiz",
+        "Nico Vargas"
+      ],
+      "name": "Relayer"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Unique identifier for audit session",
+          "name": "audit_id",
+          "type": "text"
+        },
+        {
+          "description": "Penalty applied (default 3.0)",
+          "name": "penalty_multiplier",
+          "type": "text"
+        }
+      ],
+      "description": "Entities conducting random audits with 0.10 probability",
+      "examples": [
+        "Governance Auditor 1",
+        "Random Audit Bot",
+        "Compliance Checker"
+      ],
+      "name": "Auditor"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Reputation decay percentage per epoch",
+          "name": "decay_rate",
+          "type": "text"
+        },
+        {
+          "description": "Agent's current reputation score",
+          "name": "current_rep",
+          "type": "text"
+        }
+      ],
+      "description": "System tracking reputation decay (1% per epoch)",
+      "examples": [
+        "RepDecay Engine",
+        "Trust Ledger",
+        "Scorekeeper"
+      ],
+      "name": "ReputationManager"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Toxicity level triggering freeze (0.7)",
+          "name": "toxicity_threshold",
+          "type": "text"
+        },
+        {
+          "description": "Epochs agent is frozen (2)",
+          "name": "freeze_duration",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism freezing agents when toxicity exceeds 0.7",
+      "examples": [
+        "Toxicity Breaker",
+        "Cascade Freezer",
+        "Safety Circuit"
+      ],
+      "name": "CircuitBreaker"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Coordination score between agents",
+          "name": "collusion_score",
+          "type": "text"
+        },
+        {
+          "description": "List of detected colluding pairs",
+          "name": "flagged_pairs",
+          "type": "text"
+        }
+      ],
+      "description": "Detector flagging coordinated pairs above collusion score 0.6",
+      "examples": [
+        "Collusion Scanner",
+        "Coordination Flag",
+        "Pair Detector"
+      ],
+      "name": "CollusionDetector"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Current quarantine state",
+          "name": "quarantine_status",
+          "type": "text"
+        },
+        {
+          "description": "Length of detected manipulation chain",
+          "name": "chain_length",
+          "type": "text"
+        }
+      ],
+      "description": "System quarantining manipulation chains in the network",
+      "examples": [
+        "Manipulation Quarantine",
+        "Chain Breaker",
+        "Security Gate"
+      ],
+      "name": "SecurityLayer"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Full name of the person",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent archetype or role",
+          "name": "role_type",
+          "type": "text"
+        }
+      ],
+      "description": "Fallback type for any individual agent",
+      "examples": [
+        "Unclassified Agent",
+        "Generic Persona"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of the organization",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Role in governance mechanisms",
+          "name": "governance_role",
+          "type": "text"
+        }
+      ],
+      "description": "Fallback type for any organizational entity",
+      "examples": [
+        "SWARM Benchmark",
+        "Simulation Consortium"
+      ],
+      "name": "Organization"
+    }
+  ]
+}
