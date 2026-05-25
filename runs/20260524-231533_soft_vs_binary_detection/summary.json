@@ -114,8 +114,8 @@
     {
       "variant": "soft",
       "n": 50,
-      "median_ttd_mean": 0.28,
-      "median_ttd_std": 0.7493997598078077,
+      "median_ttd_mean": 2.13,
+      "median_ttd_std": 1.0237675517420934,
       "detection_rate_mean": 1.0,
       "detection_rate_std": 0.0
     }
@@ -295,6 +295,7 @@
   },
   "stats": {
     "method": "paired (soft vs binary on identical streams); Wilcoxon signed-rank + paired t; Cohen's d_z; Holm-Bonferroni",
+    "alpha": 0.05,
     "family_size": 11,
     "n_survive_holm": 8,
     "comparisons": [
@@ -351,10 +352,10 @@
       {
         "label": "TTD binary-soft (epochs; +=soft faster)",
         "n": 50,
-        "mean_diff": 9.65,
-        "cohen_dz": 5.033132417214534,
-        "t_p": 1.1314575344409171e-36,
-        "wilcoxon_p": 7.083792122188225e-10,
+        "mean_diff": 7.8,
+        "cohen_dz": 3.745529099512393,
+        "t_p": 1.0792576297307867e-30,
+        "wilcoxon_p": 7.032366033386256e-10,
         "holm_threshold": 0.0071428571428571435,
         "survives_holm": true
       },

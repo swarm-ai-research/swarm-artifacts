@@ -19,7 +19,7 @@ Each soft metric is paired with its **binary analogue** — the *same* metric co
 | variant | median epochs from onset | detection rate |
 | --- | ---: | ---: |
 | binary | 9.93 | 0.88 |
-| soft | 0.28 | 1.00 |
+| soft | 2.13 | 1.00 |
 
 ## 3. Market adverse selection (risk = −gap; higher = more adverse)
 

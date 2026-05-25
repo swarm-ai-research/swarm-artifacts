@@ -14,9 +14,9 @@ interaction streams across 10 seeds and 5 adversarial base rates. We report ROC
 curves, AUROC, time-to-detection at a calibrated FPR ≤ 0.05, and proxy
 calibration (Brier, ECE). The headline result: when degradation is kept *above*
 the binary threshold (as a gaming agent would), the soft toxicity detector flags
-it almost immediately (median 0.28 epochs from onset, 100% caught) while the
-binary detector is an order of magnitude slower (9.93 epochs) and misses 12% of
-degrading agents entirely. The soft proxy is also strictly better calibrated.
+it far sooner (median 2.13 epochs from onset, 100% caught) while the binary
+detector is ~4.7× slower (9.93 epochs) and misses 12% of degrading agents
+entirely. The soft proxy is also strictly better calibrated.
 
 ## 1. Setup
 
@@ -77,8 +77,13 @@ threshold counter even as the distribution shifts left.
 
 | variant | median epochs from onset | detection rate |
 | --- | ---: | ---: |
-| soft | 0.28 | 1.00 |
+| soft | 2.13 | 1.00 |
 | binary | 9.93 | 0.88 |
+
+The FPR-calibration window and the detection-scan window are aligned (both
+start at the first full trailing window and the scan begins no earlier than
+onset), so the reported FPR ≤ 0.05 operating point holds over exactly the
+epochs scanned and pre-onset flags are not credited as instantaneous detection.
 
 ![Time-to-detection](../../runs/20260524-231533_soft_vs_binary_detection/plots/ttd.png)
 
@@ -120,7 +125,7 @@ of 11 comparisons. **8/11 survive.**
 | AUROC soft−binary @ br=0.20 | +0.0875 | 1.30 | 7.8e−03 | **YES** |
 | AUROC soft−binary @ br=0.35 | +0.0357 | 0.95 | 3.1e−02 | no |
 | AUROC soft−binary @ br=0.50 | +0.0550 | 1.30 | 3.9e−03 | **YES** |
-| TTD binary−soft (epochs; +=soft faster) | +9.65 | 5.03 | 7.1e−10 | **YES** |
+| TTD binary−soft (epochs; +=soft faster) | +7.80 | 3.75 | <1e−06 | **YES** |
 | Detection-rate soft−binary | +0.120 | 0.84 | 1.6e−06 | **YES** |
 | Market \|signal\| soft−binary: conditional_loss | +0.0142 | 2.67 | <1e−14 | **YES** |
 | Market \|signal\| soft−binary: quality_gap | +0.0788 | 3.42 | <1e−14 | **YES** |
@@ -139,7 +144,7 @@ The binary analogue of a soft metric is not a different idea — it is literally
 the same metric with the proxy thresholded first. That single bottleneck is what
 a gaming agent exploits: by keeping quality just above τ\*, it makes the binary
 view report "all fine" while the distribution it controls shifts left. The soft
-detectors read that shift directly, which buys (a) earlier detection (≈10× faster
+detectors read that shift directly, which buys (a) earlier detection (≈4.7× faster
 here, at a fixed FPR), (b) complete coverage (no missed degraders), (c) a
 recoverable market-level adverse-selection signal, and (d) better-calibrated
 probabilities.
