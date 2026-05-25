@@ -1,0 +1,39 @@
+{
+  "base_rates": [
+    0.05,
+    0.1,
+    0.2,
+    0.35,
+    0.5
+  ],
+  "n_seeds": 10,
+  "tau_star": 0.5,
+  "max_fpr": 0.05,
+  "ttd_window": 4,
+  "population": {
+    "n_agents": 40,
+    "onset_choices": [
+      4,
+      8,
+      12
+    ],
+    "trajectory_choices": [
+      "linear",
+      "exponential",
+      "sigmoid",
+      "step"
+    ],
+    "stream": {
+      "n_epochs": 24,
+      "interactions_per_epoch": 12,
+      "initial_quality": 0.85,
+      "quality_floor": 0.66,
+      "benign_quality": 0.85,
+      "acceptance_threshold": 0.7,
+      "gaming_benchmark": 0.85,
+      "benchmark_noise": 0.1,
+      "proxy_noise": 0.09,
+      "quality_jitter": 0.02
+    }
+  }
+}

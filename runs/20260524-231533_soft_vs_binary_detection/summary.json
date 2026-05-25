@@ -1,0 +1,413 @@
+{
+  "experiment": "detection_baselines",
+  "n_seeds": 10,
+  "base_rates": [
+    0.05,
+    0.1,
+    0.2,
+    0.35,
+    0.5
+  ],
+  "tau_star": 0.5,
+  "max_fpr": 0.05,
+  "detection_auroc": [
+    {
+      "base_rate": 0.05,
+      "variant": "binary",
+      "n": 10,
+      "auroc_mean": 0.925,
+      "auroc_std": 0.11456439237389601,
+      "auprc_mean": 0.8574999999999999,
+      "auprc_std": 0.2176723455104024
+    },
+    {
+      "base_rate": 0.05,
+      "variant": "soft",
+      "n": 10,
+      "auroc_mean": 1.0,
+      "auroc_std": 0.0,
+      "auprc_mean": 1.0,
+      "auprc_std": 0.0
+    },
+    {
+      "base_rate": 0.1,
+      "variant": "binary",
+      "n": 10,
+      "auroc_mean": 0.95,
+      "auroc_std": 0.06123724356957945,
+      "auprc_mean": 0.9099999999999999,
+      "auprc_std": 0.110227038425243
+    },
+    {
+      "base_rate": 0.1,
+      "variant": "soft",
+      "n": 10,
+      "auroc_mean": 1.0,
+      "auroc_std": 0.0,
+      "auprc_mean": 1.0,
+      "auprc_std": 0.0
+    },
+    {
+      "base_rate": 0.2,
+      "variant": "binary",
+      "n": 10,
+      "auroc_mean": 0.9125,
+      "auroc_std": 0.0637377439199098,
+      "auprc_mean": 0.86,
+      "auprc_std": 0.10198039027185571
+    },
+    {
+      "base_rate": 0.2,
+      "variant": "soft",
+      "n": 10,
+      "auroc_mean": 1.0,
+      "auroc_std": 0.0,
+      "auprc_mean": 1.0,
+      "auprc_std": 0.0
+    },
+    {
+      "base_rate": 0.35,
+      "variant": "binary",
+      "n": 10,
+      "auroc_mean": 0.9642857142857142,
+      "auroc_std": 0.03571428571428572,
+      "auprc_mean": 0.9535714285714285,
+      "auprc_std": 0.046428571428571395
+    },
+    {
+      "base_rate": 0.35,
+      "variant": "soft",
+      "n": 10,
+      "auroc_mean": 1.0,
+      "auroc_std": 0.0,
+      "auprc_mean": 1.0,
+      "auprc_std": 0.0
+    },
+    {
+      "base_rate": 0.5,
+      "variant": "binary",
+      "n": 10,
+      "auroc_mean": 0.9450000000000001,
+      "auroc_std": 0.03999999999999998,
+      "auprc_mean": 0.9450000000000003,
+      "auprc_std": 0.039999999999999925
+    },
+    {
+      "base_rate": 0.5,
+      "variant": "soft",
+      "n": 10,
+      "auroc_mean": 1.0,
+      "auroc_std": 0.0,
+      "auprc_mean": 1.0,
+      "auprc_std": 0.0
+    }
+  ],
+  "time_to_detection": [
+    {
+      "variant": "binary",
+      "n": 50,
+      "median_ttd_mean": 9.93,
+      "median_ttd_std": 1.5588778014969615,
+      "detection_rate_mean": 0.8797142857142858,
+      "detection_rate_std": 0.14246811315275473
+    },
+    {
+      "variant": "soft",
+      "n": 50,
+      "median_ttd_mean": 0.28,
+      "median_ttd_std": 0.7493997598078077,
+      "detection_rate_mean": 1.0,
+      "detection_rate_std": 0.0
+    }
+  ],
+  "market_selection": [
+    {
+      "metric": "conditional_loss",
+      "variant": "binary",
+      "base_rate": 0.05,
+      "n": 10,
+      "value_mean": 6.519982656538748e-06,
+      "value_std": 0.00020377502593950646
+    },
+    {
+      "metric": "conditional_loss",
+      "variant": "binary",
+      "base_rate": 0.1,
+      "n": 10,
+      "value_mean": 0.0002195082548726135,
+      "value_std": 0.0002343987570083939
+    },
+    {
+      "metric": "conditional_loss",
+      "variant": "binary",
+      "base_rate": 0.2,
+      "n": 10,
+      "value_mean": 0.00025532042651660314,
+      "value_std": 0.00023862948950487066
+    },
+    {
+      "metric": "conditional_loss",
+      "variant": "binary",
+      "base_rate": 0.35,
+      "n": 10,
+      "value_mean": 0.0006350381780668935,
+      "value_std": 0.0005263382908286218
+    },
+    {
+      "metric": "conditional_loss",
+      "variant": "binary",
+      "base_rate": 0.5,
+      "n": 10,
+      "value_mean": 0.0004935105539466078,
+      "value_std": 0.0002986096082059665
+    },
+    {
+      "metric": "conditional_loss",
+      "variant": "soft",
+      "base_rate": 0.05,
+      "n": 10,
+      "value_mean": -0.020789642331028767,
+      "value_std": 0.0011164701689840202
+    },
+    {
+      "metric": "conditional_loss",
+      "variant": "soft",
+      "base_rate": 0.1,
+      "n": 10,
+      "value_mean": -0.019028683988411666,
+      "value_std": 0.000879450942918029
+    },
+    {
+      "metric": "conditional_loss",
+      "variant": "soft",
+      "base_rate": 0.2,
+      "n": 10,
+      "value_mean": -0.015376837569026825,
+      "value_std": 0.0009308005964027208
+    },
+    {
+      "metric": "conditional_loss",
+      "variant": "soft",
+      "base_rate": 0.35,
+      "n": 10,
+      "value_mean": -0.010880112652207596,
+      "value_std": 0.0007297247067879527
+    },
+    {
+      "metric": "conditional_loss",
+      "variant": "soft",
+      "base_rate": 0.5,
+      "n": 10,
+      "value_mean": -0.007161072159949633,
+      "value_std": 0.0005694770169641355
+    },
+    {
+      "metric": "quality_gap",
+      "variant": "binary",
+      "base_rate": 0.05,
+      "n": 10,
+      "value_mean": 4.2479499693459656e-05,
+      "value_std": 0.0010300147627778007
+    },
+    {
+      "metric": "quality_gap",
+      "variant": "binary",
+      "base_rate": 0.1,
+      "n": 10,
+      "value_mean": 0.001152005578098736,
+      "value_std": 0.0012434939973915825
+    },
+    {
+      "metric": "quality_gap",
+      "variant": "binary",
+      "base_rate": 0.2,
+      "n": 10,
+      "value_mean": 0.001447213412406101,
+      "value_std": 0.001360582278155424
+    },
+    {
+      "metric": "quality_gap",
+      "variant": "binary",
+      "base_rate": 0.35,
+      "n": 10,
+      "value_mean": 0.003834533945178431,
+      "value_std": 0.003158258728684833
+    },
+    {
+      "metric": "quality_gap",
+      "variant": "binary",
+      "base_rate": 0.5,
+      "n": 10,
+      "value_mean": 0.003382715657139335,
+      "value_std": 0.0020845211410550893
+    },
+    {
+      "metric": "quality_gap",
+      "variant": "soft",
+      "base_rate": 0.05,
+      "n": 10,
+      "value_mean": -0.10612479028601425,
+      "value_std": 0.003230138134770387
+    },
+    {
+      "metric": "quality_gap",
+      "variant": "soft",
+      "base_rate": 0.1,
+      "n": 10,
+      "value_mean": -0.09982465276399155,
+      "value_std": 0.0018513954495410696
+    },
+    {
+      "metric": "quality_gap",
+      "variant": "soft",
+      "base_rate": 0.2,
+      "n": 10,
+      "value_mean": -0.08520149329853645,
+      "value_std": 0.003418583082209
+    },
+    {
+      "metric": "quality_gap",
+      "variant": "soft",
+      "base_rate": 0.35,
+      "n": 10,
+      "value_mean": -0.06631758853565482,
+      "value_std": 0.0038396961832682136
+    },
+    {
+      "metric": "quality_gap",
+      "variant": "soft",
+      "base_rate": 0.5,
+      "n": 10,
+      "value_mean": -0.04840313699256701,
+      "value_std": 0.0037731503667466065
+    }
+  ],
+  "calibration": {
+    "n": 50,
+    "soft_brier_mean": 0.15140059807581685,
+    "soft_brier_std": 0.012500151328376584,
+    "binary_brier_mean": 0.18289236111111104,
+    "binary_brier_std": 0.023477389152292447,
+    "soft_ece_mean": 0.054481826158403746,
+    "soft_ece_std": 0.005116056633363562,
+    "binary_ece_mean": 0.18289236111111104,
+    "binary_ece_std": 0.023477389152292447
+  },
+  "stats": {
+    "method": "paired (soft vs binary on identical streams); Wilcoxon signed-rank + paired t; Cohen's d_z; Holm-Bonferroni",
+    "family_size": 11,
+    "n_survive_holm": 8,
+    "comparisons": [
+      {
+        "label": "AUROC soft-binary @ br=0.05",
+        "n": 10,
+        "mean_diff": 0.075,
+        "cohen_dz": 0.6210590034081188,
+        "t_p": 0.08112618884584051,
+        "wilcoxon_p": 0.25,
+        "holm_threshold": 0.05,
+        "survives_holm": false
+      },
+      {
+        "label": "AUROC soft-binary @ br=0.10",
+        "n": 10,
+        "mean_diff": 0.05,
+        "cohen_dz": 0.7745966692414833,
+        "t_p": 0.036787497879786135,
+        "wilcoxon_p": 0.125,
+        "holm_threshold": 0.025,
+        "survives_holm": false
+      },
+      {
+        "label": "AUROC soft-binary @ br=0.20",
+        "n": 10,
+        "mean_diff": 0.0875,
+        "cohen_dz": 1.3023647131866884,
+        "t_p": 0.0026040009823757016,
+        "wilcoxon_p": 0.0078125,
+        "holm_threshold": 0.0125,
+        "survives_holm": true
+      },
+      {
+        "label": "AUROC soft-binary @ br=0.35",
+        "n": 10,
+        "mean_diff": 0.03571428571428571,
+        "cohen_dz": 0.9486832980505137,
+        "t_p": 0.014956363910414203,
+        "wilcoxon_p": 0.03125,
+        "holm_threshold": 0.016666666666666666,
+        "survives_holm": false
+      },
+      {
+        "label": "AUROC soft-binary @ br=0.50",
+        "n": 10,
+        "mean_diff": 0.05500000000000001,
+        "cohen_dz": 1.304439534819457,
+        "t_p": 0.002578638943639294,
+        "wilcoxon_p": 0.00390625,
+        "holm_threshold": 0.01,
+        "survives_holm": true
+      },
+      {
+        "label": "TTD binary-soft (epochs; +=soft faster)",
+        "n": 50,
+        "mean_diff": 9.65,
+        "cohen_dz": 5.033132417214534,
+        "t_p": 1.1314575344409171e-36,
+        "wilcoxon_p": 7.083792122188225e-10,
+        "holm_threshold": 0.0071428571428571435,
+        "survives_holm": true
+      },
+      {
+        "label": "Detection-rate soft-binary (+=soft catches more)",
+        "n": 50,
+        "mean_diff": 0.1202857142857143,
+        "cohen_dz": 0.8358135677991337,
+        "t_p": 3.21865547611795e-07,
+        "wilcoxon_p": 1.6416009966164376e-06,
+        "holm_threshold": 0.008333333333333333,
+        "survives_holm": true
+      },
+      {
+        "label": "Market |signal| soft-binary: conditional_loss",
+        "n": 50,
+        "mean_diff": 0.01424841384494502,
+        "cohen_dz": 2.667261162609118,
+        "t_p": 4.131940499086595e-24,
+        "wilcoxon_p": 1.7763568394002505e-15,
+        "holm_threshold": 0.004545454545454546,
+        "survives_holm": true
+      },
+      {
+        "label": "Market |signal| soft-binary: quality_gap",
+        "n": 50,
+        "mean_diff": 0.07878571945536647,
+        "cohen_dz": 3.421639730988508,
+        "t_p": 6.661902811957969e-29,
+        "wilcoxon_p": 1.7763568394002505e-15,
+        "holm_threshold": 0.005,
+        "survives_holm": true
+      },
+      {
+        "label": "Brier binary-soft (+=soft better)",
+        "n": 50,
+        "mean_diff": 0.03149176303529426,
+        "cohen_dz": 2.8000488335522213,
+        "t_p": 5.010397378459088e-25,
+        "wilcoxon_p": 1.7763568394002505e-15,
+        "holm_threshold": 0.005555555555555556,
+        "survives_holm": true
+      },
+      {
+        "label": "ECE binary-soft (+=soft better)",
+        "n": 50,
+        "mean_diff": 0.12841053495270735,
+        "cohen_dz": 4.756781488711677,
+        "t_p": 1.6181469240772816e-35,
+        "wilcoxon_p": 1.7763568394002505e-15,
+        "holm_threshold": 0.00625,
+        "survives_holm": true
+      }
+    ]
+  }
+}

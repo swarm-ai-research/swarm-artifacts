@@ -1,12 +1,12 @@
-generated_utc: '2026-03-28T13:40:01.329666+00:00'
-total_runs: 152
+generated_utc: '2026-05-25T03:24:49.890411+00:00'
+total_runs: 154
 by_type:
   calibration: 2
   redteam: 13
   single: 66
   study: 33
   sweep: 35
-  unknown: 3
+  unknown: 5
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1400,6 +1400,18 @@ runs:
   - dose-response
   date: '2026-03-28'
   status: completed
+- id: 20260524-230549_detection_baselines
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: 20260524-231533_soft_vs_binary_detection
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
 - id: agent_tree_demo
   slug: agent_tree_demo
   type: single
