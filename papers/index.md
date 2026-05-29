@@ -21,6 +21,7 @@ Each is a self-contained report tied to a scenario, seed, and exported run data.
 - [Governance Parameter Effects on Recursive Collusion Dynamics](collusion_governance.md)
 - [Collusion Tax Effect: Taxation and Collusion Penalties in Recursive Systems](collusion_tax_effect.md)
 - [Transaction Taxes Reduce Welfare Monotonically While Circuit Breakers Show Null Effect](governance_sweep_kernel_collusion.md) — controlled sweep across two domains.
+- [Post-Fix Governance Sweep: Impact of Fail-Closed Policies on Handoff](post_fix_governance_sweep.md)
 
 ## GPU kernel marketplace
 
@@ -56,12 +57,15 @@ Each is a self-contained report tied to a scenario, seed, and exported run data.
 - [Governance Under Emergent LLM Behavior: A Concordia Entity Sweep](concordia_entity_sweep.md)
 - [Governance Costs Without Governance Benefits: A Concordia Narrative Sweep](concordia_governance_sweep.md)
 - [Governance Effects on LLM Agents with Semantic Memory](memori_governance_sweep.md)
+- [Local LLM Tool-Use in Governed Handoff: An Ollama Model Comparison](ollama_model_comparison.md)
 - [RLHF Alignment Survives Adversarial Framing: Claude Models in SWARM](pi_bridge_claude_study.md)
 - [Governance Effects on Skill-Evolving Agents](skillrl_study.md)
 
 ## Delegation & planning
 
 - [Delegation Games: Governance for Task Allocation Under Adversarial Delegation](delegation_games.md)
+- [Distributional Screening of Task Planners: Can Soft Labels Detect Miscalibrated Confidence?](dag_confidence_calibration.md)
+- [Mesa Bridge Governance Arc: From Tax to Adaptation to Generalization](mesa_bridge_governance_arc.md)
 
 ## Detection & measurement
 
@@ -70,5 +74,6 @@ Each is a self-contained report tied to a scenario, seed, and exported run data.
 ## Applied bridges & external integrations
 
 - [Emergent Progressive Taxation and the Cost of Evasion in Production Economies](ai_economist_gtb.md) — AI Economist / GTB bridge.
+- [Parametric Governance Cannot Fix Structural Vulnerabilities: A Live AI Research Platform](research_swarm_governance.md)
 - [Obfuscation Atlas Integration](obfuscation_atlas_integration.md)
 - [Lessons from ARC-AGI-3 Agent Development](arc-agi-3-lessons.md)
