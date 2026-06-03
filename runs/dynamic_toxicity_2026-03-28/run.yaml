@@ -1,0 +1,36 @@
+run_id: dynamic_toxicity_2026-03-28
+slug: dynamic_toxicity_2026-03-28
+created_utc: unknown
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/baseline/baseline_agents.csv
+  - csv/baseline/baseline_epochs.csv
+  - csv/combined/dynamic_toxicity_combined_agents.csv
+  - csv/combined/dynamic_toxicity_combined_epochs.csv
+  - csv/contagion/dynamic_toxicity_contagion_agents.csv
+  - csv/contagion/dynamic_toxicity_contagion_epochs.csv
+  - csv/contagion_aggressive/dynamic_toxicity_contagion_aggressive_agents.csv
+  - csv/contagion_aggressive/dynamic_toxicity_contagion_aggressive_epochs.csv
+  - csv/proxy_drift/dynamic_toxicity_proxy_drift_agents.csv
+  - csv/proxy_drift/dynamic_toxicity_proxy_drift_epochs.csv
+  - csv/trust_erosion/dynamic_toxicity_trust_erosion_agents.csv
+  - csv/trust_erosion/dynamic_toxicity_trust_erosion_epochs.csv
+  - csv/trust_erosion_aggressive/dynamic_toxicity_trust_erosion_aggressive_agents.csv
+  - csv/trust_erosion_aggressive/dynamic_toxicity_trust_erosion_aggressive_epochs.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- untagged

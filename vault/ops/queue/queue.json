@@ -2850,6 +2850,138 @@
         "claim-freeze-duration-and-violation-threshold-interact-on-welfare",
         "claim-tax-cb-interact-on-quality-gap"
       ]
+    },
+    {
+      "id": "extract-20260326_screening_strength_sweep",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260326_screening_strength_sweep/",
+      "created": "2026-06-03T01:35:16.594707Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "note": "Experiment note synthesized: vault/experiments/20260326_screening_strength_sweep.md"
+    },
+    {
+      "id": "extract-20260328_long_horizon_screening_replication",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260328_long_horizon_screening_replication/",
+      "created": "2026-06-03T01:35:16.594914Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "note": "Experiment note synthesized: vault/experiments/20260328_long_horizon_screening_replication.md"
+    },
+    {
+      "id": "extract-20260524-230549_detection_baselines",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260524-230549_detection_baselines/",
+      "created": "2026-06-03T01:35:16.594930Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "note": "Experiment note synthesized: vault/experiments/20260524-230549_detection_baselines.md"
+    },
+    {
+      "id": "extract-20260524-231533_soft_vs_binary_detection",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260524-231533_soft_vs_binary_detection/",
+      "created": "2026-06-03T01:35:16.594944Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "note": "Experiment note synthesized: vault/experiments/20260524-231533_soft_vs_binary_detection.md"
+    },
+    {
+      "id": "extract-dynamic_toxicity_2026-03-28",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/dynamic_toxicity_2026-03-28/",
+      "created": "2026-06-03T01:35:16.594957Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "note": "Experiment note synthesized: vault/experiments/dynamic_toxicity_2026-03-28.md"
+    },
+    {
+      "id": "extract-20260304_212912_frontier_trace",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260304_212912_frontier_trace/",
+      "created": "2026-06-03T01:35:16.594989Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "note": "Observational frontier/screening run: minimal data, no formal summary. Covered by later detection studies."
+    },
+    {
+      "id": "extract-20260304_213700_screening",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260304_213700_screening/",
+      "created": "2026-06-03T01:35:16.595008Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "note": "Observational frontier/screening run: minimal data, no formal summary. Covered by later detection studies."
+    },
+    {
+      "id": "extract-20260304_232817_screening",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260304_232817_screening/",
+      "created": "2026-06-03T01:35:16.595022Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "note": "Observational frontier/screening run: minimal data, no formal summary. Covered by later detection studies."
+    },
+    {
+      "id": "extract-20260304_232823_screening",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260304_232823_screening/",
+      "created": "2026-06-03T01:35:16.595035Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "note": "Observational frontier/screening run: minimal data, no formal summary. Covered by later detection studies."
+    },
+    {
+      "id": "extract-escalation_asymmetric_info",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/escalation_asymmetric_info/",
+      "created": "2026-06-03T01:35:16.595048Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "note": "Experiment note synthesized: vault/experiments/escalation_asymmetric_info.md"
+    },
+    {
+      "id": "extract-frontier_all_20260304_232812",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/frontier_all_20260304_232812/",
+      "created": "2026-06-03T01:35:16.595061Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "note": "Experiment note synthesized: vault/experiments/frontier_all_20260304_232812.md"
     }
   ],
   "maintenance_conditions": {

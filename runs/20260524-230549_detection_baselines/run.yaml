@@ -1,0 +1,41 @@
+run_id: 20260524-230549_detection_baselines
+slug: detection_baselines
+created_utc: '2026-05-24T23:05:49+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/calibration.csv
+  - csv/calibration_agg.csv
+  - csv/detection.csv
+  - csv/detection_agg.csv
+  - csv/market.csv
+  - csv/market_agg.csv
+  - csv/ttd.csv
+  - csv/ttd_agg.csv
+  plots:
+  - path: plots/auroc_vs_baserate.png
+    description: ''
+  - path: plots/calibration.png
+    description: ''
+  - path: plots/market_selection.png
+    description: ''
+  - path: plots/roc_toxicity.png
+    description: ''
+  - path: plots/ttd.png
+    description: ''
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- baseline

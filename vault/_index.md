@@ -107,6 +107,15 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-cb-threshold-05-maximizes-welfare-in-small-world-topology]] — Freeze threshold 0.5 maximizes welfare among CB-active conditions, d=0.77 vs 0.3 (medium confidence)
 - [[claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05]] — CB fires only at thresholds 0.3-0.5; never activates at 0.7-0.9 across 1440 runs (high confidence)
 - [[claim-aggressive-cb-threshold-harms-honest-agents-through-false-positive-freezing]] — Threshold 0.3 causes 7% honest payoff penalty through false-positive freezing (medium confidence)
+- [[claim-screening-improves-coordination-capability-universally]] — Screening universally improves agent coordination across task types (medium confidence)
+- [[claim-screening-effect-is-task-type-dependent]] — Screening effectiveness varies significantly with task complexity and structure (medium confidence)
+- [[claim-coordination-capability-increases-monotonically-with-screening-strength]] — Coordination capability increases monotonically with screening detection strength (medium confidence)
+- [[claim-screening-signal-reliability-determines-routing-outcome]] — Screening outcome determined primarily by signal reliability, not threshold (medium confidence)
+- [[claim-screening-harms-routing-under-tight-governance]] — Screening reduces routing efficiency when combined with tight governance constraints (low confidence)
+- [[claim-routing-screening-dose-response-is-u-shaped-under-tight-governance]] — Routing response to screening shows U-shaped curve under tight governance (low confidence)
+- [[claim-loose-governance-is-near-costless-entry-on-safety-frontier]] — Loose governance provides near-zero safety cost entry point to frontier optimization (low confidence)
+- [[claim-governance-capability-cost-is-monotonic-and-task-universal]] — Governance capability cost monotonically increases across all task types (medium confidence)
+- [[claim-task-complexity-amplifies-governance-capability-cost]] — Task complexity amplifies governance capability cost non-linearly (medium confidence)
 
 ## Governance Mechanisms
 

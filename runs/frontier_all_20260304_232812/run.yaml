@@ -1,0 +1,30 @@
+run_id: frontier_all_20260304_232812
+slug: frontier_all_20260304_232812
+created_utc: unknown
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - 20260304_232813_frontier_trace/csv/allocation_raw.csv
+  - 20260304_232813_frontier_trace/csv/allocation_summary.csv
+  - 20260304_232813_frontier_trace/csv/coordination_raw.csv
+  - 20260304_232813_frontier_trace/csv/coordination_summary.csv
+  - 20260304_232813_frontier_trace/csv/long_horizon_raw.csv
+  - 20260304_232813_frontier_trace/csv/long_horizon_summary.csv
+  - 20260304_232813_frontier_trace/csv/routing_raw.csv
+  - 20260304_232813_frontier_trace/csv/routing_summary.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- untagged

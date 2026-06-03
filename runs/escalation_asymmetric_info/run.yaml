@@ -1,0 +1,26 @@
+run_id: escalation_asymmetric_info
+slug: escalation_asymmetric_info
+created_utc: unknown
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  plots:
+  - path: asymmetric_info_heatmap.png
+    description: ''
+  - path: asymmetric_info_sweep.png
+    description: ''
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- untagged

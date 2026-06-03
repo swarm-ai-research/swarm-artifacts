@@ -1,12 +1,11 @@
-generated_utc: '2026-05-25T03:37:20.945399+00:00'
+generated_utc: '2026-06-03T01:37:00.896156+00:00'
 total_runs: 154
 by_type:
   calibration: 2
   redteam: 13
-  single: 66
+  single: 71
   study: 33
   sweep: 35
-  unknown: 5
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1401,17 +1400,19 @@ runs:
   date: '2026-03-28'
   status: completed
 - id: 20260524-230549_detection_baselines
-  type: unknown
+  slug: detection_baselines
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - baseline
+  date: '2026-05-24'
+  status: completed
 - id: 20260524-231533_soft_vs_binary_detection
-  type: unknown
+  slug: soft_vs_binary_detection
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - untagged
+  date: '2026-05-24'
+  status: completed
 - id: agent_tree_demo
   slug: agent_tree_demo
   type: single
@@ -1455,23 +1456,26 @@ runs:
   - claim-contract-screening-achieves-perfect-type-separation
   - claim-screening-equilibrium-generates-honest-payoff-premium
 - id: dynamic_toxicity_2026-03-28
-  type: unknown
+  slug: dynamic_toxicity_2026-03-28
+  type: single
   tags:
-  - unmigrated
+  - untagged
   date: unknown
-  status: unknown
+  status: completed
 - id: escalation_asymmetric_info
-  type: unknown
+  slug: escalation_asymmetric_info
+  type: single
   tags:
-  - unmigrated
+  - untagged
   date: unknown
-  status: unknown
+  status: completed
 - id: frontier_all_20260304_232812
-  type: unknown
+  slug: frontier_all_20260304_232812
+  type: single
   tags:
-  - unmigrated
+  - untagged
   date: unknown
-  status: unknown
+  status: completed
 - id: hodoscope_demo
   slug: hodoscope_demo
   type: single
