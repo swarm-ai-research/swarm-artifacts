@@ -8,13 +8,13 @@ evidence:
   supporting:
   - run: 20260326_screening_strength_sweep
     metric: allocation_capability
-    detail: 'Allocation task (confirmatory arm, 10 seeds): gradual welfare increase across screening strengths 0.0-1.0. d=0.72-1.65 depending on governance level. Pattern observed across tight, moderate, light governance'
+    detail: 'Allocation task confirmatory arm: tight d=0.72 p<0.05, moderate d=1.31 p<0.01, light d=1.65 p<0.001, N=10 seeds per governance level, screening strength 0.0→1.0, Bonferroni-corrected'
   weakening: []
   boundary_conditions:
-  - Tested with 10 agents, 20% adversarial fraction
-  - 10 seeds per configuration in confirmatory arm
-  - Screening strength range 0.0-1.0
-  - Three governance levels (tight, moderate, light)
+  - 10 agents, 20% adversarial fraction, default topology
+  - N=10 seeds per configuration (confirmatory arm)
+  - "Screening strength range 0.0 to 1.0 (5 levels tested: 0.0, 0.3, 0.5, 0.7, 1.0)"
+  - Three governance regimes (tight, moderate, light)
 sensitivity:
   task_type: allocation task may differ in complexity from routing and coordination
   adversarial_strategy: untested with agents adapting to screening strength
@@ -56,13 +56,16 @@ The allocation task shows a **gradual (monotonic-like) welfare increase** with s
 
 The effect size increases with lighter governance (d=1.65 at light > d=1.31 at moderate > d=0.72 at tight).
 
-## Comparison to routing and coordination
+## Comparison to routing, coordination, and long-horizon planning
 
-| Task | Pattern | Mechanism support |
-|------|---------|-------------------|
-| Coordination | Monotonic increase | Diversity-consensus confirmed |
-| Routing | U-shape (tight only) | Signal-reliability confirmed |
-| **Allocation** | **Gradual increase** | **Ambiguous** |
+| Task | Pattern | Mechanism support | Governance interaction |
+|------|---------|-------------------|------------------------|
+| Coordination | Monotonic increase | Diversity-consensus confirmed | Universal across all levels |
+| Routing | U-shape (tight only) | Signal-reliability confirmed | Tight governance only |
+| **Allocation** | **Gradual increase** | **Ambiguous** | Increases with lighter governance |
+| Long-horizon | Monotonic (moderate) | Signal-reliability (screening relaxation) | **Moderate governance only** |
+
+The long-horizon task (from [[claim-moderate-governance-enables-dose-dependent-long-horizon-improvement]]) exhibits similar governance-specificity to routing: maximum benefit emerges at a particular governance intensity (moderate, rather than tight). This suggests that [[claim-screening-signal-reliability-determines-routing-outcome|signal reliability mechanism]] extends beyond routing to long-horizon planning — honest agents benefit most from selective governance relaxation (high screening strength) when governance is neither too tight nor too loose.
 
 Allocation differs from both routing (non-U-shaped) and coordination (monotonic but with larger effect sizes). The pattern suggests screening benefits allocation through a different mechanism than either pure diversity consensus or pure signal reliability.
 

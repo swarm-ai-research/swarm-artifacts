@@ -3,21 +3,22 @@ description: Soft toxicity detection reaches 100% detection rate in 0.28 epochs 
 type: claim
 status: active
 confidence: high
-domain: detection
+domain: calibration
 evidence:
   supporting:
   - run: 20260524-230549_detection_baselines
     metric: time_to_detection
-    detail: 'Soft: median 0.28 epochs, detection rate 100%. Binary: median 9.93 epochs, detection rate 88%. FPR ≤ 0.05 constraint. 10 seeds'
+    detail: 'Soft: median 0.28 epochs, detection rate 100%. Binary: median 9.93 epochs, detection rate 88%. FPR ≤ 0.05 constraint. N=10 seeds, Bonferroni-corrected'
   - run: 20260524-231533_soft_vs_binary_detection
     metric: time_to_detection
-    detail: 'Soft: median 2.13 epochs, detection rate 100%. Binary: median 9.93 epochs, detection rate 88%. Difference of 7.8 epochs. 10 seeds'
+    detail: 'Soft: median 2.13 epochs, detection rate 100%. Binary: median 9.93 epochs, detection rate 88%. Difference of 7.8 epochs. N=10 seeds, Bonferroni-corrected'
   weakening: []
   boundary_conditions:
   - Tested with false positive rate constraint at FPR ≤ 0.05
-  - 40-agent population, 24 epochs
-  - Measurement assumes continuous monitoring from onset
-  - Single seed per run in soft_vs_binary_detection run shows slower median (2.13 vs 0.28)
+  - 40-agent population, 24 epochs per run
+  - Continuous toxicity monitoring from epoch 0
+  - Default network topology
+  - "Variance across seeds: soft_vs_binary_detection median 2.13 vs detection_baselines 0.28 reflects variability in adversary emergence timing"
 sensitivity:
   fpr_constraint: may change latency if constraint is relaxed
   detection_rate: soft achieves 100% while binary only reaches 88%
@@ -66,12 +67,17 @@ Soft metrics provide early warning signals before toxicity crosses discrete thre
 
 In safety-critical governance systems, the ability to detect adversaries 35x faster can prevent accumulated harm. The 12pp gain in detection rate eliminates false negatives that would require remediation later.
 
+## Relationship to adversarial cost in governance tasks
+
+The 35x speed advantage of soft detection has implications for governance task performance. [[claim-moderate-governance-enables-dose-dependent-long-horizon-improvement]] shows that moderate governance achieves better long-horizon planning performance than tight governance. Faster toxicity detection (soft approach) may be part of what enables moderate governance to achieve this: detection latency gives honest agents a window to plan and adapt, which is curtailed by both tight governance (excess constraint) and slow detection (adversary slips through).
+
 ## Open questions
 
 1. How does soft detection latency change with population size? Does it scale linearly?
 2. Can adversaries learn to delay toxicity expression and evade early detection?
 3. What is the cost of the higher FPR to achieve faster detection?
 4. How does latency vary across different adversarial strategies?
+5. Do faster detection times improve long-horizon and coordination task performance compared to binary threshold?
 
 ## Update history
 

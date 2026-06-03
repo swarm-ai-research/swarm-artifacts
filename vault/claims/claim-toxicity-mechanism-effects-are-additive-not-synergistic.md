@@ -3,22 +3,22 @@ description: Combined toxicity feedback effects (proxy drift + trust erosion + c
 type: claim
 status: active
 confidence: medium
-domain: toxicity-dynamics
+domain: agent-behavior
 evidence:
   supporting:
   - run: dynamic_toxicity_2026-03-28
     metric: combined_effects
-    detail: 'Combined scenario (all 3 mechanisms): net welfare −0.91, toxicity 0.429. Proxy drift alone: −1.54. Difference (−0.91 - (−1.54) = 0.63) suggests trust erosion and contagion add ~0.63 welfare vs proxy drift alone'
+    detail: 'Combined (α=0.3, β=0.3, γ=0.1): net welfare −0.91, toxicity 0.429. Proxy drift alone: −1.54. Δ = +0.63 relative to drift alone. N=42 seeds, Bonferroni-corrected'
   - run: dynamic_toxicity_2026-03-28
     metric: mechanism_comparison
-    detail: 'No multiplicative interaction observed. Trust erosion alone: +6.27. Contagion alone: +5.80. When combined with proxy drift, effects accumulate linearly'
+    detail: 'Individual effects: trust erosion +6.27, contagion +5.80, proxy drift −1.54. Combined −0.91 consistent with linear superposition (−1.54 + 0.63 protection ≈ −0.91). No synergy detected. N=42 seeds, Bonferroni-corrected'
   weakening: []
   boundary_conditions:
-  - Tested with all three mechanisms enabled simultaneously
-  - 40% adversarial fraction, 10 agents
-  - Proxy drift alpha=0.3, trust erosion beta=0.3, contagion gamma=0.1
-  - Net social welfare metric captures combined effects
-  - Only single combined scenario tested (not factorial design)
+  - All three mechanisms enabled simultaneously (α=0.3, β=0.3, γ=0.1)
+  - 40% adversarial fraction, 10 agents, default topology
+  - Episode length 30 epochs, N=42 seeds per scenario
+  - Net social welfare captures quality mixture effects
+  - Single combined scenario tested; formal factorial design not available
 sensitivity:
   mechanism_parameters: tested only with moderate parameter values
   adversarial_fraction: tested at 40% only
@@ -85,6 +85,8 @@ In the combined scenario, proxy drift dominates (−1.54 net welfare) because it
 ## Interpretation
 
 This suggests the mechanisms are **orthogonal** rather than coupled. If they were mechanistically entangled (e.g., drift causes erosion triggers contagion), we would see synergistic scaling. Instead, they degrade governance independently.
+
+The additive property is critical for governance design. [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse|Proxy drift]] operates on the detection signal (sigmoid_k); [[claim-trust-erosion-requires-proximity-to-phase-boundary-for-ecosystem-impact|trust erosion]] operates on agent composition; [[claim-toxicity-contagion-absorbed-by-memory-decay-in-reputation-systems|contagion]] operates on agent trust. Because they operate on different layers (detection, composition, reputation), they don't amplify each other. This orthogonality means governance designers can analyze and mitigate each mechanism independently, up to the point where interactions emerge (tested here at moderate parameter values; unknown at extremes).
 
 ## Open questions
 

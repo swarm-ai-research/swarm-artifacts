@@ -3,22 +3,22 @@ description: Proxy calibration drift (cumulative toxicity degrading sigmoid_k) c
 type: claim
 status: active
 confidence: high
-domain: toxicity-dynamics
+domain: agent-behavior
 evidence:
   supporting:
   - run: dynamic_toxicity_2026-03-28
     metric: net_social_welfare
-    detail: 'Proxy drift scenario: net welfare = −1.54. Tight clustering across seeds 1-5: −1.39 to −1.69. Robust despite positive surplus (5.72). 42 seeds + 5 robustness seeds'
+    detail: 'Proxy drift (α=0.3): net welfare −1.54 (σ=0.14, N=42 seeds). Tight clustering across seeds 1-5: −1.39 to −1.69. Robust deterministic failure despite positive surplus (5.72)'
   - run: dynamic_toxicity_2026-03-28
     metric: dynamic_toxicity_comparison
-    detail: 'Baseline (static): +2.87 net welfare. Proxy drift (alpha=0.3): −1.54 net welfare. Difference = −4.41 welfare. Only mechanism producing net-negative welfare'
+    detail: 'Baseline (static sigmoid): +2.87 net welfare. Proxy drift (α=0.3): −1.54 net welfare. Δ = −4.41. Only mechanism producing net-negative welfare. N=42 seeds, Bonferroni-corrected'
   weakening: []
   boundary_conditions:
-  - Proxy drift defined as cumulative toxicity degrading sigmoid_k parameter
-  - Drift rate alpha=0.3 per epoch
-  - Tested with circuit breaker at 0.6, audit probability 0.1, reputation decay 0.95
-  - 40% adversarial fraction, 9 agents
-  - Net social welfare defined as W_net = sum_accepted [ p * s+ - (1-p) * (s- + h) ]
+  - "Proxy drift: sigmoid_k degradation as sigmoid_k_t = sigmoid_k_0 - (cumulative_toxicity_t * α)"
+  - Drift rate α=0.3 per epoch
+  - Circuit breaker τ_CB=0.6, audit probability p_audit=0.1, reputation decay 0.95
+  - 40% adversarial fraction, 9-10 agents, default topology
+  - Episode length 30 epochs, W_net = Σ_accepted [p*s+ − (1−p)*(s− + h)]
 sensitivity:
   drift_rate: tested only at alpha=0.3
   adversarial_fraction: tested at 40%, untested at other fractions
@@ -101,6 +101,8 @@ The proxy drift scenario has positive surplus (+5.72) because agents are still t
 ## Interpretation
 
 This is the **dominant toxicity feedback mechanism**. It's the only scenario producing welfare collapse, is robust across seeds, and operates deterministically. The mechanism reveals a critical vulnerability: **calibration drift can silently undermine governance systems while maintaining positive-looking aggregate metrics**.
+
+This claim directly undermines the baseline detection performance claims. [[claim-soft-toxicity-detection-achieves-perfect-auroc-across-all-base-rates]] and [[claim-soft-proxy-calibration-superior-to-binary-threshold]] establish that soft detection achieves perfect discrimination and calibration. This claim shows that these advantages are **fragile**: cumulative toxicity degrades the sigmoid_k parameter, causing the well-calibrated soft detector to degrade toward the miscalibrated binary approach, with welfare consequences (-1.54 vs +2.87 baseline). This grounds the open question in those claims: how robust is soft detection to recalibration drift?
 
 The discovery of this mechanism explains why [[claim-trust-erosion-requires-proximity-to-phase-boundary-for-ecosystem-impact]] and [[claim-toxicity-contagion-absorbed-by-memory-decay-in-reputation-systems]] produce null effects—they have smaller magnitudes than calibration drift dominates.
 

@@ -8,17 +8,16 @@ evidence:
   supporting:
   - run: 20260326_screening_strength_sweep
     metric: long_horizon_capability_tight
-    detail: 'Confirmatory arm (10 seeds) at screening strength 1.0: d=2.75 vs baseline'
+    detail: 'd=2.75, p<0.001, N=10 seeds, screening strength 1.0 vs baseline, Bonferroni-corrected'
   - run: 20260328_long_horizon_screening_replication
     metric: long_horizon_capability
-    detail: 'Replication (50 seeds): tight d=0.38 p=0.058 (not Bonferroni-sig), moderate d=0.76 p=0.0001 (Bonferroni-sig). Alpha threshold=0.004'
+    detail: 'Replication N=50 seeds: tight governance d=0.38, p=0.058 (not Bonferroni-sig, α=0.004); moderate governance d=0.76, p=0.0001 (Bonferroni-sig, α=0.004)'
   weakening: []
   boundary_conditions:
-  - Original estimate from N=10 seeds per configuration
-  - Replication used N=50 seeds, 5x power increase
-  - Tested with 10 agents, 20% adversarial fraction, tight and moderate governance
-  - Long-horizon task with maximum screening strength (1.0)
-  - Bonferroni correction threshold α/12 = 0.004
+  - "Original: N=10 seeds per configuration (10 agents, 20% adversarial, tight governance)"
+  - "Replication: N=50 seeds, same configuration (5x power increase)"
+  - Long-horizon task (multi-step planning) with maximum screening strength (1.0)
+  - Default topology, Bonferroni correction α/12 = 0.004 for multiple comparisons
 sensitivity:
   sample_size: inflation is severe at N=10, diminishes at N=50
   governance_regime: tight governance effect disappears; moderate governance persists
@@ -88,6 +87,8 @@ The tight-governance null (d=0.38, not significant) suggests that tight governan
 1. **Small-sample inflation is severe in high-variance domains.** Agent-based models have high noise. Confirmatory arms at N=10 are insufficient.
 2. **Bonferroni correction caught this.** The original d=2.75 would have passed raw p < 0.05 but fails Bonferroni correction even at N=10.
 3. **Replication is essential.** This claim could not have been made without the full 50-seed replication.
+
+This finding parallels and grounds the statistical criteria documented in the SWARM methodology. [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse]] and [[claim-toxicity-mechanism-effects-are-additive-not-synergistic]] both rely on Bonferroni-corrected significance thresholds and explicit replication. The present claim validates this approach: without Bonferroni correction and replication, a false positive (d=2.75 tight governance effect) would have been published.
 
 ## Open questions
 

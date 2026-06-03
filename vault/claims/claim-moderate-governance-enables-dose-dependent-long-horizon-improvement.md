@@ -14,11 +14,11 @@ evidence:
     detail: 'Tight governance trend: 0.0→0.543, 1.0→0.692 (d=0.38, p=0.058, not Bonferroni-sig). Non-monotonic: 0.543→0.590→0.592→0.640→0.692. 50 seeds'
   weakening: []
   boundary_conditions:
-  - Tested with 10 agents, 20% adversarial fraction
-  - 50 seeds per configuration (replication of 10-seed finding)
-  - Screening strength range 0.0-1.0 (5 levels tested)
-  - Long-horizon task with multiple steps required
-  - Bonferroni correction threshold α/12 = 0.004
+  - 10 agents, 20% adversarial fraction, default topology
+  - N=50 seeds per configuration (full replication of 10-seed confirmatory arm)
+  - "Screening strength range 0.0-1.0 (5 levels: 0.0, 0.3, 0.5, 0.7, 1.0)"
+  - Long-horizon multi-step planning task
+  - Bonferroni correction α/12 = 0.004 for 12-way hypothesis battery
 sensitivity:
   governance_regime: effect specific to moderate governance; tight governance shows weaker trend
   screening_strength: monotonic dose-response under moderate; non-monotonic under tight
@@ -98,6 +98,8 @@ This suggests that **governance intensity and task complexity co-determine scree
 1. Detect task type (coordination, routing, long-horizon)
 2. Select appropriate governance intensity (light, moderate, tight)
 3. Calibrate screening strength accordingly
+
+The governance-task alignment principle here connects to detection system design. [[claim-soft-detection-reduces-time-to-detection-35x-vs-binary-threshold|Fast, accurate detection]] enables moderate governance to work: honest agents benefit from screening relaxation, and the fast detection catches adversaries before they exploit the relaxation window. In contrast, slow detection (binary threshold) would make moderate governance unsafe. Similarly, [[claim-soft-toxicity-detector-robust-across-base-rates-0-05-to-0-50|base-rate-robust detection]] supports the "sweet spot" properties of moderate governance—the system doesn't need regime-specific recalibration as agent composition drifts.
 
 ## Open questions
 

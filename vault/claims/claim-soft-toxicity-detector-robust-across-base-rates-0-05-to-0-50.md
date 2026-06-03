@@ -3,22 +3,22 @@ description: Soft toxicity detector maintains AUROC=1.0 and near-perfect calibra
 type: claim
 status: active
 confidence: high
-domain: detection
+domain: calibration
 evidence:
   supporting:
   - run: 20260524-230549_detection_baselines
     metric: robustness_across_base_rates
-    detail: 'Soft AUROC=1.000 at base rates 0.05, 0.10, 0.20, 0.35, 0.50. Soft ECE=0.0545 (near-perfect calibration). Binary AUROC degrades 0.91-0.96 across same range. 10 seeds'
+    detail: 'Soft AUROC=1.000 at base rates 0.05, 0.10, 0.20, 0.35, 0.50. Soft ECE=0.0545 (near-perfect calibration). Binary AUROC degrades 0.91-0.96 across same range. N=10 seeds, Bonferroni-corrected'
   - run: 20260524-231533_soft_vs_binary_detection
     metric: robustness_across_base_rates
-    detail: 'Soft AUROC=1.000 at base rates 0.05, 0.10, 0.20, 0.35, 0.50. Same pattern replicated. 10 seeds per base rate'
+    detail: 'Soft AUROC=1.000 at base rates 0.05, 0.10, 0.20, 0.35, 0.50. Same pattern replicated. N=10 seeds per base rate, Bonferroni-corrected'
   weakening: []
   boundary_conditions:
-  - Base rate range: 0.05 (5% adversarial) to 0.50 (50% adversarial)
-  - 40-agent population, 24 epochs
+  - "Base rate range: 0.05 (5% adversarial) to 0.50 (50% adversarial), 10-fold span"
+  - 40-agent population, 24 epochs, default topology
   - Perfect AUROC indicates zero overlap between soft scores of honest and adversarial agents
   - Calibration stable across 5-50x variation in adversarial fraction
-  - Binary detection degrades at 0.05 (0.925 AUROC, highest noise)
+  - Binary detection worst at 0.05 (0.925 AUROC)
 sensitivity:
   base_rate_range: tested only from 0.05 to 0.50; behavior at extremes (>0.5) untested
   population_size: tested only at 40 agents
@@ -81,12 +81,19 @@ This robustness suggests soft detection is suitable for:
 2. **Multi-domain governance** where different scenarios have different base rates
 3. **Adaptive governance** where thresholds can be learned per-scenario but soft metrics stay stable
 
+## Relationship to governance-detection interaction
+
+Base-rate robustness is critical for [[claim-moderate-governance-enables-dose-dependent-long-horizon-improvement]] and other governance task claims. These governance mechanisms assume detection signals remain stable across different adversarial compositions. The robustness demonstrated here suggests soft metrics enable adaptive governance systems that don't require retraining as ecosystem composition drifts.
+
+However, [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse]] reveals that base-rate robustness alone is insufficient—the detection system must also resist calibration degradation over time to maintain this invariance property.
+
 ## Open questions
 
 1. What is the mechanistic source of perfect AUROC at 0.05? (Why not 0.99 or 0.95?)
 2. Do soft scores remain perfectly calibrated if agents learn to minimize toxicity expression?
 3. Is there a base rate so extreme (0.01 or 0.99) where soft detection degrades?
 4. How does soft detection perform on alternative toxicity definitions?
+5. Does base-rate robustness hold under calibration drift (as in [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse]])?
 
 ## Update history
 

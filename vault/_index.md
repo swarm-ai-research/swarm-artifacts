@@ -124,6 +124,11 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse]] — Proxy calibration drift causes deterministic welfare collapse from +2.87 to −1.54, robust across 6 seeds (high confidence)
 - [[claim-trust-erosion-requires-proximity-to-phase-boundary-for-ecosystem-impact]] — Trust erosion requires proximity to phase boundary; 30% adversarial fraction too far to trigger collapse (medium confidence)
 - [[claim-toxicity-contagion-absorbed-by-memory-decay-in-reputation-systems]] — Quality contagion absorbed by memory decay; even at gamma=0.4 produces no measurable harm (medium confidence)
+- [[claim-toxicity-mechanism-effects-are-additive-not-synergistic]] — Combined toxicity feedback mechanisms produce additive effects; proxy drift dominates combined scenario (medium confidence)
+- [[claim-positive-surplus-masks-welfare-destruction-in-proxy-drift]] — Proxy drift produces positive surplus (+5.72) but negative welfare (−1.54), revealing measurement criterion failure (high confidence)
+- [[claim-screening-produces-gradual-welfare-increase-on-allocation-task]] — Allocation task shows gradual welfare increase with screening strength (d=0.72-1.65), consistent with both mechanism theories (medium confidence)
+- [[claim-soft-toxicity-detector-robust-across-base-rates-0-05-to-0-50]] — Soft toxicity detector maintains AUROC=1.0 across 10-fold base rate range (0.05-0.50), showing stable generalization (high confidence)
+- [[claim-moderate-governance-enables-dose-dependent-long-horizon-improvement]] — Moderate governance shows dose-dependent long-horizon improvement (d=0.76 Bonferroni-sig), tight governance shows only trend (medium confidence)
 
 ## Governance Mechanisms
 

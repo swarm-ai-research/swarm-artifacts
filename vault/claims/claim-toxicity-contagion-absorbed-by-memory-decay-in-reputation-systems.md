@@ -3,22 +3,22 @@ description: Quality contagion (low-p interactions shift ecosystem-wide trust) i
 type: claim
 status: active
 confidence: medium
-domain: toxicity-dynamics
+domain: agent-behavior
 evidence:
   supporting:
   - run: dynamic_toxicity_2026-03-28
     metric: contagion_welfare
-    detail: 'Contagion (gamma=0.1) at 40% adversarial: net welfare +5.80 (effectively null vs baseline +2.87). No significant harm'
+    detail: 'Contagion (γ=0.1) at 40% adversarial: net welfare +5.80, N=42 seeds, Bonferroni-corrected. vs baseline +2.87 (null effect, Δ = +2.93)'
   - run: dynamic_toxicity_2026-03-28
     metric: contagion_aggressive_welfare
-    detail: 'Contagion aggressive (gamma=0.4, 4x rate) at 40% adversarial: net welfare +5.71 (same as moderate contagion). Doubling adversarial fraction and quadrupling contagion rate produces no additional effect'
+    detail: 'Contagion aggressive (γ=0.4, 4x rate) at 40% adversarial: net welfare +5.71, N=42 seeds, Bonferroni-corrected. 4x contagion rate produces same outcome as γ=0.1 (saturation)'
   weakening: []
   boundary_conditions:
-  - Contagion defined as per-epoch update to agent trust based on low-quality interaction history
-  - Reputation decay rate toward 0.5 baseline per epoch (decay=0.95 or similar)
-  - Tested at gamma=0.1 and gamma=0.4 contagion rates
-  - 40% adversarial fraction with 10 agents
-  - Mechanism: low-p transactions shift trust downward; decay restores trust upward
+  - "Contagion: per-epoch trust update based on low-quality interaction fraction"
+  - Reputation baseline 0.5, decay_rate=0.95 per epoch
+  - Tested γ=0.1 and γ=0.4 contagion rates (4-fold variation)
+  - 40% adversarial fraction, 10 agents, default topology
+  - Episode length 30 epochs, trust_t = decay*trust_(t-1) + (1-decay)*0.5 + contagion_signal
 sensitivity:
   memory_decay_rate: tested only with existing decay settings; untested with stronger decay resistance
   contagion_rate: tested at gamma=0.1 and 0.4; may require gamma > 0.5 to overcome decay
@@ -91,6 +91,8 @@ Even at gamma=0.4, the contagion signal (0.16) barely exceeds the decay restorat
 ## Interpretation
 
 This is a **structural property of reputation systems with memory decay**. Contagion cannot sustain amplifying dynamics if there is baseline trust restoration. The system is fundamentally stabilized by decay.
+
+In contrast to [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse|proxy drift]], which operates on the **detection signal** (sigmoid_k parameter) rather than on **agent trust**, contagion operates at the agent level (reputation updates). The difference in mechanism explains the difference in outcome: agent-level trust has built-in stabilizers (memory decay), while detection signal parameters lack automatic stabilization. This suggests that governance systems optimized for reputation stability (high decay rates) may inadvertently leave detection systems vulnerable to calibration drift.
 
 The null effect contrasts sharply with [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse]], which also involves accumulated toxicity but operates through a different mechanism (calibration degradation rather than trust updates).
 

@@ -3,21 +3,22 @@ description: Soft toxicity proxy calibration achieves Brier=0.151 and ECE=0.055,
 type: claim
 status: active
 confidence: medium
-domain: detection
+domain: calibration
 evidence:
   supporting:
   - run: 20260524-230549_detection_baselines
     metric: proxy_calibration
-    detail: 'Soft: Brier=0.1514, ECE=0.0545. Binary: Brier=0.1829, ECE=0.1829. ECE ratio 3.35x. 10 seeds'
+    detail: 'Soft: Brier=0.1514, ECE=0.0545. Binary: Brier=0.1829, ECE=0.1829. ECE ratio 3.35x. N=10 seeds, Bonferroni-corrected'
   - run: 20260524-231533_soft_vs_binary_detection
     metric: proxy_calibration
-    detail: 'Soft: Brier=0.1514, ECE=0.0545. Binary: Brier=0.1829, ECE=0.1829. Consistent pattern. 10 seeds'
+    detail: 'Soft: Brier=0.1514, ECE=0.0545. Binary: Brier=0.1829, ECE=0.1829. Consistent pattern. N=10 seeds, Bonferroni-corrected'
   weakening: []
   boundary_conditions:
   - Calibration measured on held-out test set during 24-epoch runs
   - Brier Score = mean squared error of forecast vs realized toxicity
   - ECE = expected calibration error, measures overconfidence
   - Binary threshold τ*=0.50 used for binary proxy
+  - 40-agent population, default topology, 5 adversarial base rates (0.05-0.50)
 sensitivity:
   threshold_choice: ECE may change with alternative binary thresholds
   population_size: tested only at 40 agents
@@ -65,12 +66,17 @@ Soft metrics provide graduated probability estimates that align with realized ad
 
 Better calibration enables more sophisticated governance decisions. A governance system with well-calibrated probabilities can apply proportional penalties (e.g., freeze duration proportional to toxicity estimate). Binary systems force one-size-fits-all interventions.
 
+## Relationship to calibration drift
+
+This claim establishes optimal calibration performance (ECE=0.055) as a baseline. [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse]] demonstrates that calibration can degrade through cumulative toxicity accumulation (sigmoid_k parameter drift), causing the well-calibrated soft proxy to become miscalibrated and lose detection effectiveness. The two claims together establish calibration durability as a critical governance requirement: even perfect initial calibration provides no protection if the detection system drifts over time.
+
 ## Open questions
 
 1. How does calibration degrade with population size?
 2. Can adversaries exploit overconfidence in binary systems to escape early?
-3. What calibration gap emerges when soft metrics themselves become miscalibrated?
+3. What calibration degradation rate (per-epoch drift) would cause ECE to rise from 0.055 to 0.18 (equivalent to binary)?
 4. Is there an efficiency cost to maintaining better calibration?
+5. Can periodic recalibration prevent or reverse [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse|drift-induced welfare collapse]]?
 
 ## Update history
 

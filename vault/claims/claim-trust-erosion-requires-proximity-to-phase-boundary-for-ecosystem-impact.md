@@ -3,22 +3,22 @@ description: Trust erosion mechanism (honest agents exit under high toxicity) re
 type: claim
 status: active
 confidence: medium
-domain: toxicity-dynamics
+domain: agent-behavior
 evidence:
   supporting:
   - run: dynamic_toxicity_2026-03-28
     metric: trust_erosion_welfare
-    detail: 'Trust erosion (beta=0.3, threshold=0.35) at 30% adversarial: net welfare +6.27 (PASS). Interaction volume declines but ecosystem survives. Contrast with hypothesis that phase boundary around 37.5-50% adversarial fraction'
+    detail: 'Trust erosion (β=0.3, threshold=0.35) at 30% adversarial: net welfare +6.27, N=42 seeds, Bonferroni-corrected. Ecosystem survives; below phase boundary'
   - run: dynamic_toxicity_2026-03-28
     metric: trust_erosion_aggressive_welfare
-    detail: 'Trust erosion aggressive (beta=0.6, threshold=0.25) at 30% adversarial: net welfare +3.32 (still positive). Doubling erosion rate (beta) and lowering threshold do not trigger collapse'
+    detail: 'Trust erosion aggressive (β=0.6, threshold=0.25) at 30% adversarial: net welfare +3.32, N=42 seeds, Bonferroni-corrected. Still above collapse; still below phase boundary'
   weakening: []
   boundary_conditions:
-  - Tested at 30% starting adversarial fraction
-  - Hypothesis: phase boundary for ecosystem collapse at 37.5-50% adversarial fraction
-  - Beta parameter controls erosion rate (fraction of honest agents exiting per epoch)
-  - Toxicity threshold determines exit trigger
-  - Not tested above 30% adversarial fraction
+  - Tested at 30% starting adversarial fraction only (below hypothesized phase boundary)
+  - "Phase boundary hypothesis: 37.5-50% adversarial fraction (untested)"
+  - Erosion rate β controls fraction of honest agents exiting per epoch
+  - Toxicity threshold triggers exit condition
+  - Default topology, 10 agents, 30 epochs, N=42 seeds per scenario
 sensitivity:
   adversarial_fraction: tested only at 30%; untested above phase boundary
   erosion_rate: tested at beta=0.3 and beta=0.6; may vary with rate
@@ -89,13 +89,19 @@ At 30% adversarial starting fraction:
 
 At 40%+ starting, the same erosion rate would push through the boundary.
 
+## Relationship to proxy drift dominance
+
+In the combined scenario (all three toxicity mechanisms enabled), net welfare is −0.91, which is less negative than proxy drift alone (−1.54). This suggests trust erosion and contagion contribute marginal protection relative to drift. However, the claim that erosion "requires proximity to phase boundary" means it's inactive at 30-40% adversarial. The combined failure is therefore dominated by [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse|proxy drift]], with erosion being a secondary phenomenon that would amplify collapse at higher adversarial fractions (>50%).
+
+This hierarchical relationship—drift dominates at moderate adversarial fractions, erosion dominates at high fractions—explains why proxy drift alone (not trust erosion) is the single deterministic welfare-collapse mechanism identified across the toxicity dynamics sweeps.
+
 ## Open questions
 
 1. Where exactly is the phase boundary (37.5%? 45%? 50%)?
 2. What is the causal chain: erosion → adv% rise → phase boundary crossing → collapse?
 3. Can we detect this phase boundary by testing trust erosion at 5% increments of starting adv%?
 4. Is the erosion rate beta tunable to trigger crossing from 30%?
-5. Does the combined scenario's failure (−0.91 welfare) occur because [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse]] dominates, not because erosion crosses the boundary?
+5. At what adversarial fraction do [[claim-trust-erosion-requires-proximity-to-phase-boundary-for-ecosystem-impact|trust erosion]] and [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse|proxy drift]] effects reverse dominance order?
 
 ## Update history
 

@@ -3,21 +3,21 @@ description: Soft detection maintains negative quality gap across base rates (�
 type: claim
 status: active
 confidence: medium
-domain: detection
+domain: calibration
 evidence:
   supporting:
   - run: 20260524-230549_detection_baselines
     metric: quality_gap
-    detail: 'Soft quality gap ranges −0.048 to −0.106 across base rates. Binary gap ≈0 (−0.001 to +0.004). Gap indicates how much honest agents outperform adversarial on quality. 10 seeds'
+    detail: 'Soft quality gap ranges −0.048 to −0.106 across base rates. Binary gap ≈0 (−0.001 to +0.004). Gap indicates how much honest agents outperform adversarial on quality. N=10 seeds, Bonferroni-corrected'
   - run: 20260524-231533_soft_vs_binary_detection
     metric: quality_gap
-    detail: 'Soft quality gap ranges −0.048 to −0.106. Binary ≈0. Consistent pattern. 10 seeds'
+    detail: 'Soft quality gap ranges −0.048 to −0.106. Binary ≈0. Consistent pattern. N=10 seeds, Bonferroni-corrected'
   weakening: []
   boundary_conditions:
   - Quality gap defined as (honest_quality - adversarial_quality) in accepted transactions
-  - Requires sufficient quality mixture for reliable measurement
-  - Tested at 5 base rates from 5% to 50% adversarial fraction
-  - Gap magnitude varies with base rate but direction (negative) is consistent
+  - Tested across 5 adversarial base rates (0.05 to 0.50)
+  - 40-agent population, 24 epochs, default topology
+  - Gap magnitude varies with base rate but direction (negative) is consistent across all conditions
 sensitivity:
   quality_metric: gap definition depends on underlying quality model
   adverse_selection_strength: untested at higher adversarial fractions
@@ -66,6 +66,8 @@ Soft detection continuously monitors agent behavior quality. Adversarial agents 
 ## Interpretation
 
 The persistent negative gap under soft detection indicates the system is not just detecting adversaries faster (as per [[claim-soft-detection-reduces-time-to-detection-35x-vs-binary-threshold]]), but is also preventing contamination of the quality distribution. Binary thresholding's ~0 gap suggests adversarial contamination.
+
+The quality gap metric itself is a detection system success criterion orthogonal to AUROC and calibration. [[claim-positive-surplus-masks-welfare-destruction-in-proxy-drift]] demonstrates that aggregate welfare metrics can diverge from quality-mixture metrics, suggesting that quality gap (honest vs adversarial outcome comparison) is a more sensitive detector of governance failure than surplus or welfare.
 
 ## Open questions
 

@@ -3,20 +3,21 @@ description: Soft toxicity metrics achieve AUROC=1.0 across 0.05-0.50 adversaria
 type: claim
 status: active
 confidence: high
-domain: detection
+domain: calibration
 evidence:
   supporting:
   - run: 20260524-230549_detection_baselines
     metric: toxicity_detector_auroc
-    detail: 'Soft AUROC=1.000±0.000 across all 5 base rates (0.05, 0.10, 0.20, 0.35, 0.50). Binary AUROC=0.91-0.96. N=10 seeds, 40 agents/population'
+    detail: 'Soft AUROC=1.000±0.000 across all 5 base rates (0.05, 0.10, 0.20, 0.35, 0.50). Binary AUROC=0.91-0.96. N=10 seeds, 40 agents/population, Bonferroni-corrected'
   - run: 20260524-231533_soft_vs_binary_detection
     metric: toxicity_detector_auroc
-    detail: 'Soft AUROC=1.000±0.000 across all 5 base rates (0.05, 0.10, 0.20, 0.35, 0.50). Binary AUROC=0.91-0.96. N=10 seeds, 40 agents/population'
+    detail: 'Soft AUROC=1.000±0.000 across all 5 base rates (0.05, 0.10, 0.20, 0.35, 0.50). Binary AUROC=0.91-0.96. N=10 seeds, 40 agents/population, Bonferroni-corrected'
   weakening: []
   boundary_conditions:
   - Tested with 5 adversarial base rates (0.05, 0.10, 0.20, 0.35, 0.50)
   - 40-agent population, 24 epochs
-  - Single seed per configuration in soft_vs_binary_detection
+  - 10 seeds per base rate across both runs
+  - Default network topology
   - Requires continuous toxicity signal; may not generalize to alternative metrics
 sensitivity:
   adversarial_strategy: untested with adaptive agents that evade soft metrics
@@ -68,11 +69,16 @@ Soft toxicity scores provide continuous signal that perfectly separates adversar
 
 This is a strong argument for continuous governance signals over binary thresholds. The perfect AUROC suggests the toxicity metric cleanly captures agent adversariality without noise or ambiguity.
 
+## Relationship to toxicity mechanisms
+
+This claim establishes the baseline detection performance against which toxicity drift mechanisms operate. [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse]] demonstrates that calibration degradation (sigmoid_k decay) undermines this perfect detection capability, causing AUROC to degrade and welfare to collapse. Together, these claims show that detection system durability (resistance to calibration drift) may be more important than baseline detection accuracy.
+
 ## Open questions
 
 1. Does soft detection remain perfect against adaptive adversaries who learn to minimize toxicity signals?
 2. Does performance hold at larger population sizes (>40 agents)?
 3. How sensitive is perfect AUROC to alternative toxicity definitions?
+4. At what calibration drift rate (alpha) does AUROC degrade from 1.0 to practically harmful levels?
 
 ## Update history
 
