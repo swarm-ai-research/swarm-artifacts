@@ -131,7 +131,7 @@ export const ClosingCTA: React.FC = () => {
             .padStart(2, "0")}`,
         }}
       >
-        github.com/swarm-ai-safety/swarm
+        github.com/swarm-ai-research/swarm
       </div>
 
       <div

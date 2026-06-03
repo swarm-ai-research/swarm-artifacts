@@ -265,6 +265,6 @@ We present evidence from a live AI research platform model that parametric gover
 ## References
 
 \begin{enumerate}
-\item SWARM: System-Wide Assessment of Risk in Multi-agent systems. \url{https://github.com/swarm-ai-safety/swarm}
+\item SWARM: System-Wide Assessment of Risk in Multi-agent systems. \url{https://github.com/swarm-ai-research/swarm}
 \item Research Swarm. \url{https://github.com/openclawprison/research-swarm}
 \end{enumerate}

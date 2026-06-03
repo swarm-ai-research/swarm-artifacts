@@ -168,7 +168,7 @@ export const FindIssue: React.FC = () => {
           fontFamily: fonts.mono,
         }}
       >
-        github.com/swarm-ai-safety/swarm/issues
+        github.com/swarm-ai-research/swarm/issues
       </div>
     </AbsoluteFill>
   );

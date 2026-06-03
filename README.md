@@ -1,6 +1,6 @@
 # SWARM Research OS
 
-Continuous integration for multi-agent science. This repo is the artifact store and knowledge vault for the [SWARM](https://github.com/swarm-ai-safety/swarm) multi-agent simulation framework.
+Continuous integration for multi-agent science. This repo is the artifact store and knowledge vault for the [SWARM](https://github.com/swarm-ai-research/swarm) multi-agent simulation framework.
 
 ## Vault statistics
 

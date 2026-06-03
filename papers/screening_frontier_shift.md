@@ -158,7 +158,14 @@ All three governance levels show the same monotonic pattern (tight: rho = 0.964,
 
 **Allocation** (10 seeds): gradual improvement across all governance levels (d = 0.30--1.65 at strength 1.0). Consistent with both mechanisms.
 
-**Long horizon** (10 seeds): unexpectedly large improvement under tight governance (baseline 0.319 → strength 1.0: 0.971, d = 2.75). This falsifies the null prediction but is based on only 10 seeds with high variance (SD = 0.33--0.45). Requires replication at 30+ seeds before claiming.
+**Long horizon** (10 seeds): unexpectedly large improvement under tight governance (baseline 0.319 → strength 1.0: 0.971, d = 2.75). This falsified the null prediction but was based on only 10 seeds with high variance (SD = 0.33--0.45).
+
+**Long horizon replication** (50 seeds, run 20260328_long_horizon_screening_replication, 750 runs): The d = 2.75 effect **did NOT replicate**. True effects are:
+- Tight governance: d = 0.38, p = 0.058 (NOT significant at Bonferroni α/12 = 0.004)
+- Moderate governance: d = 0.76, p = 0.0001 (Bonferroni-significant)
+- Light governance: d = 0.05, p = 0.811 (null, ceiling effect)
+
+The initial 10-seed estimate was inflated. There is a real but modest moderate-governance effect; tight governance shows no significant long-horizon benefit from high-strength screening.
 
 ### 3.8 Prediction Scorecard
 
@@ -167,7 +174,7 @@ All three governance levels show the same monotonic pattern (tight: rho = 0.964,
 | Coordination monotonic ↑ | **Confirmed** (rho=0.96-0.98) | Consensus arm holds |
 | Routing × tight inverted-U | **Falsified** (U-shape instead) | Diversity-consensus mechanism wrong |
 | Routing × light positive/flat | **Mixed** (high variance) | Inconclusive |
-| Long-horizon null | **Falsified** (d=2.75 at 1.0, 10 seeds) | Needs replication |
+| Long-horizon null | **Partially falsified** (d=0.76 moderate-gov, p<0.0001; d=0.38 tight-gov, p=0.058) | Modest effect found, initial estimate was inflated |
 
 ## 4. Discussion
 
@@ -233,13 +240,13 @@ The frontier trace finding (governance cost amplifies 4.4x with task complexity)
 
 3. **Implementation-specific mechanism.** The U-shape is grounded in SWARM's multiplicative friction model ($\text{friction} \times (1 - \text{trust} \times \text{strength})$). Additive models or different trust-score distributions could produce different dose-response shapes.
 
-4. **Long-horizon result underpowered.** The large effect at strength 1.0 (d = 2.75) is based on only 10 seeds. This requires 30+ seed replication before claiming.
+4. **Long-horizon result underpowered.** The large effect at strength 1.0 (d = 2.75) from 10 seeds did not replicate at 50 seeds. Replication (run 20260328_long_horizon_screening_replication) confirms the concern and reveals that tight-governance long-horizon effects are not significant at Bonferroni correction; only moderate governance shows a real effect (d = 0.76).
 
 5. **High variance in routing.** Routing shows bimodal outcomes (SD = 0.37--0.42 at most strengths), reflecting a binary success/failure pattern. The U-shape in means may obscure different distributional dynamics.
 
 ## 6. Future Work
 
-1. **Long-horizon replication at 30+ seeds.** The d = 2.75 effect is the most surprising finding and needs confirmation.
+1. **Long-horizon replication at 30+ seeds.** ✓ **Completed** (run 20260328_long_horizon_screening_replication, 50 seeds). The d = 2.75 effect did not replicate; real effects are moderate-governance-specific (d = 0.76, Bonferroni-significant) and tight-governance null (d = 0.38, p = 0.058).
 
 2. **Higher adversarial fractions (40%, 60%).** Test whether the U-shape trough shifts rightward as adversaries become more prevalent and the value of trust discrimination increases.
 
@@ -271,8 +278,9 @@ More broadly, this work demonstrates that mechanism design interventions in mult
 | 20260304_232817_screening | sweep | 20 | routing | 120 | Screening A/B (routing repl) |
 | 20260304_232823_screening | sweep | 20 | long_horizon | 120 | Screening A/B (l_horiz repl) |
 | 20260326_screening_strength_sweep | sweep | 30/10 | routing, coord, alloc, l_horiz | 2,640 | Dose-response |
+| 20260328_long_horizon_screening_replication | sweep | 50 | long_horizon | 750 | L_horiz replication |
 
-**Total: 5,480 runs across 5 experiments.**
+**Total: 6,230 runs across 6 experiments.**
 
 ## Appendix B: Phase 2 Effect Size Tables
 

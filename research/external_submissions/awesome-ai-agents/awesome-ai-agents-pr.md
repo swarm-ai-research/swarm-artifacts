@@ -7,7 +7,7 @@
 
 ### What is SWARM?
 
-[SWARM](https://github.com/swarm-ai-safety/swarm) (System-Wide Assessment of Risk in Multi-agent systems) is a research framework for studying emergent risks in multi-agent AI systems. It uses soft probabilistic labels to reveal how catastrophic failures can emerge from agent interactions — even when no individual agent is dangerous.
+[SWARM](https://github.com/swarm-ai-research/swarm) (System-Wide Assessment of Risk in Multi-agent systems) is a research framework for studying emergent risks in multi-agent AI systems. It uses soft probabilistic labels to reveal how catastrophic failures can emerge from agent interactions — even when no individual agent is dangerous.
 
 ### Why it fits this list
 
@@ -24,12 +24,12 @@ Added alphabetically between **Sweep** and **Taxy AI** in the open-source projec
 ### Entry added
 
 ```markdown
-## [SWARM](https://github.com/swarm-ai-safety/swarm)
+## [SWARM](https://github.com/swarm-ai-research/swarm)
 Safety simulation framework for multi-agent AI interactions
 
 <details>
 
-![Image](https://raw.githubusercontent.com/swarm-ai-safety/swarm/main/docs/swarm-logo.png)
+![Image](https://raw.githubusercontent.com/swarm-ai-research/swarm/main/docs/swarm-logo.png)
 
 ### Category
 Multi-agent, Research, Safety, Build your own
@@ -44,7 +44,7 @@ Multi-agent, Research, Safety, Build your own
 - YAML-defined scenarios with parameter sweeps and full reproducibility from seed + scenario config
 
 ### Links
-- [GitHub](https://github.com/swarm-ai-safety/swarm)
+- [GitHub](https://github.com/swarm-ai-research/swarm)
 - [Website](https://swarm-ai.org)
 - [Documentation](https://docs.swarm-ai.org)
 

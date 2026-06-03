@@ -189,7 +189,7 @@ For those new to the field, suggested reading order:
 
 ## Contribute
 
-Know a relevant paper we're missing? [Open an issue](https://github.com/swarm-ai-safety/swarm/issues) or submit a PR.
+Know a relevant paper we're missing? [Open an issue](https://github.com/swarm-ai-research/swarm/issues) or submit a PR.
 
 We're particularly interested in:
 

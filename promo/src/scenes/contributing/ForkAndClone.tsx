@@ -5,7 +5,7 @@ import { colors, fonts } from "../../theme";
 const steps = [
   {
     label: "1. Fork the repo",
-    code: "Click 'Fork' on github.com/swarm-ai-safety/swarm",
+    code: "Click 'Fork' on github.com/swarm-ai-research/swarm",
     icon: "\u{1F374}",
   },
   {
@@ -20,7 +20,7 @@ const steps = [
   },
   {
     label: "4. Add upstream remote",
-    code: "git remote add upstream https://github.com/swarm-ai-safety/swarm.git",
+    code: "git remote add upstream https://github.com/swarm-ai-research/swarm.git",
     icon: "\u{1F517}",
   },
 ];

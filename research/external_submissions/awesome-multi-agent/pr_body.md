@@ -1,5 +1,5 @@
 ## Add SWARM: distributional safety simulation framework
-Hi! I'd like to add [SWARM](https://github.com/swarm-ai-safety/swarm) to the Environment section of this awesome list.
+Hi! I'd like to add [SWARM](https://github.com/swarm-ai-research/swarm) to the Environment section of this awesome list.
 
 ### What is SWARM?
 **SWARM (System-Wide Assessment of Risk in Multi-agent systems)** is an open-source Python framework for studying emergent risks in multi-agent AI systems using probabilistic (soft) labels rather than binary classifications.
@@ -21,7 +21,7 @@ SWARM provides a simulation environment directly relevant to multi-agent learnin
 | Incoherence | Variance-to-error ratio across replays |
 
 ### Links
-- Repository: https://github.com/swarm-ai-safety/swarm
+- Repository: https://github.com/swarm-ai-research/swarm
 - License: MIT
 - Install: `pip install swarm-safety`
 

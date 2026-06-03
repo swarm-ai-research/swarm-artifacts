@@ -45,7 +45,7 @@ img_row_new = """  <tr>
     <img src="https://vitalab.github.io/article/images/autocurricula/env.png" width="100%"/>
     </td>
     <td width="23%">
-    <img src="https://github.com/swarm-ai-safety/swarm/raw/main/docs/images/swarm-hero.gif" width="100%"/>
+    <img src="https://github.com/swarm-ai-research/swarm/raw/main/docs/images/swarm-hero.gif" width="100%"/>
     </td>
   </tr>
 """
@@ -63,13 +63,13 @@ link_row_new = """  <tr>
     <a href="https://github.com/openai/multi-agent-emergence-environments">Multiagent emergence</a>
     </th>
     <th>
-    <a href="https://github.com/swarm-ai-safety/swarm">SWARM</a>
+    <a href="https://github.com/swarm-ai-research/swarm">SWARM</a>
     </th>
 
   </tr>
 """
 
-bullet_block = """- **SWARM: System-Wide Assessment of Risk in Multi-agent systems** [[code]](https://github.com/swarm-ai-safety/swarm) [[install]](https://pypi.org/project/swarm-safety/)
+bullet_block = """- **SWARM: System-Wide Assessment of Risk in Multi-agent systems** [[code]](https://github.com/swarm-ai-research/swarm) [[install]](https://pypi.org/project/swarm-safety/)
   - A distributional safety simulation framework for studying emergent risks in multi-agent AI systems.
   - Uses soft (probabilistic) labels instead of binary classifications to measure toxicity, adverse selection, and governance effectiveness.
   - Built-in agent archetypes (honest, opportunistic, deceptive, adversarial, LLM-backed) and governance levers (taxes, reputation, circuit breakers, audits).

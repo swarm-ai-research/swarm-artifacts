@@ -294,4 +294,4 @@ Summary: `runs/20260210-213833_collusion_governance/summary.json`
    Multi-Agent Systems Under Adversarial Pressure." SWARM Technical Report.
 2. Savitt, R. (2026). "Transaction Taxes Reduce Welfare Monotonically While
    Circuit Breakers Show Null Effect." SWARM Technical Report.
-3. SWARM Framework. https://github.com/swarm-ai-safety/swarm
+3. SWARM Framework. https://github.com/swarm-ai-research/swarm

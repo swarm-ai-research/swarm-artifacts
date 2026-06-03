@@ -309,7 +309,7 @@ To cite the software:
   title  = {SWARM: System-Wide Assessment of Risk in Multi-agent systems},
   author = {Savitt, Raeli},
   year   = {2026},
-  url    = {https://github.com/swarm-ai-safety/swarm}
+  url    = {https://github.com/swarm-ai-research/swarm}
 }
 ```
 

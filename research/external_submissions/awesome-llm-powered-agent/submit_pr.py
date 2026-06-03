@@ -32,8 +32,8 @@ BRANCH_NAME = "add-swarm-multi-agent-safety"
 PR_TITLE = "Add SWARM to Multi-Agent Simulation Projects"
 
 SWARM_ENTRY = (
-    '* ![SWARM Stars](https://img.shields.io/github/stars/swarm-ai-safety/swarm) '
-    '[SWARM](https://github.com/swarm-ai-safety/swarm) '
+    '* ![SWARM Stars](https://img.shields.io/github/stars/swarm-ai-research/swarm) '
+    '[SWARM](https://github.com/swarm-ai-research/swarm) '
     '- A research framework for studying emergent risks and governance in '
     'multi-agent LLM systems, featuring probabilistic safety metrics, '
     'configurable governance levers, and first-class LLM agent support.'
@@ -131,7 +131,7 @@ def get_readme(owner: str, token: str) -> tuple[str, str]:
 def patch_readme(content: str) -> str:
     """Insert the SWARM entry into the Multi-Agent Simulation Projects section."""
     # Verify idempotency
-    if "swarm-ai-safety/swarm" in content:
+    if "swarm-ai-research/swarm" in content:
         print("SWARM entry already present — skipping patch.")
         return content
 

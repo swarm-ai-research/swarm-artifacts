@@ -260,4 +260,4 @@ ORDER BY model, mix_name, persona, seed;
 2. Bai, Y. et al. (2022). Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback. *arXiv:2204.05862*.
 3. Perez, E. et al. (2022). Red Teaming Language Models with Language Models. *arXiv:2202.03286*.
 4. Anthropic. (2025). Claude Model Card and Evaluations.
-5. Savitt, R. (2026). SWARM: Soft-label Welfare and Risk Metrics for Multi-Agent Safety. *GitHub: swarm-ai-safety/swarm*.
+5. Savitt, R. (2026). SWARM: Soft-label Welfare and Risk Metrics for Multi-Agent Safety. *GitHub: swarm-ai-research/swarm*.

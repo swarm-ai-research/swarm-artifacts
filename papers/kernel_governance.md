@@ -339,4 +339,4 @@ Summary: `runs/20260210-220048_kernel_governance/summary.json`
    Dynamics in Multi-Agent Systems." SWARM Technical Report.
 2. Savitt, R. (2026). "Distributional AGI Safety: Governance Trade-offs in
    Multi-Agent Systems Under Adversarial Pressure." SWARM Technical Report.
-3. SWARM Framework. https://github.com/swarm-ai-safety/swarm
+3. SWARM Framework. https://github.com/swarm-ai-research/swarm

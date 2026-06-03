@@ -1,6 +1,6 @@
 ## Add SWARM to Multi-Agent Simulation Projects
 
-Hi! I'd like to suggest adding [SWARM](https://github.com/swarm-ai-safety/swarm) to the **Multi-Agent Simulation Projects** section.
+Hi! I'd like to suggest adding [SWARM](https://github.com/swarm-ai-research/swarm) to the **Multi-Agent Simulation Projects** section.
 
 ### What is SWARM?
 
@@ -22,7 +22,7 @@ SWARM directly addresses **multi-agent cooperation and competition** among LLM-p
 ### Entry
 
 ```markdown
-* ![SWARM Stars](https://img.shields.io/github/stars/swarm-ai-safety/swarm) [SWARM](https://github.com/swarm-ai-safety/swarm) - A research framework for studying emergent risks and governance in multi-agent LLM systems, featuring probabilistic safety metrics, configurable governance levers, and first-class LLM agent support.
+* ![SWARM Stars](https://img.shields.io/github/stars/swarm-ai-research/swarm) [SWARM](https://github.com/swarm-ai-research/swarm) - A research framework for studying emergent risks and governance in multi-agent LLM systems, featuring probabilistic safety metrics, configurable governance levers, and first-class LLM agent support.
 ```
 
 Thank you for maintaining this excellent resource!

@@ -103,7 +103,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "SWARM Research OS"
-          git config user.email "noreply@swarm-ai-safety.org"
+          git config user.email "noreply@swarm-ai-research.org"
           BRANCH="research-os/synthesize-$(date +%Y%m%d-%H%M%S)"
           git checkout -b "$BRANCH"
           git add vault/ run-index.yaml
@@ -112,7 +112,7 @@ jobs:
           Auto-generated experiment notes for:
           ${{ steps.detect.outputs.run_ids }}
 
-          Co-Authored-By: SWARM Research OS <noreply@swarm-ai-safety.org>"
+          Co-Authored-By: SWARM Research OS <noreply@swarm-ai-research.org>"
 
           git push -u origin "$BRANCH"
 

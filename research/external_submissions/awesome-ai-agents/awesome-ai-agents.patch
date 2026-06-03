@@ -8,12 +8,12 @@ index 2f8fcf6..f912b46 100644
  
 +</details>
 +
-+## [SWARM](https://github.com/swarm-ai-safety/swarm)
++## [SWARM](https://github.com/swarm-ai-research/swarm)
 +Safety simulation framework for multi-agent AI interactions
 +
 +<details>
 +
-+![Image](https://raw.githubusercontent.com/swarm-ai-safety/swarm/main/docs/swarm-logo.png)
++![Image](https://raw.githubusercontent.com/swarm-ai-research/swarm/main/docs/swarm-logo.png)
 +
 +### Category
 +Multi-agent, Research, Safety, Build your own
@@ -28,7 +28,7 @@ index 2f8fcf6..f912b46 100644
 +- YAML-defined scenarios with parameter sweeps and full reproducibility from seed + scenario config
 +
 +### Links
-+- [GitHub](https://github.com/swarm-ai-safety/swarm)
++- [GitHub](https://github.com/swarm-ai-research/swarm)
 +- [Website](https://swarm-ai.org)
 +- [Documentation](https://docs.swarm-ai.org)
 +

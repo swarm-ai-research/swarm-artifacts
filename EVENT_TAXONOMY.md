@@ -312,7 +312,7 @@ Emitted when the pipeline opens a PR with results.
   "ts": "2026-02-13T21:12:00Z",
   "data": {
     "pr_number": 47,
-    "pr_url": "https://github.com/swarm-ai-safety/swarm-artifacts/pull/47",
+    "pr_url": "https://github.com/swarm-ai-research/swarm-artifacts/pull/47",
     "title": "Sweep results: tax sensitivity in baseline governance v2",
     "trigger_run_id": "20260213-202050_baseline_governance_v2",
     "files_changed": [
