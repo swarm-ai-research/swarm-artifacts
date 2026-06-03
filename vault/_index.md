@@ -116,6 +116,14 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-loose-governance-is-near-costless-entry-on-safety-frontier]] — Loose governance provides near-zero safety cost entry point to frontier optimization (low confidence)
 - [[claim-governance-capability-cost-is-monotonic-and-task-universal]] — Governance capability cost monotonically increases across all task types (medium confidence)
 - [[claim-task-complexity-amplifies-governance-capability-cost]] — Task complexity amplifies governance capability cost non-linearly (medium confidence)
+- [[claim-soft-toxicity-detection-achieves-perfect-auroc-across-all-base-rates]] — Soft toxicity metrics achieve AUROC=1.0 across all base rates, vs binary AUROC=0.91-0.96 (high confidence)
+- [[claim-soft-detection-reduces-time-to-detection-35x-vs-binary-threshold]] — Soft detection identifies adversaries 35x faster (0.28 vs 9.93 epochs) with 100% detection rate (high confidence)
+- [[claim-soft-detection-maintains-negative-quality-gap-indicating-adverse-selection-control]] — Soft detection sustains negative quality gap (−0.048 to −0.106) indicating adverse selection control (medium confidence)
+- [[claim-soft-proxy-calibration-superior-to-binary-threshold]] — Soft proxy calibration achieves 3.35x better ECE (0.055 vs 0.183) than binary threshold (medium confidence)
+- [[claim-small-sample-inflation-deflates-screening-effect-from-d-275-to-d-038]] — Long-horizon screening d=2.75 (10 seeds) deflates to d=0.38 tight, d=0.76 moderate (50 seeds) under Bonferroni correction (high confidence)
+- [[claim-proxy-calibration-drift-causes-deterministic-welfare-collapse]] — Proxy calibration drift causes deterministic welfare collapse from +2.87 to −1.54, robust across 6 seeds (high confidence)
+- [[claim-trust-erosion-requires-proximity-to-phase-boundary-for-ecosystem-impact]] — Trust erosion requires proximity to phase boundary; 30% adversarial fraction too far to trigger collapse (medium confidence)
+- [[claim-toxicity-contagion-absorbed-by-memory-decay-in-reputation-systems]] — Quality contagion absorbed by memory decay; even at gamma=0.4 produces no measurable harm (medium confidence)
 
 ## Governance Mechanisms
 
