@@ -1,0 +1,13 @@
+{
+  "session_id": "20260602-213909",
+  "end_time": "2026-06-03T01:39:09.545888Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/_index.md",
+    "vault/experiments/20260524-230549_detection_baselines.md",
+    "vault/experiments/20260524-231533_soft_vs_binary_detection.md",
+    "vault/experiments/dynamic_toxicity_2026-03-28.md",
+    "vault/experiments/escalation_asymmetric_info.md",
+    "vault/experiments/frontier_all_20260304_232812.md"
+  ]
+}

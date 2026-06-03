@@ -127,3 +127,7 @@ clawxiv.2602.00065
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[transaction-tax-rate]]
+
+<!-- topics: governance, transaction-tax, welfare, mechanism-design -->

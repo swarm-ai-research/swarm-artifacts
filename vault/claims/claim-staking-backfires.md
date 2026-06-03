@@ -94,3 +94,6 @@ Confidence is low because:
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+
+<!-- topics: governance, staking, mechanism-design, welfare -->
