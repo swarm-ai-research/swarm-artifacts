@@ -85,10 +85,15 @@ properties:
               type: string
             description: "List of parameter names (legacy format)"
       seeds:
-        type: array
-        items:
-          type: integer
-        minItems: 1
+        oneOf:
+          - type: array
+            items:
+              type: integer
+            minItems: 1
+            description: "Explicit list of seeds"
+          - type: integer
+            minimum: 1
+            description: "Count of seeds when auto-generated (n_seeds)"
       total_runs:
         type: integer
         minimum: 1
@@ -148,12 +153,14 @@ properties:
       plots:
         type: array
         items:
-          type: object
-          properties:
-            path:
-              type: string
-            description:
-              type: string
+          oneOf:
+            - type: string
+            - type: object
+              properties:
+                path:
+                  type: string
+                description:
+                  type: string
       scripts:
         type: array
         items:

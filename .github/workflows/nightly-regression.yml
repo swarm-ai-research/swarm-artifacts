@@ -33,17 +33,17 @@ jobs:
       scenarios: ${{ steps.find.outputs.scenarios }}
       scenario_count: ${{ steps.find.outputs.count }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Find canary scenarios
         id: find
         run: |
           if [ -n "${{ github.event.inputs.scenarios }}" ]; then
             # Manual trigger with specific scenarios
-            SCENARIOS=$(echo "${{ github.event.inputs.scenarios }}" | tr ',' '\n' | jq -R . | jq -s .)
+            SCENARIOS=$(echo "${{ github.event.inputs.scenarios }}" | tr ',' '\n' | jq -R . | jq -sc .)
           else
             # Auto-discover from benchmarks directory
             if [ -d "$CANARY_DIR" ]; then
-              SCENARIOS=$(find "$CANARY_DIR" -name "*.yaml" -type f | sort | jq -R . | jq -s .)
+              SCENARIOS=$(find "$CANARY_DIR" -name "*.yaml" -type f | sort | jq -R . | jq -sc .)
             else
               SCENARIOS="[]"
             fi
@@ -62,9 +62,9 @@ jobs:
       matrix:
         scenario: ${{ fromJson(needs.discover.outputs.scenarios) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
@@ -110,7 +110,7 @@ jobs:
 
       - name: Upload canary results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: canary-${{ steps.run.outputs.scenario_name }}
           path: |
@@ -126,10 +126,10 @@ jobs:
     permissions:
       issues: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Download all canary results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           pattern: canary-*
           path: canary-results/
