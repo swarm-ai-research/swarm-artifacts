@@ -1,8 +1,9 @@
 ---
-description: "Audit rate has 3.6× stronger effect on allocation safety than circuit breaker sensitivity; 100% audit (tight) vs 80% audit (tight-moderate) safety gap is 17.4 percentage points; audit is primary governance lever"
+description: "Audit rate has 3.6× stronger effect on allocation safety than CB sensitivity; tight→tight-moderate audit drop costs 17.4pp safety; audit is the primary governance lever"
 type: claim
 status: active
 confidence: high
+created: 2026-06-04
 domain: governance
 evidence:
   supporting:

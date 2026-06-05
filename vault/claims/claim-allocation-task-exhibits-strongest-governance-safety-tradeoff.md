@@ -3,6 +3,7 @@ description: "Allocation task shows 10.4% capability loss but 87.2% safety gain 
 type: claim
 status: active
 confidence: high
+created: 2026-06-04
 domain: governance
 evidence:
   supporting:

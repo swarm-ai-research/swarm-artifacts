@@ -1,8 +1,9 @@
 ---
-description: "Governance mechanisms exhibit consistent task-specific ordering across all configurations: allocation (most efficient) > coordination > routing > long-horizon (least efficient); suggests task structure determines governance fit"
+description: "Governance mechanisms exhibit consistent task-specific ordering across all configurations: allocation > coordination > routing > long-horizon; task structure determines governance fit"
 type: claim
 status: active
 confidence: high
+created: 2026-06-04
 domain: governance
 evidence:
   supporting:

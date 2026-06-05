@@ -129,6 +129,12 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-screening-produces-gradual-welfare-increase-on-allocation-task]] — Allocation task shows gradual welfare increase with screening strength (d=0.72-1.65), consistent with both mechanism theories (medium confidence)
 - [[claim-soft-toxicity-detector-robust-across-base-rates-0-05-to-0-50]] — Soft toxicity detector maintains AUROC=1.0 across 10-fold base rate range (0.05-0.50), showing stable generalization (high confidence)
 - [[claim-moderate-governance-enables-dose-dependent-long-horizon-improvement]] — Moderate governance shows dose-dependent long-horizon improvement (d=0.76 Bonferroni-sig), tight governance shows only trend (medium confidence)
+- [[claim-allocation-task-exhibits-strongest-governance-safety-tradeoff]] — Allocation keeps 90% capability at tight governance while reaching 87.2% safety_proxy; best 8.4× capability:safety ratio (high confidence)
+- [[claim-long-horizon-tasks-suffer-disproportionate-governance-capability-cost]] — Long-horizon loses 45.7% capability at tight governance; confirmation-gate delays compound (high confidence)
+- [[claim-coordination-task-governance-cost-scales-monotonically-with-enforcement-intensity]] — Coordination capability decays linearly with governance intensity (R²=0.98); ~4.1% loss per intensity unit (high confidence)
+- [[claim-audit-rate-dominates-circuit-breaker-sensitivity-for-safety-in-allocation-task]] — Audit rate is 17× more important than CB sensitivity for allocation safety (high confidence)
+- [[claim-governance-effectiveness-exhibits-strong-task-specific-structure]] — Stable task ranking across 7 governance levels: allocation > coordination > routing > long-horizon (high confidence)
+- [[claim-contract-screening-amplifies-coordination-effectiveness-but-degrades-routing]] — Screening boosts coordination +5.8% (d=1.05) but degrades routing -29.3% (d=-0.78); opposite-signed (high confidence)
 
 ## Governance Mechanisms
 

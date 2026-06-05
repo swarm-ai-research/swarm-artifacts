@@ -1,8 +1,9 @@
 ---
-description: "Long-horizon tasks suffer 45.7% capability loss at tight governance (highest among task types) due to confirmation gate delays compounding over 50+ decision steps; governance overhead scales with decision horizon"
+description: "Long-horizon tasks lose 45.7% capability at tight governance (highest among task types); confirmation-gate delays compound over 50+ decision steps; cost scales with horizon"
 type: claim
 status: active
 confidence: high
+created: 2026-06-04
 domain: governance
 evidence:
   supporting:

@@ -1,8 +1,9 @@
 ---
-description: "Coordination task capability decays predictably with governance intensity: oracle=1.0 → loose=0.997 → light=0.891 → moderate=0.786 → tight=0.710; monotonic scaling suggests governance cost is structural, not threshold-based"
+description: "Coordination capability decays monotonically with governance intensity (oracle=1.0 → loose=0.997 → light=0.891 → moderate=0.786 → tight=0.710); cost is structural, not threshold-based"
 type: claim
 status: active
 confidence: high
+created: 2026-06-04
 domain: governance
 evidence:
   supporting:

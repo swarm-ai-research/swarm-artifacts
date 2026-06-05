@@ -3,6 +3,7 @@ description: "Adding contract screening (strength=0.5) to tight governance impro
 type: claim
 status: active
 confidence: high
+created: 2026-06-04
 domain: governance
 evidence:
   supporting:

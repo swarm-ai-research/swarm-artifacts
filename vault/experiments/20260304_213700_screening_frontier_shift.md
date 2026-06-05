@@ -125,16 +125,11 @@ Consistent with main run: long_horizon shows no reliable screening effect.
 
 ### New claims extracted
 
-- [[claim-screening-improves-coordination-universally-d=1.0-p<0.000001]] (high) -- Screening reliably improves coordination across all governance levels with large effect size
-- [[claim-screening-harms-routing-under-tight-governance-d=-0.78]] (high) -- Screening degrades routing capability when governance is tight due to path-diversity over-constraint
-- [[claim-screening-modestly-improves-allocation-governance-dependent]] (medium) -- Allocation gains are smaller and depend on governance level; light governance derives minimal benefit
-- [[claim-screening-has-no-effect-on-long-horizon-planning]] (medium) -- Multi-step capability is invariant to screening strength
-- [[claim-screening-is-task-type-governance-specialization-not-universal-frontier]] (high) -- Screening's frontier impact depends critically on task type and governance topology; not a general improvement
+- [[claim-contract-screening-amplifies-coordination-effectiveness-but-degrades-routing]] (high) — opposite-signed mechanism interaction: coordination +5.8% (d=1.05, Bonf-sig); routing -29.3% (d=-0.78, Bonf-sig); allocation modest gain (governance-dependent); long_horizon null.
 
 ### Existing claims updated or created
 
-- [[claim-frontier-improvements-are-task-dependent]] -- **NEW EVIDENCE**: screening example shows that capability improvements don't transfer across task types; this generalizes beyond circuit breakers
-- [[claim-governance-topology-modulates-screening-efficacy]] -- **NEW FINDING**: tight governance creates path-diversity constraints that make screening harmful for routing
+- [[claim-governance-effectiveness-exhibits-strong-task-specific-structure]] — **NEW EVIDENCE**: screening's frontier impact depends on task type and governance topology, consistent with the task-specific governance ranking established at scale.
 
 ## Artifacts
 
