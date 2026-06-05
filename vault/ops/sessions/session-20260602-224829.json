@@ -1,0 +1,23 @@
+{
+  "session_id": "20260602-224829",
+  "end_time": "2026-06-03T02:48:29.688763Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/_index.md",
+    "vault/claims/claim-moderate-governance-enables-dose-dependent-long-horizon-improvement.md",
+    "vault/claims/claim-positive-surplus-masks-welfare-destruction-in-proxy-drift.md",
+    "vault/claims/claim-proxy-calibration-drift-causes-deterministic-welfare-collapse.md",
+    "vault/claims/claim-screening-produces-gradual-welfare-increase-on-allocation-task.md",
+    "vault/claims/claim-small-sample-inflation-deflates-screening-effect-from-d-275-to-d-038.md",
+    "vault/claims/claim-soft-detection-maintains-negative-quality-gap-indicating-adverse-selection-control.md",
+    "vault/claims/claim-soft-detection-reduces-time-to-detection-35x-vs-binary-threshold.md",
+    "vault/claims/claim-soft-proxy-calibration-superior-to-binary-threshold.md",
+    "vault/claims/claim-soft-toxicity-detection-achieves-perfect-auroc-across-all-base-rates.md",
+    "vault/claims/claim-soft-toxicity-detector-robust-across-base-rates-0-05-to-0-50.md",
+    "vault/claims/claim-toxicity-contagion-absorbed-by-memory-decay-in-reputation-systems.md",
+    "vault/claims/claim-toxicity-mechanism-effects-are-additive-not-synergistic.md",
+    "vault/claims/claim-trust-erosion-requires-proximity-to-phase-boundary-for-ecosystem-impact.md",
+    "vault/governance-dashboard.md",
+    "vault/ops/observations/obs-correction-default-holm-vs-bonferroni.md"
+  ]
+}
