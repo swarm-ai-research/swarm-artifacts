@@ -1,0 +1,326 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent works for or is employed by an organization",
+      "name": "WORKS_FOR",
+      "source_targets": [
+        {
+          "source": "Person",
+          "target": "Organization"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent is affiliated with a governance mechanism",
+      "name": "AFFILIATED_WITH",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "GovernanceRegime"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance mechanism regulates agent behavior",
+      "name": "REGULATES",
+      "source_targets": [
+        {
+          "source": "GovernanceRegime",
+          "target": "HonestParticipant"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "AdaptiveAdversary"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Mechanism reports on agent activity or violations",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "AuditMechanism",
+          "target": "HonestParticipant"
+        },
+        {
+          "source": "CollusionDetector",
+          "target": "AdversarialAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent supports or cooperates with another agent",
+      "name": "SUPPORTS",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "HonestParticipant"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "AdversarialAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent opposes or competes against another agent",
+      "name": "OPPOSES",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "HonestParticipant"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents form coalitions or collaborate together",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AdaptiveAdversary"
+        },
+        {
+          "source": "HonestParticipant",
+          "target": "HonestParticipant"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent comments on governance mechanisms or other agents",
+      "name": "COMMENTS_ON",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "CircuitBreaker"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned agent following stated governance norms",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "HonestParticipant"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus",
+      "examples": [
+        "Nico Nagi",
+        "Oakley Ueda"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that learns governance signals and routes around them",
+      "examples": [
+        "Umi Ito",
+        "Vale Park"
+      ],
+      "name": "AdaptiveAdversary"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of governance regime",
+          "name": "regime_name",
+          "type": "text"
+        },
+        {
+          "description": "Probability of random audits",
+          "name": "audit_probability",
+          "type": "text"
+        }
+      ],
+      "description": "Simulation governance mechanism with audits and penalties",
+      "examples": [
+        "Random Audit Regime",
+        "Circuit Breaker System"
+      ],
+      "name": "GovernanceRegime"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Mechanism identifier",
+          "name": "mechanism_name",
+          "type": "text"
+        },
+        {
+          "description": "Penalty multiplier value",
+          "name": "penalty_multiplier",
+          "type": "text"
+        }
+      ],
+      "description": "Random audit system with penalty enforcement",
+      "examples": [
+        "Audit System",
+        "Penalty Enforcer"
+      ],
+      "name": "AuditMechanism"
+    },
+    {
+      "attributes": [
+        {
+          "description": "System identifier",
+          "name": "system_name",
+          "type": "text"
+        },
+        {
+          "description": "Reputation decay percentage",
+          "name": "decay_rate",
+          "type": "text"
+        }
+      ],
+      "description": "Reputation tracking and decay mechanism",
+      "examples": [
+        "Reputation Tracker",
+        "Decay Monitor"
+      ],
+      "name": "ReputationSystem"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Detector identifier",
+          "name": "detector_name",
+          "type": "text"
+        },
+        {
+          "description": "Score threshold for flagging",
+          "name": "collusion_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "System that flags coordinated agent pairs",
+      "examples": [
+        "Collusion Monitor",
+        "Pair Detector"
+      ],
+      "name": "CollusionDetector"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Breaker identifier",
+          "name": "breaker_name",
+          "type": "text"
+        },
+        {
+          "description": "Toxicity limit before freeze",
+          "name": "toxicity_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism that freezes agents exceeding toxicity threshold",
+      "examples": [
+        "Toxicity Breaker",
+        "Freeze Mechanism"
+      ],
+      "name": "CircuitBreaker"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Individual's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Individual's role or position",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual agent or participant",
+      "examples": [
+        "Casey Ortiz",
+        "Quinn Ito"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Type of organization",
+          "name": "org_type",
+          "type": "text"
+        }
+      ],
+      "description": "Any organization or institution",
+      "examples": [
+        "SWARM Benchmark",
+        "Governance Authority"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

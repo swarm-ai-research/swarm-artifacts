@@ -1,0 +1,326 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent participates in governance regime or coalition",
+      "name": "PARTICIPATES_IN",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents form a coalition together",
+      "name": "FORMS_COALITION",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AdaptiveAdversary"
+        },
+        {
+          "source": "HonestParticipant",
+          "target": "HonestParticipant"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent is subject to governance audit",
+      "name": "SUBJECT_TO_AUDIT",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AuditEvent"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "AuditEvent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent accumulates or loses reputation",
+      "name": "ACCUMULATES_REPUTATION",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "ReputationScore"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "ReputationScore"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent generates payoff recorded in ledger",
+      "name": "GENERATES_PAYOFF",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "PayoffLedger"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "PayoffLedger"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance regime reports on agent behavior",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "GovernanceRegime",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "AdaptiveAdversary"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent supports another agent or coalition",
+      "name": "SUPPORTS",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "HonestParticipant"
+        },
+        {
+          "source": "HonestParticipant",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent opposes another agent or governance action",
+      "name": "OPPOSES",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "HonestParticipant"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned agent following stated governance norms",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "HonestParticipant"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus",
+      "examples": [
+        "Nico Nagi",
+        "Oakley Ueda"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Adversary that learns governance signals and routes around them",
+      "examples": [
+        "Umi Ito",
+        "Vale Park"
+      ],
+      "name": "AdaptiveAdversary"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of governance regime",
+          "name": "regime_name",
+          "type": "text"
+        },
+        {
+          "description": "Probability of random audits",
+          "name": "audit_probability",
+          "type": "text"
+        }
+      ],
+      "description": "Simulation governance mechanism with audit and penalty rules",
+      "examples": [
+        "Random Audit Regime",
+        "Circuit Breaker System"
+      ],
+      "name": "GovernanceRegime"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Coalition identifier",
+          "name": "coalition_name",
+          "type": "text"
+        },
+        {
+          "description": "Number of participating agents",
+          "name": "member_count",
+          "type": "text"
+        }
+      ],
+      "description": "Group of agents coordinating actions or sharing payoffs",
+      "examples": [
+        "Adversary Pair",
+        "Honest Alliance"
+      ],
+      "name": "Coalition"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent whose reputation is tracked",
+          "name": "owner_name",
+          "type": "text"
+        },
+        {
+          "description": "Current reputation value",
+          "name": "current_value",
+          "type": "text"
+        }
+      ],
+      "description": "Agent reputation tracking entity updated each epoch",
+      "examples": [
+        "Avery Reputation",
+        "Nico Reputation"
+      ],
+      "name": "ReputationScore"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Audited agent name",
+          "name": "target_name",
+          "type": "text"
+        },
+        {
+          "description": "Audit result",
+          "name": "outcome",
+          "type": "text"
+        }
+      ],
+      "description": "Random audit action performed by governance regime",
+      "examples": [
+        "Audit on Nico",
+        "Passed Audit"
+      ],
+      "name": "AuditEvent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent whose payoff is recorded",
+          "name": "agent_name",
+          "type": "text"
+        },
+        {
+          "description": "Cumulative payoff value",
+          "name": "total_payoff",
+          "type": "text"
+        }
+      ],
+      "description": "Entity tracking agent payoffs and welfare over epochs",
+      "examples": [
+        "Logan Payoff",
+        "Sage Payoff"
+      ],
+      "name": "PayoffLedger"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Person's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Person's role in simulation",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual simulation participant",
+      "examples": [
+        "Jordan Laine",
+        "Quinn Ito"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Organization type",
+          "name": "type",
+          "type": "text"
+        }
+      ],
+      "description": "Any organization or collective entity",
+      "examples": [
+        "SWARM Benchmark",
+        "Governance Authority"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

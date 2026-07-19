@@ -1,0 +1,272 @@
+{
+  "scenario_id": "adversarial_redteam",
+  "n_actions": 185,
+  "n_actions_judged": 151,
+  "n_interactions": 151,
+  "n_accepted": 74,
+  "n_rejected": 77,
+  "accept_rate": 0.4900662251655629,
+  "n_agents": 39,
+  "judge_sources": {
+    "llm": 151
+  },
+  "soft_metrics": {
+    "toxicity_rate_accepted": 0.46621621621621623,
+    "toxicity_rate_all": 0.4870860927152318,
+    "average_quality_accepted": 0.5337837837837838,
+    "average_quality_all": 0.5129139072847683,
+    "quality_gap": 0.04092664092664089,
+    "spread": -0.06260962949704652,
+    "uncertain_fraction": 0.18543046357615894,
+    "conditional_loss_initiator": 0.03130481474852337,
+    "total_welfare": 44.5,
+    "total_social_surplus": -24.5,
+    "net_social_welfare": -24.5,
+    "avg_initiator_payoff": 0.30067567567567566,
+    "avg_counterparty_payoff": 0.30067567567567566
+  },
+  "quality_distribution": [
+    [
+      0.0,
+      0.1,
+      0
+    ],
+    [
+      0.1,
+      0.2,
+      4
+    ],
+    [
+      0.2,
+      0.30000000000000004,
+      59
+    ],
+    [
+      0.30000000000000004,
+      0.4,
+      11
+    ],
+    [
+      0.4,
+      0.5,
+      6
+    ],
+    [
+      0.5,
+      0.6000000000000001,
+      1
+    ],
+    [
+      0.6000000000000001,
+      0.7000000000000001,
+      14
+    ],
+    [
+      0.7000000000000001,
+      0.8,
+      19
+    ],
+    [
+      0.8,
+      0.9,
+      31
+    ],
+    [
+      0.9,
+      1.0,
+      6
+    ]
+  ],
+  "per_agent": {
+    "Adaptive Adversary 1": {
+      "n_actions": 4,
+      "avg_p": 0.275,
+      "low_p_share": 0.75
+    },
+    "Adaptive Adversary 2": {
+      "n_actions": 9,
+      "avg_p": 0.3333333333333333,
+      "low_p_share": 0.8888888888888888
+    },
+    "Adaptive Adversary 3": {
+      "n_actions": 3,
+      "avg_p": 0.4166666666666667,
+      "low_p_share": 0.6666666666666666
+    },
+    "Adaptive Adversary 4": {
+      "n_actions": 13,
+      "avg_p": 0.5230769230769231,
+      "low_p_share": 0.46153846153846156
+    },
+    "Adaptive Adversary 5": {
+      "n_actions": 2,
+      "avg_p": 0.225,
+      "low_p_share": 1.0
+    },
+    "Adaptive Adversary 6": {
+      "n_actions": 5,
+      "avg_p": 0.26,
+      "low_p_share": 1.0
+    },
+    "Adversarial Agent 1": {
+      "n_actions": 4,
+      "avg_p": 0.375,
+      "low_p_share": 0.75
+    },
+    "Adversarial Agent 2": {
+      "n_actions": 2,
+      "avg_p": 0.25,
+      "low_p_share": 1.0
+    },
+    "Adversarial Agent 4": {
+      "n_actions": 3,
+      "avg_p": 0.26666666666666666,
+      "low_p_share": 1.0
+    },
+    "Adversarial Agent 5": {
+      "n_actions": 9,
+      "avg_p": 0.41111111111111115,
+      "low_p_share": 0.5555555555555556
+    },
+    "Adversarial Agent 6": {
+      "n_actions": 6,
+      "avg_p": 0.39999999999999997,
+      "low_p_share": 0.6666666666666666
+    },
+    "Audit Mechanism": {
+      "n_actions": 4,
+      "avg_p": 0.825,
+      "low_p_share": 0.0
+    },
+    "Avery Achebe": {
+      "n_actions": 2,
+      "avg_p": 0.5,
+      "low_p_share": 0.5
+    },
+    "Blake Haider": {
+      "n_actions": 5,
+      "avg_p": 0.35,
+      "low_p_share": 0.8
+    },
+    "Dakota Vargas": {
+      "n_actions": 2,
+      "avg_p": 0.825,
+      "low_p_share": 0.0
+    },
+    "Governance Regime": {
+      "n_actions": 3,
+      "avg_p": 0.7000000000000001,
+      "low_p_share": 0.0
+    },
+    "Gray Quan": {
+      "n_actions": 3,
+      "avg_p": 0.5833333333333334,
+      "low_p_share": 0.3333333333333333
+    },
+    "Honest Participant 1": {
+      "n_actions": 3,
+      "avg_p": 0.4666666666666666,
+      "low_p_share": 0.6666666666666666
+    },
+    "Honest Participant 10": {
+      "n_actions": 1,
+      "avg_p": 0.8,
+      "low_p_share": 0.0
+    },
+    "Honest Participant 11": {
+      "n_actions": 5,
+      "avg_p": 0.6799999999999999,
+      "low_p_share": 0.2
+    },
+    "Honest Participant 2": {
+      "n_actions": 4,
+      "avg_p": 0.5375,
+      "low_p_share": 0.5
+    },
+    "Honest Participant 3": {
+      "n_actions": 1,
+      "avg_p": 0.85,
+      "low_p_share": 0.0
+    },
+    "Honest Participant 5": {
+      "n_actions": 3,
+      "avg_p": 0.7833333333333333,
+      "low_p_share": 0.0
+    },
+    "Honest Participant 6": {
+      "n_actions": 10,
+      "avg_p": 0.8699999999999999,
+      "low_p_share": 0.0
+    },
+    "Honest Participant 7": {
+      "n_actions": 3,
+      "avg_p": 0.8166666666666668,
+      "low_p_share": 0.0
+    },
+    "Indigo Eriksen": {
+      "n_actions": 5,
+      "avg_p": 0.43,
+      "low_p_share": 0.6
+    },
+    "Jordan Laine": {
+      "n_actions": 3,
+      "avg_p": 0.8166666666666668,
+      "low_p_share": 0.0
+    },
+    "Kai Singh": {
+      "n_actions": 2,
+      "avg_p": 0.42500000000000004,
+      "low_p_share": 0.5
+    },
+    "Nico Nagi": {
+      "n_actions": 5,
+      "avg_p": 0.5,
+      "low_p_share": 0.4
+    },
+    "Oakley Ueda": {
+      "n_actions": 3,
+      "avg_p": 0.4666666666666666,
+      "low_p_share": 0.3333333333333333
+    },
+    "Parker Brandt": {
+      "n_actions": 3,
+      "avg_p": 0.26666666666666666,
+      "low_p_share": 1.0
+    },
+    "Quinn Ito": {
+      "n_actions": 3,
+      "avg_p": 0.85,
+      "low_p_share": 0.0
+    },
+    "Sage Wei": {
+      "n_actions": 3,
+      "avg_p": 0.25,
+      "low_p_share": 1.0
+    },
+    "Umi Ito": {
+      "n_actions": 2,
+      "avg_p": 0.15,
+      "low_p_share": 1.0
+    },
+    "Vale Park": {
+      "n_actions": 3,
+      "avg_p": 0.6166666666666667,
+      "low_p_share": 0.0
+    },
+    "Wren Wei": {
+      "n_actions": 3,
+      "avg_p": 0.6666666666666666,
+      "low_p_share": 0.3333333333333333
+    },
+    "Yuri Kovac": {
+      "n_actions": 6,
+      "avg_p": 0.525,
+      "low_p_share": 0.5
+    },
+    "Zion Rao": {
+      "n_actions": 1,
+      "avg_p": 0.25,
+      "low_p_share": 1.0
+    }
+  }
+}

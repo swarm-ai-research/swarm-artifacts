@@ -1,0 +1,267 @@
+{
+  "scenario_id": "casestudy_libel_cascade",
+  "n_actions": 315,
+  "n_actions_judged": 297,
+  "n_interactions": 297,
+  "n_accepted": 187,
+  "n_rejected": 110,
+  "accept_rate": 0.6296296296296297,
+  "n_agents": 37,
+  "judge_sources": {
+    "llm": 297
+  },
+  "soft_metrics": {
+    "toxicity_rate_accepted": 0.4342245989304813,
+    "toxicity_rate_all": 0.45774410774410773,
+    "average_quality_accepted": 0.5657754010695187,
+    "average_quality_all": 0.5422558922558923,
+    "quality_gap": 0.06350267379679142,
+    "spread": -0.07055852644087923,
+    "uncertain_fraction": 0.04713804713804714,
+    "conditional_loss_initiator": 0.03527926322043973,
+    "total_welfare": 130.4,
+    "total_social_surplus": -32.00000000000001,
+    "net_social_welfare": -32.00000000000001,
+    "avg_initiator_payoff": 0.3486631016042781,
+    "avg_counterparty_payoff": 0.3486631016042781
+  },
+  "quality_distribution": [
+    [
+      0.0,
+      0.1,
+      15
+    ],
+    [
+      0.1,
+      0.2,
+      25
+    ],
+    [
+      0.2,
+      0.30000000000000004,
+      81
+    ],
+    [
+      0.30000000000000004,
+      0.4,
+      6
+    ],
+    [
+      0.4,
+      0.5,
+      2
+    ],
+    [
+      0.5,
+      0.6000000000000001,
+      0
+    ],
+    [
+      0.6000000000000001,
+      0.7000000000000001,
+      8
+    ],
+    [
+      0.7000000000000001,
+      0.8,
+      53
+    ],
+    [
+      0.8,
+      0.9,
+      95
+    ],
+    [
+      0.9,
+      1.0,
+      12
+    ]
+  ],
+  "per_agent": {
+    "Adira Ito": {
+      "n_actions": 2,
+      "avg_p": 0.15,
+      "low_p_share": 1.0
+    },
+    "Avery Achebe": {
+      "n_actions": 11,
+      "avg_p": 0.5409090909090909,
+      "low_p_share": 0.36363636363636365
+    },
+    "Bex Park": {
+      "n_actions": 9,
+      "avg_p": 0.22777777777777775,
+      "low_p_share": 1.0
+    },
+    "Blake Haider": {
+      "n_actions": 12,
+      "avg_p": 0.7291666666666666,
+      "low_p_share": 0.16666666666666666
+    },
+    "Cal Wei": {
+      "n_actions": 8,
+      "avg_p": 0.225,
+      "low_p_share": 1.0
+    },
+    "Casey Ortiz": {
+      "n_actions": 9,
+      "avg_p": 0.49444444444444446,
+      "low_p_share": 0.5555555555555556
+    },
+    "Devon Diallo": {
+      "n_actions": 13,
+      "avg_p": 0.6692307692307692,
+      "low_p_share": 0.23076923076923078
+    },
+    "Ellis Mbeki": {
+      "n_actions": 7,
+      "avg_p": 0.37857142857142856,
+      "low_p_share": 0.7142857142857143
+    },
+    "Emerson Kovac": {
+      "n_actions": 3,
+      "avg_p": 0.21666666666666667,
+      "low_p_share": 1.0
+    },
+    "Finley Tahir": {
+      "n_actions": 6,
+      "avg_p": 0.6083333333333333,
+      "low_p_share": 0.3333333333333333
+    },
+    "Gale Yamada": {
+      "n_actions": 8,
+      "avg_p": 0.5875,
+      "low_p_share": 0.375
+    },
+    "Gray Achebe": {
+      "n_actions": 3,
+      "avg_p": 0.39999999999999997,
+      "low_p_share": 0.6666666666666666
+    },
+    "Harper Haider": {
+      "n_actions": 10,
+      "avg_p": 0.58,
+      "low_p_share": 0.4
+    },
+    "Haven Faruq": {
+      "n_actions": 6,
+      "avg_p": 0.525,
+      "low_p_share": 0.5
+    },
+    "Indigo Ortiz": {
+      "n_actions": 9,
+      "avg_p": 0.7555555555555555,
+      "low_p_share": 0.0
+    },
+    "Iris Mbeki": {
+      "n_actions": 6,
+      "avg_p": 0.15,
+      "low_p_share": 1.0
+    },
+    "Jordan Vargas": {
+      "n_actions": 12,
+      "avg_p": 0.8083333333333332,
+      "low_p_share": 0.0
+    },
+    "Juno Tahir": {
+      "n_actions": 13,
+      "avg_p": 0.6461538461538462,
+      "low_p_share": 0.3076923076923077
+    },
+    "Kit Achebe": {
+      "n_actions": 9,
+      "avg_p": 0.07222222222222223,
+      "low_p_share": 1.0
+    },
+    "Lior Haider": {
+      "n_actions": 10,
+      "avg_p": 0.615,
+      "low_p_share": 0.3
+    },
+    "Logan Haider": {
+      "n_actions": 6,
+      "avg_p": 0.625,
+      "low_p_share": 0.3333333333333333
+    },
+    "Morgan Ortiz": {
+      "n_actions": 6,
+      "avg_p": 0.15,
+      "low_p_share": 1.0
+    },
+    "Nico Vargas": {
+      "n_actions": 4,
+      "avg_p": 0.8125,
+      "low_p_share": 0.0
+    },
+    "Oakley Chen": {
+      "n_actions": 6,
+      "avg_p": 0.125,
+      "low_p_share": 1.0
+    },
+    "Parker Joshi": {
+      "n_actions": 10,
+      "avg_p": 0.495,
+      "low_p_share": 0.6
+    },
+    "Quinn Quan": {
+      "n_actions": 14,
+      "avg_p": 0.7321428571428571,
+      "low_p_share": 0.14285714285714285
+    },
+    "Reese Xiang": {
+      "n_actions": 10,
+      "avg_p": 0.67,
+      "low_p_share": 0.2
+    },
+    "Sage Eriksen": {
+      "n_actions": 6,
+      "avg_p": 0.7833333333333333,
+      "low_p_share": 0.0
+    },
+    "Tatum Laine": {
+      "n_actions": 4,
+      "avg_p": 0.5875,
+      "low_p_share": 0.25
+    },
+    "Umi Singh": {
+      "n_actions": 6,
+      "avg_p": 0.7000000000000001,
+      "low_p_share": 0.16666666666666666
+    },
+    "Vale Zaman": {
+      "n_actions": 6,
+      "avg_p": 0.8083333333333332,
+      "low_p_share": 0.0
+    },
+    "Wren Goto": {
+      "n_actions": 9,
+      "avg_p": 0.6499999999999999,
+      "low_p_share": 0.2222222222222222
+    },
+    "Xen Nagi": {
+      "n_actions": 5,
+      "avg_p": 0.58,
+      "low_p_share": 0.4
+    },
+    "Yuri Ueda": {
+      "n_actions": 7,
+      "avg_p": 0.3,
+      "low_p_share": 0.8571428571428571
+    },
+    "amplifier": {
+      "n_actions": 7,
+      "avg_p": 0.5571428571428572,
+      "low_p_share": 0.42857142857142855
+    },
+    "injector": {
+      "n_actions": 14,
+      "avg_p": 0.375,
+      "low_p_share": 0.7142857142857143
+    },
+    "relayer": {
+      "n_actions": 11,
+      "avg_p": 0.7272727272727273,
+      "low_p_share": 0.09090909090909091
+    }
+  }
+}

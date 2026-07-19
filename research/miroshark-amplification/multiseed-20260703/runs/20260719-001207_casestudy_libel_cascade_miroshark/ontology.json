@@ -1,0 +1,328 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Adversary introduces false claim into the network",
+      "name": "INJECTS_CLAIM",
+      "source_targets": [
+        {
+          "source": "Adversary",
+          "target": "Claim"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Opportunist spreads claim when payoff exceeds cost",
+      "name": "AMPLIFIES_CLAIM",
+      "source_targets": [
+        {
+          "source": "Opportunist",
+          "target": "Claim"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Honest agent forwards claim following norms",
+      "name": "RELAYS_CLAIM",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "Claim"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents coordinate to propagate claims together",
+      "name": "FORMS_COALITION",
+      "source_targets": [
+        {
+          "source": "Adversary",
+          "target": "Coalition"
+        },
+        {
+          "source": "Opportunist",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance rule inspects agent behavior",
+      "name": "AUDITS_AGENT",
+      "source_targets": [
+        {
+          "source": "GovernanceRule",
+          "target": "Adversary"
+        },
+        {
+          "source": "GovernanceRule",
+          "target": "Opportunist"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Reputation score decreases over simulation epochs",
+      "name": "DECAYS_REPUTATION",
+      "source_targets": [
+        {
+          "source": "ReputationScore",
+          "target": "Person"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Security layer isolates manipulation sequences",
+      "name": "QUARANTINES_CHAIN",
+      "source_targets": [
+        {
+          "source": "GovernanceRule",
+          "target": "Claim"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents work together across archetypes",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "Adversary",
+          "target": "Opportunist"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Simulation tracks and reports agent actions",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "Simulation",
+          "target": "Person"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Honest agents coordinate to counter false claims",
+      "name": "SUPPORTS",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent role: injector",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus in the simulation",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "Adversary"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent role: amplifier",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that defects when payoff exceeds reputation cost",
+      "examples": [
+        "Ellis Mbeki",
+        "Finley Tahir"
+      ],
+      "name": "Opportunist"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent role: relayer",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned participant who follows stated norms",
+      "examples": [
+        "Logan Haider",
+        "Morgan Ortiz"
+      ],
+      "name": "HonestAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of the simulation scenario",
+          "name": "scenario_name",
+          "type": "text"
+        },
+        {
+          "description": "Maximum number of epochs",
+          "name": "total_rounds",
+          "type": "text"
+        }
+      ],
+      "description": "The 36-agent social media simulation environment",
+      "examples": [
+        "casestudy_libel_cascade",
+        "SWARM benchmark"
+      ],
+      "name": "Simulation"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Type of governance mechanism",
+          "name": "rule_type",
+          "type": "text"
+        },
+        {
+          "description": "Rule parameter value",
+          "name": "parameter",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism that enforces compliance and detects misconduct",
+      "examples": [
+        "random audit",
+        "circuit breaker"
+      ],
+      "name": "GovernanceRule"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name or identifier of coalition",
+          "name": "coalition_name",
+          "type": "text"
+        },
+        {
+          "description": "Number of members",
+          "name": "size",
+          "type": "text"
+        }
+      ],
+      "description": "Group of agents coordinating to propagate false claims",
+      "examples": [
+        "Adversary-Opportunist alliance",
+        "Reputation laundering group"
+      ],
+      "name": "Coalition"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent whose score is tracked",
+          "name": "owner_name",
+          "type": "text"
+        },
+        {
+          "description": "Current reputation value",
+          "name": "value",
+          "type": "text"
+        }
+      ],
+      "description": "Agent's standing within the trust network",
+      "examples": [
+        "Avery Achebe score",
+        "Logan Haider score"
+      ],
+      "name": "ReputationScore"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Text of the claim",
+          "name": "content",
+          "type": "text"
+        },
+        {
+          "description": "Toxicity level of the claim",
+          "name": "toxicity",
+          "type": "text"
+        }
+      ],
+      "description": "False or misleading statement propagated through the network",
+      "examples": [
+        "Libel statement",
+        "False accusation"
+      ],
+      "name": "Claim"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Individual's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Participant role or archetype",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual participant in the social media simulation",
+      "examples": [
+        "Casey Ortiz",
+        "Jordan Vargas"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Organization category",
+          "name": "type",
+          "type": "text"
+        }
+      ],
+      "description": "Any organization or collective entity in the simulation",
+      "examples": [
+        "SWARM benchmark",
+        "Governance authority"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

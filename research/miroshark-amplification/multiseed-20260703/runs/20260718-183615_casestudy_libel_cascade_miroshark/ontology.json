@@ -1,0 +1,326 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Transmits content or claim to another agent",
+      "name": "SPREADS_TO",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "HonestRelayer"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "HonestRelayer"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Performs random compliance check on agent",
+      "name": "AUDITS",
+      "source_targets": [
+        {
+          "source": "ReputationAuditor",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "ReputationAuditor",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Detects and marks coordinated pair behavior",
+      "name": "FLAGS_COORDINATION",
+      "source_targets": [
+        {
+          "source": "CollusionDetector",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "CollusionDetector",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Temporarily suspends agent due to toxicity breach",
+      "name": "FREEZES",
+      "source_targets": [
+        {
+          "source": "CircuitBreaker",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "CircuitBreaker",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Replies or reacts to content from another agent",
+      "name": "RESPONDS_TO",
+      "source_targets": [
+        {
+          "source": "HonestRelayer",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "HonestRelayer",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Forms cooperative interaction or coalition",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "HonestRelayer",
+          "target": "HonestRelayer"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Endorses or amplifies content from source",
+      "name": "SUPPORTS",
+      "source_targets": [
+        {
+          "source": "OpportunisticAgent",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "HonestRelayer",
+          "target": "HonestRelayer"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Challenges or counters content from source",
+      "name": "OPPOSES",
+      "source_targets": [
+        {
+          "source": "HonestRelayer",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "HonestRelayer",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Legal or display name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Known defection approach",
+          "name": "defect_strategy",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus in trust networks",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Legal or display name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Reputation cost tolerance level",
+          "name": "payoff_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that defects when payoff exceeds reputation cost",
+      "examples": [
+        "Ellis Mbeki",
+        "Finley Tahir"
+      ],
+      "name": "OpportunisticAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Legal or display name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Stated norm compliance level",
+          "name": "norm_adherence",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned participant following stated norms",
+      "examples": [
+        "Logan Haider",
+        "Morgan Ortiz"
+      ],
+      "name": "HonestRelayer"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Display name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Username on platform",
+          "name": "platform_handle",
+          "type": "text"
+        }
+      ],
+      "description": "Individual participant posting and sharing content",
+      "examples": [
+        "Casey Ortiz",
+        "Jordan Vargas"
+      ],
+      "name": "SocialMediaUser"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Source identifier",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Nature of injected content",
+          "name": "claim_type",
+          "type": "text"
+        }
+      ],
+      "description": "Source that introduces false claims into network",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "ContentInjector"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Audit system name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Probability of triggering audit",
+          "name": "audit_probability",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism performing random audits on agents",
+      "examples": [
+        "Random Audit System",
+        "Governance Module"
+      ],
+      "name": "ReputationAuditor"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Breaker identifier",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Freeze activation level",
+          "name": "toxicity_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "System that freezes agents exceeding toxicity threshold",
+      "examples": [
+        "Toxicity Monitor",
+        "Freeze Protocol"
+      ],
+      "name": "CircuitBreaker"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Detector name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Flagging threshold value",
+          "name": "coordination_score",
+          "type": "text"
+        }
+      ],
+      "description": "System flagging coordinated agent pairs above score threshold",
+      "examples": [
+        "Coordination Scanner",
+        "Pair Analyzer"
+      ],
+      "name": "CollusionDetector"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Individual name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Social or functional role",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual capable of social media participation",
+      "examples": [
+        "Adira Ito",
+        "Bex Park"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization identifier",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Stated purpose or goal",
+          "name": "mission",
+          "type": "text"
+        }
+      ],
+      "description": "Any organized entity participating in social discourse",
+      "examples": [
+        "SWARM Benchmark",
+        "Governance Authority"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

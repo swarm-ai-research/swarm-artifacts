@@ -1,0 +1,31 @@
+{
+  "_done": true,
+  "already_prepared": true,
+  "message": "Preparation work already complete",
+  "prepare_info": {
+    "config_generated": true,
+    "created_at": "2026-07-17T00:00:03.315493",
+    "entities_count": 43,
+    "entity_types": [
+      "HonestAgent",
+      "GovernanceRegime",
+      "AdversarialAgent",
+      "OpportunisticAgent",
+      "SecurityLayer",
+      "Simulation",
+      "ReputationSystem"
+    ],
+    "existing_files": [
+      "state.json",
+      "simulation_config.json",
+      "reddit_profiles.json",
+      "twitter_profiles.csv"
+    ],
+    "profiles_count": 43,
+    "status": "ready",
+    "updated_at": "2026-07-17T00:23:01.323282"
+  },
+  "progress": 100,
+  "simulation_id": "sim_286d21654585",
+  "status": "ready"
+}

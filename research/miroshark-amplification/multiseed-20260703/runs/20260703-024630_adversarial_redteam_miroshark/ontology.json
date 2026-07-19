@@ -1,0 +1,322 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent operates under a governance mechanism",
+      "name": "WORKS_FOR",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "GovernanceMechanism"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "GovernanceMechanism"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents form coalitions or coordinate actions",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AdaptiveAdversary"
+        },
+        {
+          "source": "HonestParticipant",
+          "target": "HonestParticipant"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance mechanism reports audit events on agents",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "GovernanceMechanism",
+          "target": "AuditEvent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent supports or participates in a coalition",
+      "name": "SUPPORTS",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "Coalition"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent opposes another agent's actions or coalition",
+      "name": "OPPOSES",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "GovernanceMechanism",
+          "target": "AdaptiveAdversary"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance mechanism regulates agent behavior via audits or penalties",
+      "name": "REGULATES",
+      "source_targets": [
+        {
+          "source": "GovernanceMechanism",
+          "target": "HonestParticipant"
+        },
+        {
+          "source": "GovernanceMechanism",
+          "target": "AdversarialAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent comments on reputation or payoff outcomes",
+      "name": "COMMENTS_ON",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "ReputationScore"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "PayoffLedger"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent is affiliated with an organization or coalition",
+      "name": "AFFILIATED_WITH",
+      "source_targets": [
+        {
+          "source": "AdaptiveAdversary",
+          "target": "Organization"
+        },
+        {
+          "source": "HonestParticipant",
+          "target": "Coalition"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral classification",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned simulation agent following stated governance norms",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "HonestParticipant"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Known defection approach",
+          "name": "defect_strategy",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus from the system",
+      "examples": [
+        "Nico Nagi",
+        "Oakley Ueda"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Adaptation speed to governance",
+          "name": "learning_rate",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that learns governance signals and routes around detection",
+      "examples": [
+        "Umi Ito",
+        "Vale Park"
+      ],
+      "name": "AdaptiveAdversary"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Mechanism identifier",
+          "name": "mech_name",
+          "type": "text"
+        },
+        {
+          "description": "Configured parameter setting",
+          "name": "parameter_value",
+          "type": "text"
+        }
+      ],
+      "description": "System component implementing audit, penalty, or circuit breaker rules",
+      "examples": [
+        "RandomAudit",
+        "CircuitBreaker"
+      ],
+      "name": "GovernanceMechanism"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Coalition identifier",
+          "name": "coalition_name",
+          "type": "text"
+        },
+        {
+          "description": "Number of participating agents",
+          "name": "member_count",
+          "type": "text"
+        }
+      ],
+      "description": "Group of agents coordinating actions across simulation epochs",
+      "examples": [
+        "AdversaryPair1",
+        "HonestBloc"
+      ],
+      "name": "Coalition"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Current reputation numeric value",
+          "name": "score_value",
+          "type": "text"
+        },
+        {
+          "description": "Epoch decay percentage",
+          "name": "decay_rate",
+          "type": "text"
+        }
+      ],
+      "description": "Agent's tracked reputation value subject to decay and audit effects",
+      "examples": [
+        "HighRep",
+        "LaunderedRep"
+      ],
+      "name": "ReputationScore"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Cumulative payoff amount",
+          "name": "total_payoff",
+          "type": "text"
+        },
+        {
+          "description": "Number of epochs recorded",
+          "name": "epoch_count",
+          "type": "text"
+        }
+      ],
+      "description": "Record of an agent's cumulative payoffs from cooperative and defective moves",
+      "examples": [
+        "HighPayoff",
+        "LowPayoff"
+      ],
+      "name": "PayoffLedger"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Audit or penalty type",
+          "name": "event_type",
+          "type": "text"
+        },
+        {
+          "description": "Applied penalty value",
+          "name": "penalty_amount",
+          "type": "text"
+        }
+      ],
+      "description": "Governance-triggered inspection or penalty action on an agent",
+      "examples": [
+        "RandomAudit",
+        "ToxicityFreeze"
+      ],
+      "name": "AuditEvent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Person's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Participant role in simulation",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual simulation participant",
+      "examples": [
+        "Jordan Laine",
+        "Sage Wei"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Primary organizational function",
+          "name": "function",
+          "type": "text"
+        }
+      ],
+      "description": "Any organization or institutional body in the simulation context",
+      "examples": [
+        "SWARM Benchmark",
+        "Governance Authority"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

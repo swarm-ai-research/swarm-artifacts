@@ -1,0 +1,356 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent works for or is employed by an organization",
+      "name": "WORKS_FOR",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "Organization"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "Organization"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent is affiliated with a governance mechanism",
+      "name": "AFFILIATED_WITH",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "GovernanceRegime"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance mechanism regulates agent behavior",
+      "name": "REGULATES",
+      "source_targets": [
+        {
+          "source": "GovernanceRegime",
+          "target": "HonestParticipant"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "AdversarialAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Mechanism reports on agent activity or violations",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "AuditMechanism",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "CollusionDetector",
+          "target": "AdaptiveAdversary"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent comments on governance or other agents",
+      "name": "COMMENTS_ON",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "ReputationSystem"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent responds to audit or detection events",
+      "name": "RESPONDS_TO",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AuditMechanism"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "CircuitBreaker"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent supports another agent or mechanism",
+      "name": "SUPPORTS",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "HonestParticipant"
+        },
+        {
+          "source": "HonestParticipant",
+          "target": "GovernanceRegime"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent opposes governance or other agents",
+      "name": "OPPOSES",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "CollusionDetector"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents form coalitions or collaborate",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AdaptiveAdversary"
+        },
+        {
+          "source": "HonestParticipant",
+          "target": "HonestParticipant"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents compete for resources or influence",
+      "name": "COMPETES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "HonestParticipant"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned simulation agent following stated norms",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "HonestParticipant"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Method of extracting surplus",
+          "name": "defection_strategy",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus",
+      "examples": [
+        "Nico Nagi",
+        "Oakley Ueda"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Speed of adapting to governance",
+          "name": "learning_rate",
+          "type": "text"
+        }
+      ],
+      "description": "Adversary that learns governance signals and routes around them",
+      "examples": [
+        "Umi Ito",
+        "Vale Park"
+      ],
+      "name": "AdaptiveAdversary"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of governance regime",
+          "name": "regime_name",
+          "type": "text"
+        },
+        {
+          "description": "Probability of random audits",
+          "name": "audit_probability",
+          "type": "text"
+        }
+      ],
+      "description": "Simulation governance mechanism with audit and penalty rules",
+      "examples": [
+        "SWARM Governance",
+        "Random Audit System"
+      ],
+      "name": "GovernanceRegime"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Audit mechanism identifier",
+          "name": "mechanism_name",
+          "type": "text"
+        },
+        {
+          "description": "Multiplier applied on detection",
+          "name": "penalty_multiplier",
+          "type": "text"
+        }
+      ],
+      "description": "Random audit process with penalty multiplier",
+      "examples": [
+        "Random Audit 0.15",
+        "Penalty 2.5x"
+      ],
+      "name": "AuditMechanism"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Reputation system name",
+          "name": "system_name",
+          "type": "text"
+        },
+        {
+          "description": "Percentage decay per epoch",
+          "name": "decay_rate",
+          "type": "text"
+        }
+      ],
+      "description": "Reputation tracking with decay and weight parameters",
+      "examples": [
+        "Reputation Tracker",
+        "5% Decay System"
+      ],
+      "name": "ReputationSystem"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Detector identifier",
+          "name": "detector_name",
+          "type": "text"
+        },
+        {
+          "description": "Score threshold for flagging",
+          "name": "collusion_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism that flags coordinated agent pairs",
+      "examples": [
+        "Collusion Scanner",
+        "0.4 Threshold Detector"
+      ],
+      "name": "CollusionDetector"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Breaker identifier",
+          "name": "breaker_name",
+          "type": "text"
+        },
+        {
+          "description": "Maximum toxicity before freeze",
+          "name": "toxicity_limit",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism that freezes agents exceeding toxicity threshold",
+      "examples": [
+        "Toxicity Breaker",
+        "0.6 Threshold System"
+      ],
+      "name": "CircuitBreaker"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Individual's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Participant role or position",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual participant in the simulation",
+      "examples": [
+        "Jordan Laine",
+        "Kai Singh"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Organization purpose or function",
+          "name": "purpose",
+          "type": "text"
+        }
+      ],
+      "description": "Any organized entity or group in the simulation",
+      "examples": [
+        "SWARM Benchmark",
+        "Governance Authority"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

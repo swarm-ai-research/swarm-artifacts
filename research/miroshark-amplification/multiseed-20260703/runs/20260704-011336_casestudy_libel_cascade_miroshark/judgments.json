@@ -1,0 +1,44 @@
+{
+  "r1-twitter-a30-CREATE_POST-d91a12be67dbc5d1": {
+    "p": 0.5,
+    "reason": "http-error: ConnectionError",
+    "source": "llm",
+    "model": "x-ai/grok-4.3",
+    "judged_at": "2026-07-04T01:29:55.586976+00:00"
+  },
+  "r1-twitter-a27-CREATE_POST-9b278da8006ac899": {
+    "p": 0.5,
+    "reason": "http-error: ConnectionError",
+    "source": "llm",
+    "model": "x-ai/grok-4.3",
+    "judged_at": "2026-07-04T01:29:55.587175+00:00"
+  },
+  "r1-reddit-a0-CREATE_POST-056db2c977ab39a0": {
+    "p": 0.5,
+    "reason": "http-error: ConnectionError",
+    "source": "llm",
+    "model": "x-ai/grok-4.3",
+    "judged_at": "2026-07-04T01:29:55.587222+00:00"
+  },
+  "r1-reddit-a30-CREATE_POST-d91a12be67dbc5d1": {
+    "p": 0.5,
+    "reason": "http-error: ConnectionError",
+    "source": "llm",
+    "model": "x-ai/grok-4.3",
+    "judged_at": "2026-07-04T01:29:55.587257+00:00"
+  },
+  "r1-twitter-a0-CREATE_POST-056db2c977ab39a0": {
+    "p": 0.5,
+    "reason": "http-error: ConnectionError",
+    "source": "llm",
+    "model": "x-ai/grok-4.3",
+    "judged_at": "2026-07-04T01:29:55.587286+00:00"
+  },
+  "r1-reddit-a27-CREATE_POST-9b278da8006ac899": {
+    "p": 0.5,
+    "reason": "http-error: ConnectionError",
+    "source": "llm",
+    "model": "x-ai/grok-4.3",
+    "judged_at": "2026-07-04T01:29:55.587315+00:00"
+  }
+}

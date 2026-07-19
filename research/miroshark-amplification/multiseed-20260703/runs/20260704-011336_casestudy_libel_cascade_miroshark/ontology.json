@@ -1,0 +1,330 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent defects against another for surplus",
+      "name": "DEFECTS_AGAINST",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "HonestAgent"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance audits an agent",
+      "name": "AUDITS",
+      "source_targets": [
+        {
+          "source": "GovernanceRegime",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Mechanism applies penalty to agent",
+      "name": "PENALIZES",
+      "source_targets": [
+        {
+          "source": "AuditMechanism",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "AuditMechanism",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "System reduces agent reputation",
+      "name": "DECAYS_REPUTATION",
+      "source_targets": [
+        {
+          "source": "ReputationSystem",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "ReputationSystem",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "ReputationSystem",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Circuit breaker freezes toxic agent",
+      "name": "FREEZES",
+      "source_targets": [
+        {
+          "source": "CircuitBreaker",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "CircuitBreaker",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Detector flags coordinated agent pair",
+      "name": "FLAGS_COALITION",
+      "source_targets": [
+        {
+          "source": "CollusionDetector",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "CollusionDetector",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents form cooperative coalition",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent reports on another agent's behavior",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Strategy for extracting surplus",
+          "name": "defect_strategy",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus in simulations",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Minimum payoff to defect",
+          "name": "payoff_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that defects when payoff exceeds reputation cost",
+      "examples": [
+        "Ellis Mbeki",
+        "Finley Tahir"
+      ],
+      "name": "OpportunisticAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Level of norm following",
+          "name": "norm_adherence",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned agent following stated norms",
+      "examples": [
+        "Logan Haider",
+        "Morgan Ortiz"
+      ],
+      "name": "HonestAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Regime identifier",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Random audit probability",
+          "name": "audit_probability",
+          "type": "text"
+        }
+      ],
+      "description": "Simulation governance system with audits and penalties",
+      "examples": [
+        "SWARM Governance",
+        "Audit System"
+      ],
+      "name": "GovernanceRegime"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Mechanism name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Penalty scale factor",
+          "name": "penalty_multiplier",
+          "type": "text"
+        }
+      ],
+      "description": "Random audit process with penalty enforcement",
+      "examples": [
+        "Random Audit",
+        "Penalty Enforcer"
+      ],
+      "name": "AuditMechanism"
+    },
+    {
+      "attributes": [
+        {
+          "description": "System identifier",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Reputation decay percentage",
+          "name": "decay_rate",
+          "type": "text"
+        }
+      ],
+      "description": "Reputation tracking and decay mechanism",
+      "examples": [
+        "Reputation Tracker",
+        "Decay Engine"
+      ],
+      "name": "ReputationSystem"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Breaker identifier",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Freeze activation level",
+          "name": "toxicity_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "Toxicity threshold system that freezes agents",
+      "examples": [
+        "Toxicity Monitor",
+        "Freeze System"
+      ],
+      "name": "CircuitBreaker"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Detector name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Pair detection threshold",
+          "name": "coordination_score",
+          "type": "text"
+        }
+      ],
+      "description": "System detecting coordinated agent pairs",
+      "examples": [
+        "Coalition Scanner",
+        "Pair Detector"
+      ],
+      "name": "CollusionDetector"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Individual's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Participant role",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual participant in social media",
+      "examples": [
+        "Casey Ortiz",
+        "Jordan Vargas"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Organization category",
+          "name": "type",
+          "type": "text"
+        }
+      ],
+      "description": "Any organization or institution",
+      "examples": [
+        "SWARM Benchmark",
+        "Governance System"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

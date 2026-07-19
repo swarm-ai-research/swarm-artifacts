@@ -1,0 +1,380 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent participates in governance regime",
+      "name": "PARTICIPATES_IN",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "GovernanceRegime"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent subject to audit mechanism",
+      "name": "SUBJECT_TO",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "AuditMechanism"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "AuditMechanism"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "AuditMechanism"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent's reputation tracked by system",
+      "name": "TRACKED_BY",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "ReputationSystem"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "ReputationSystem"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "ReputationSystem"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent monitored by collusion detector",
+      "name": "MONITORED_BY",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "CollusionDetector"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "CollusionDetector"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "CollusionDetector"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent frozen by circuit breaker",
+      "name": "FROZEN_BY",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "CircuitBreaker"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "CircuitBreaker"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "CircuitBreaker"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent cooperates with another agent",
+      "name": "COOPERATES_WITH",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "AdaptiveAdversary"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent defects against another agent",
+      "name": "DEFECTS_AGAINST",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "HonestAgent"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents form coalition together",
+      "name": "FORMS_COALITION",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AdaptiveAdversary"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "AdversarialAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Organization reports on agent behavior",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "Organization",
+          "target": "HonestAgent"
+        },
+        {
+          "source": "Organization",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "Organization",
+          "target": "AdaptiveAdversary"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Person affiliated with organization",
+      "name": "AFFILIATED_WITH",
+      "source_targets": [
+        {
+          "source": "Person",
+          "target": "Organization"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned simulation participant following stated norms",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "HonestAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus",
+      "examples": [
+        "Nico Nagi",
+        "Oakley Ueda"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Adversary that learns governance signals and routes around them",
+      "examples": [
+        "Umi Ito",
+        "Vale Park"
+      ],
+      "name": "AdaptiveAdversary"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of governance regime",
+          "name": "regime_name",
+          "type": "text"
+        },
+        {
+          "description": "Probability of random audits",
+          "name": "audit_probability",
+          "type": "text"
+        }
+      ],
+      "description": "Simulation governance mechanism with audit and penalty rules",
+      "examples": [
+        "Random Audit Regime",
+        "Circuit Breaker System"
+      ],
+      "name": "GovernanceRegime"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Mechanism identifier",
+          "name": "mechanism_name",
+          "type": "text"
+        },
+        {
+          "description": "Penalty multiplier value",
+          "name": "penalty_multiplier",
+          "type": "text"
+        }
+      ],
+      "description": "Random audit system with penalty enforcement",
+      "examples": [
+        "Audit System",
+        "Penalty Enforcer"
+      ],
+      "name": "AuditMechanism"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Reputation system name",
+          "name": "system_name",
+          "type": "text"
+        },
+        {
+          "description": "Reputation decay percentage",
+          "name": "decay_rate",
+          "type": "text"
+        }
+      ],
+      "description": "Reputation tracking and decay mechanism",
+      "examples": [
+        "Reputation Tracker",
+        "Decay Calculator"
+      ],
+      "name": "ReputationSystem"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Detector identifier",
+          "name": "detector_name",
+          "type": "text"
+        },
+        {
+          "description": "Collusion detection threshold",
+          "name": "threshold_score",
+          "type": "text"
+        }
+      ],
+      "description": "System that flags coordinated agent pairs",
+      "examples": [
+        "Collusion Monitor",
+        "Pair Flagger"
+      ],
+      "name": "CollusionDetector"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Breaker identifier",
+          "name": "breaker_name",
+          "type": "text"
+        },
+        {
+          "description": "Toxicity limit value",
+          "name": "toxicity_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism that freezes agents exceeding toxicity threshold",
+      "examples": [
+        "Toxicity Freezer",
+        "Agent Freezer"
+      ],
+      "name": "CircuitBreaker"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Person's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Person's role or position",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual participant in the simulation",
+      "examples": [
+        "Jordan Laine",
+        "Kai Singh"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Type of organization",
+          "name": "org_type",
+          "type": "text"
+        }
+      ],
+      "description": "Any organizational entity in the simulation context",
+      "examples": [
+        "SWARM Benchmark",
+        "Governance Authority"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

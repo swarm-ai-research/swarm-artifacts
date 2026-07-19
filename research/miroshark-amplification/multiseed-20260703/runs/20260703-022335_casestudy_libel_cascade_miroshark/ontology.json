@@ -1,0 +1,356 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Adversarial agent introduces false claim into network",
+      "name": "INJECTS_CLAIM",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "HonestAgent"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Opportunistic agent spreads content for payoff",
+      "name": "AMPLIFIES_CONTENT",
+      "source_targets": [
+        {
+          "source": "OpportunisticAgent",
+          "target": "HonestAgent"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "SocialMediaPlatform"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Honest agent passes along information per norms",
+      "name": "RELAYS_INFORMATION",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "SocialMediaPlatform"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents coordinate to share strategies or actions",
+      "name": "FORMS_COALITION",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance regime performs random audit on agent",
+      "name": "AUDITS_BEHAVIOR",
+      "source_targets": [
+        {
+          "source": "GovernanceRegime",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance applies penalty to violating agent",
+      "name": "APPLIES_PENALTY",
+      "source_targets": [
+        {
+          "source": "GovernanceRegime",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Security layer isolates manipulation chain",
+      "name": "QUARANTINES_CHAIN",
+      "source_targets": [
+        {
+          "source": "GovernanceRegime",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Entity reports on simulation events or outcomes",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "BenchmarkSuite",
+          "target": "SimulationAgent"
+        },
+        {
+          "source": "SocialMediaPlatform",
+          "target": "GovernanceRegime"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents work together toward shared goals",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "AdversarialAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents vie for influence or resources",
+      "name": "COMPETES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent role archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus in simulations",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent role archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that defects when payoff exceeds reputation cost",
+      "examples": [
+        "Ellis Mbeki",
+        "Finley Tahir"
+      ],
+      "name": "OpportunisticAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent role archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned participant following stated norms",
+      "examples": [
+        "Logan Haider",
+        "Morgan Ortiz"
+      ],
+      "name": "HonestAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent simulation role",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Individual agent participating in the social media simulation",
+      "examples": [
+        "Casey Ortiz",
+        "Jordan Vargas"
+      ],
+      "name": "SimulationAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of governance regime",
+          "name": "regime_name",
+          "type": "text"
+        },
+        {
+          "description": "Probability of random audits",
+          "name": "audit_probability",
+          "type": "text"
+        }
+      ],
+      "description": "System of rules and mechanisms governing agent behavior",
+      "examples": [
+        "Random Audit System",
+        "Circuit Breaker Protocol"
+      ],
+      "name": "GovernanceRegime"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of benchmark suite",
+          "name": "suite_name",
+          "type": "text"
+        },
+        {
+          "description": "Type of simulation scenario",
+          "name": "scenario_type",
+          "type": "text"
+        }
+      ],
+      "description": "Standardized test framework for evaluating agent behaviors",
+      "examples": [
+        "SWARM Distributional-AGI-Safety",
+        "Agents of Chaos CS11"
+      ],
+      "name": "BenchmarkSuite"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of coalition",
+          "name": "coalition_name",
+          "type": "text"
+        },
+        {
+          "description": "Number of coalition members",
+          "name": "member_count",
+          "type": "text"
+        }
+      ],
+      "description": "Group of agents coordinating actions or sharing strategies",
+      "examples": [
+        "Adversary-Opportunist Alliance",
+        "Honest Agent Network"
+      ],
+      "name": "Coalition"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of platform",
+          "name": "platform_name",
+          "type": "text"
+        },
+        {
+          "description": "Type of social interactions",
+          "name": "interaction_type",
+          "type": "text"
+        }
+      ],
+      "description": "Digital platform where agents interact and share content",
+      "examples": [
+        "Trust Network Platform",
+        "Opinion Cascade System"
+      ],
+      "name": "SocialMediaPlatform"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Person's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Person's role or position",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual that can participate in social media",
+      "examples": [
+        "Individual User",
+        "Content Creator"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Type of organization",
+          "name": "org_type",
+          "type": "text"
+        }
+      ],
+      "description": "Any organization that can participate in social media",
+      "examples": [
+        "Research Institute",
+        "Media Company"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

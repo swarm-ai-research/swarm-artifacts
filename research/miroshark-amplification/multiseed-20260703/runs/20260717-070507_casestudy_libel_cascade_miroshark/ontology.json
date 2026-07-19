@@ -1,0 +1,356 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Adversarial agent introduces false claim into network",
+      "name": "INJECTS_CLAIM",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Opportunistic agent propagates claim when payoff justifies",
+      "name": "AMPLIFIES_SIGNAL",
+      "source_targets": [
+        {
+          "source": "OpportunisticAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Honest agent passes information according to norms",
+      "name": "RELAYS_INFO",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents coordinate to share payoffs or actions",
+      "name": "FORMS_COALITION",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance regime performs random audit on agent",
+      "name": "AUDITS_AGENT",
+      "source_targets": [
+        {
+          "source": "GovernanceRegime",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance applies penalty after detecting defection",
+      "name": "APPLIES_PENALTY",
+      "source_targets": [
+        {
+          "source": "GovernanceRegime",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Toxicity metric causes circuit breaker to freeze agent",
+      "name": "TRIGGERS_BREAKER",
+      "source_targets": [
+        {
+          "source": "ToxicityMetric",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "ToxicityMetric",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Reputation score decreases each epoch",
+      "name": "DECAYS_REPUTATION",
+      "source_targets": [
+        {
+          "source": "ReputationScore",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "ReputationScore",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "ReputationScore",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent takes part in a simulation run",
+      "name": "PARTICIPATES_IN",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "SimulationRun"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "SimulationRun"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "SimulationRun"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Simulation run produces metrics on agent behavior",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "SimulationRun",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "SimulationRun",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "SimulationRun",
+          "target": "HonestAgent"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent classification as injector",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus in trust networks",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent classification as amplifier",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that defects when payoff exceeds reputation cost",
+      "examples": [
+        "Ellis Mbeki",
+        "Finley Tahir"
+      ],
+      "name": "OpportunisticAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent classification as relayer",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned participant following stated norms",
+      "examples": [
+        "Logan Haider",
+        "Morgan Ortiz"
+      ],
+      "name": "HonestAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of simulation scenario",
+          "name": "scenario_name",
+          "type": "text"
+        },
+        {
+          "description": "Number of simulation epochs",
+          "name": "epoch_count",
+          "type": "text"
+        }
+      ],
+      "description": "Execution instance of the SWARM benchmark scenario",
+      "examples": [
+        "casestudy_libel_cascade",
+        "36-agent run"
+      ],
+      "name": "SimulationRun"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Governance configuration name",
+          "name": "regime_name",
+          "type": "text"
+        },
+        {
+          "description": "Probability of random audits",
+          "name": "audit_probability",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism design including audits, penalties, and circuit breakers",
+      "examples": [
+        "random audits 0.10",
+        "penalty multiplier 3.0"
+      ],
+      "name": "GovernanceRegime"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Identifier for the coalition",
+          "name": "coalition_name",
+          "type": "text"
+        },
+        {
+          "description": "Number of participating agents",
+          "name": "member_count",
+          "type": "text"
+        }
+      ],
+      "description": "Group of agents coordinating actions or sharing payoffs",
+      "examples": [
+        "Adversary-Opportunist pair",
+        "Honest coordination group"
+      ],
+      "name": "Coalition"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Current reputation numeric value",
+          "name": "score_value",
+          "type": "text"
+        },
+        {
+          "description": "Per-epoch reputation decay percentage",
+          "name": "decay_rate",
+          "type": "text"
+        }
+      ],
+      "description": "Agent's tracked reputation value subject to decay and penalties",
+      "examples": [
+        "Initial score",
+        "Post-decay value"
+      ],
+      "name": "ReputationScore"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Current toxicity score",
+          "name": "toxicity_level",
+          "type": "text"
+        },
+        {
+          "description": "Circuit breaker activation threshold",
+          "name": "threshold",
+          "type": "text"
+        }
+      ],
+      "description": "Measure of harmful content or behavior triggering circuit breakers",
+      "examples": [
+        "0.7 toxicity",
+        "Quarantine trigger"
+      ],
+      "name": "ToxicityMetric"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Individual's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Social or simulation role",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual participant in social media simulation",
+      "examples": [
+        "Casey Ortiz",
+        "Jordan Vargas"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Type of organization",
+          "name": "org_type",
+          "type": "text"
+        }
+      ],
+      "description": "Any organization or institutional entity in simulation",
+      "examples": [
+        "SWARM Benchmark Suite",
+        "Governance Authority"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

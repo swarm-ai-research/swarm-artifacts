@@ -1,0 +1,380 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent works for or is employed by an organization",
+      "name": "WORKS_FOR",
+      "source_targets": [
+        {
+          "source": "Person",
+          "target": "Organization"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent is affiliated with a simulation or regime",
+      "name": "AFFILIATED_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "Simulation"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "Simulation"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "Simulation"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent comments on or interacts with simulation content",
+      "name": "COMMENTS_ON",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "Simulation"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "Simulation"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "Simulation"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent supports another agent or coalition",
+      "name": "SUPPORTS",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "Coalition"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "Coalition"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent responds to another agent's action or statement",
+      "name": "RESPONDS_TO",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent collaborates with another agent in a coalition",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance regime regulates agent behavior",
+      "name": "REGULATES",
+      "source_targets": [
+        {
+          "source": "GovernanceRegime",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "HonestAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Security layer reports on detected manipulation",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "SecurityLayer",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "SecurityLayer",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents compete for influence or resources",
+      "name": "COMPETES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent opposes another agent's actions or coalition",
+      "name": "OPPOSES",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "Coalition"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent role classification",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus in simulations",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent role classification",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that defects when payoff exceeds reputation cost",
+      "examples": [
+        "Ellis Mbeki",
+        "Finley Tahir"
+      ],
+      "name": "OpportunisticAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent role classification",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned agent that follows stated norms",
+      "examples": [
+        "Logan Haider",
+        "Morgan Ortiz"
+      ],
+      "name": "HonestAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Simulation scenario identifier",
+          "name": "scenario_name",
+          "type": "text"
+        },
+        {
+          "description": "Number of simulation rounds",
+          "name": "epoch_count",
+          "type": "text"
+        }
+      ],
+      "description": "Multi-agent simulation environment running interaction epochs",
+      "examples": [
+        "casestudy_libel_cascade",
+        "SWARM benchmark"
+      ],
+      "name": "Simulation"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Random audit chance",
+          "name": "audit_probability",
+          "type": "text"
+        },
+        {
+          "description": "Penalty scaling factor",
+          "name": "penalty_multiplier",
+          "type": "text"
+        }
+      ],
+      "description": "Set of rules and mechanisms controlling agent behavior",
+      "examples": [
+        "random audits",
+        "circuit breaker"
+      ],
+      "name": "GovernanceRegime"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Nature of coordination",
+          "name": "coalition_type",
+          "type": "text"
+        },
+        {
+          "description": "Number of participating agents",
+          "name": "member_count",
+          "type": "text"
+        }
+      ],
+      "description": "Group of agents coordinating actions or sharing payoffs",
+      "examples": [
+        "adversarial-opportunistic",
+        "honest coordination"
+      ],
+      "name": "Coalition"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Reputation decay per epoch",
+          "name": "decay_rate",
+          "type": "text"
+        },
+        {
+          "description": "Reputation influence weight",
+          "name": "weight_factor",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism tracking agent reputation and decay over time",
+      "examples": [
+        "1% decay",
+        "w_rep=2.0"
+      ],
+      "name": "ReputationSystem"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Threshold for circuit breaker",
+          "name": "toxicity_threshold",
+          "type": "text"
+        },
+        {
+          "description": "Coordination detection threshold",
+          "name": "collusion_score",
+          "type": "text"
+        }
+      ],
+      "description": "Protective mechanism detecting and quarantining manipulation",
+      "examples": [
+        "toxicity 0.7",
+        "collusion 0.6"
+      ],
+      "name": "SecurityLayer"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Individual's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Social or simulation role",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual that can participate in social media",
+      "examples": [
+        "Casey Ortiz",
+        "Jordan Vargas"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Type of organization",
+          "name": "org_type",
+          "type": "text"
+        }
+      ],
+      "description": "Any organization or institution that can participate",
+      "examples": [
+        "SWARM benchmark",
+        "distributional-AGI-safety"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

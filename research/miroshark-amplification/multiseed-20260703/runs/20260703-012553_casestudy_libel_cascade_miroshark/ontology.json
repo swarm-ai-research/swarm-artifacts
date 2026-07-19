@@ -1,0 +1,326 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent spreads a claim to other agents",
+      "name": "SPREADS_CLAIM",
+      "source_targets": [
+        {
+          "source": "InjectorAgent",
+          "target": "RelayerAgent"
+        },
+        {
+          "source": "AmplifierAgent",
+          "target": "RelayerAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Authority audits an agent for compliance",
+      "name": "AUDITS_AGENT",
+      "source_targets": [
+        {
+          "source": "AuditAuthority",
+          "target": "InjectorAgent"
+        },
+        {
+          "source": "AuditAuthority",
+          "target": "AmplifierAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "System applies reputation decay to agent",
+      "name": "DECAYS_REPUTATION",
+      "source_targets": [
+        {
+          "source": "ReputationSystem",
+          "target": "RelayerAgent"
+        },
+        {
+          "source": "ReputationSystem",
+          "target": "AmplifierAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Circuit breaker freezes an agent",
+      "name": "FREEZES_AGENT",
+      "source_targets": [
+        {
+          "source": "CircuitBreaker",
+          "target": "InjectorAgent"
+        },
+        {
+          "source": "CircuitBreaker",
+          "target": "AmplifierAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Detector flags coordinated agent pairs",
+      "name": "FLAGS_COALITION",
+      "source_targets": [
+        {
+          "source": "CollusionDetector",
+          "target": "InjectorAgent"
+        },
+        {
+          "source": "CollusionDetector",
+          "target": "AmplifierAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Security layer quarantines manipulation chain",
+      "name": "QUARANTINES_CHAIN",
+      "source_targets": [
+        {
+          "source": "SecurityLayer",
+          "target": "InjectorAgent"
+        },
+        {
+          "source": "SecurityLayer",
+          "target": "AmplifierAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent collaborates with another agent",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "InjectorAgent",
+          "target": "AmplifierAgent"
+        },
+        {
+          "source": "AmplifierAgent",
+          "target": "RelayerAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Authority reports on agent behavior",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "AuditAuthority",
+          "target": "RelayerAgent"
+        },
+        {
+          "source": "CollusionDetector",
+          "target": "AmplifierAgent"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Strategy for extracting surplus",
+          "name": "defect_strategy",
+          "type": "text"
+        }
+      ],
+      "description": "Adversarial agent that knowingly spreads false claims to extract surplus",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "InjectorAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Payoff threshold for defection",
+          "name": "reputation_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "Opportunistic agent that defects when payoff exceeds reputation cost",
+      "examples": [
+        "Ellis Mbeki",
+        "Finley Tahir"
+      ],
+      "name": "AmplifierAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Level of norm adherence",
+          "name": "norm_adherence",
+          "type": "text"
+        }
+      ],
+      "description": "Honest agent that follows stated norms and relays information",
+      "examples": [
+        "Logan Haider",
+        "Morgan Ortiz"
+      ],
+      "name": "RelayerAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Authority name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Probability of conducting audits",
+          "name": "audit_probability",
+          "type": "text"
+        }
+      ],
+      "description": "Governance body conducting random audits with penalties",
+      "examples": [
+        "SWARM Audit Board",
+        "Governance Commission"
+      ],
+      "name": "AuditAuthority"
+    },
+    {
+      "attributes": [
+        {
+          "description": "System name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Daily reputation decay percentage",
+          "name": "decay_rate",
+          "type": "text"
+        }
+      ],
+      "description": "System tracking agent reputation with decay mechanics",
+      "examples": [
+        "Reputation Ledger",
+        "Trust Network"
+      ],
+      "name": "ReputationSystem"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Breaker system name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Threshold for triggering freeze",
+          "name": "toxicity_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism that freezes agents exceeding toxicity thresholds",
+      "examples": [
+        "Toxicity Monitor",
+        "Safety Protocol"
+      ],
+      "name": "CircuitBreaker"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Detector name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Score threshold for flagging",
+          "name": "coordination_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "System flagging coordinated agent pairs above score threshold",
+      "examples": [
+        "Coalition Scanner",
+        "Pair Analyzer"
+      ],
+      "name": "CollusionDetector"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Layer name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Duration of quarantine in epochs",
+          "name": "quarantine_duration",
+          "type": "text"
+        }
+      ],
+      "description": "Layer quarantining manipulation chains in the network",
+      "examples": [
+        "Chain Guardian",
+        "Manipulation Shield"
+      ],
+      "name": "SecurityLayer"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Individual's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Social media role",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual that can speak on social media",
+      "examples": [
+        "Alex Rivera",
+        "Sam Patel"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Industry or sector",
+          "name": "sector",
+          "type": "text"
+        }
+      ],
+      "description": "Any organization that can speak on social media",
+      "examples": [
+        "Tech Alliance",
+        "Media Group"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "_done": true,
+  "created_at": "2026-07-03T21:13:46.685005",
+  "error": null,
+  "message": "Graph build complete",
+  "metadata": {},
+  "progress": 100,
+  "progress_detail": {},
+  "result": {
+    "chunk_count": 6,
+    "edge_count": 0,
+    "graph_id": "d77c0361-212a-4614-9444-023739b1677b",
+    "node_count": 41,
+    "project_id": "proj_43e4703d66dd"
+  },
+  "status": "completed",
+  "task_id": "7989fedf-d3e3-4402-9db2-158df2dab3b6",
+  "task_type": "Build graph: swarm-casestudy_libel_cascade",
+  "updated_at": "2026-07-03T21:13:51.960479"
+}

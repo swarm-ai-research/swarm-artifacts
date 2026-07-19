@@ -1,0 +1,352 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent works for or is employed by an organization",
+      "name": "WORKS_FOR",
+      "source_targets": [
+        {
+          "source": "Person",
+          "target": "Organization"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent is affiliated with a coalition or group",
+      "name": "AFFILIATED_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "Coalition"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "Coalition"
+        },
+        {
+          "source": "HonestRelayer",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance regime regulates agent behavior",
+      "name": "REGULATES",
+      "source_targets": [
+        {
+          "source": "GovernanceRegime",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "GovernanceRegime",
+          "target": "HonestRelayer"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent reports on cascade or information events",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "HonestRelayer",
+          "target": "InformationCascade"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent comments on reputation or governance matters",
+      "name": "COMMENTS_ON",
+      "source_targets": [
+        {
+          "source": "Person",
+          "target": "ReputationSystem"
+        },
+        {
+          "source": "Person",
+          "target": "GovernanceRegime"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent supports another agent or coalition",
+      "name": "SUPPORTS",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "HonestRelayer",
+          "target": "HonestRelayer"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent opposes another agent or coalition action",
+      "name": "OPPOSES",
+      "source_targets": [
+        {
+          "source": "HonestRelayer",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "HonestRelayer",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents collaborate in information propagation",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "OpportunisticAgent"
+        },
+        {
+          "source": "HonestRelayer",
+          "target": "HonestRelayer"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Security layer responds to detected manipulation",
+      "name": "RESPONDS_TO",
+      "source_targets": [
+        {
+          "source": "SecurityLayer",
+          "target": "InformationCascade"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents compete for influence or resources",
+      "name": "COMPETES_WITH",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "OpportunisticAgent",
+          "target": "OpportunisticAgent"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Strategy for extracting surplus",
+          "name": "defect_strategy",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus in social simulations",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Threshold for defection decision",
+          "name": "payoff_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that defects when payoff exceeds reputation cost",
+      "examples": [
+        "Ellis Mbeki",
+        "Finley Tahir"
+      ],
+      "name": "OpportunisticAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Level of norm following",
+          "name": "norm_adherence",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned agent following stated norms in information networks",
+      "examples": [
+        "Logan Haider",
+        "Morgan Ortiz"
+      ],
+      "name": "HonestRelayer"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of governance system",
+          "name": "regime_name",
+          "type": "text"
+        },
+        {
+          "description": "Probability of random audits",
+          "name": "audit_probability",
+          "type": "text"
+        }
+      ],
+      "description": "System of rules and mechanisms governing agent interactions",
+      "examples": [
+        "Random Audit System",
+        "Circuit Breaker Protocol"
+      ],
+      "name": "GovernanceRegime"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of the coalition",
+          "name": "coalition_name",
+          "type": "text"
+        },
+        {
+          "description": "Number of participating agents",
+          "name": "member_count",
+          "type": "text"
+        }
+      ],
+      "description": "Group of agents coordinating actions in the simulation",
+      "examples": [
+        "Adversary-Opportunist Alliance",
+        "Honest Agent Network"
+      ],
+      "name": "Coalition"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of reputation mechanism",
+          "name": "system_name",
+          "type": "text"
+        },
+        {
+          "description": "Rate of reputation decay per epoch",
+          "name": "decay_rate",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism tracking and updating agent reputation scores",
+      "examples": [
+        "Reputation Ledger",
+        "Trust Network"
+      ],
+      "name": "ReputationSystem"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of the cascade event",
+          "name": "cascade_name",
+          "type": "text"
+        },
+        {
+          "description": "Current toxicity measurement",
+          "name": "toxicity_level",
+          "type": "text"
+        }
+      ],
+      "description": "Propagation of claims through the agent trust network",
+      "examples": [
+        "False Claim Cascade",
+        "Libel Propagation"
+      ],
+      "name": "InformationCascade"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of security component",
+          "name": "layer_name",
+          "type": "text"
+        },
+        {
+          "description": "Duration of quarantine in epochs",
+          "name": "quarantine_duration",
+          "type": "text"
+        }
+      ],
+      "description": "Protective mechanism that quarantines manipulation chains",
+      "examples": [
+        "Manipulation Detector",
+        "Chain Quarantine System"
+      ],
+      "name": "SecurityLayer"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Individual's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Role or position in simulation",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual participant in social media interactions",
+      "examples": [
+        "Casey Ortiz",
+        "Jordan Vargas"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Primary function or purpose",
+          "name": "function",
+          "type": "text"
+        }
+      ],
+      "description": "Any organized group or institution in the simulation",
+      "examples": [
+        "SWARM Benchmark Suite",
+        "Governance Authority"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

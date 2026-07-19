@@ -1,0 +1,318 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent joins a simulation epoch or coalition",
+      "name": "PARTICIPATES_IN",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "SimulationEpoch"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance mechanism enforces a rule on agents",
+      "name": "IMPLEMENTS",
+      "source_targets": [
+        {
+          "source": "GovernanceMechanism",
+          "target": "HonestParticipant"
+        },
+        {
+          "source": "GovernanceMechanism",
+          "target": "AdversarialAgent"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent records payoff in ledger",
+      "name": "ACCUMULATES",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "PayoffLedger"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "PayoffLedger"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Reputation score belongs to an agent",
+      "name": "TRACKS",
+      "source_targets": [
+        {
+          "source": "ReputationScore",
+          "target": "HonestParticipant"
+        },
+        {
+          "source": "ReputationScore",
+          "target": "AdaptiveAdversary"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents create a coalition",
+      "name": "FORMS",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "Coalition"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Epoch changes toxicity or welfare metrics",
+      "name": "AFFECTS",
+      "source_targets": [
+        {
+          "source": "SimulationEpoch",
+          "target": "ReputationScore"
+        },
+        {
+          "source": "SimulationEpoch",
+          "target": "PayoffLedger"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Organization publishes simulation outcomes",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "Organization",
+          "target": "SimulationEpoch"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Honest agents coordinate prosocial actions",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "HonestParticipant"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent identifier",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral classification",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned agent following stated governance norms",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "HonestParticipant"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent identifier",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral classification",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus",
+      "examples": [
+        "Nico Nagi",
+        "Oakley Ueda"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent identifier",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral classification",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that learns governance signals and routes around them",
+      "examples": [
+        "Umi Ito",
+        "Vale Park"
+      ],
+      "name": "AdaptiveAdversary"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of the governance rule",
+          "name": "mechanism_name",
+          "type": "text"
+        },
+        {
+          "description": "Configured parameter value",
+          "name": "parameter_value",
+          "type": "text"
+        }
+      ],
+      "description": "System component implementing audit, penalty or circuit breaker rules",
+      "examples": [
+        "RandomAudit",
+        "CircuitBreaker"
+      ],
+      "name": "GovernanceMechanism"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Label for the coalition",
+          "name": "coalition_name",
+          "type": "text"
+        },
+        {
+          "description": "Number of participating agents",
+          "name": "member_count",
+          "type": "text"
+        }
+      ],
+      "description": "Group of agents coordinating actions across epochs",
+      "examples": [
+        "AdversaryPair",
+        "HonestBloc"
+      ],
+      "name": "Coalition"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent whose reputation is tracked",
+          "name": "owner_name",
+          "type": "text"
+        },
+        {
+          "description": "Numeric reputation score",
+          "name": "current_value",
+          "type": "text"
+        }
+      ],
+      "description": "Entity tracking reputation value for an agent",
+      "examples": [
+        "AveryScore",
+        "NicoScore"
+      ],
+      "name": "ReputationScore"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent identifier",
+          "name": "agent_name",
+          "type": "text"
+        },
+        {
+          "description": "Accumulated payoff value",
+          "name": "total_payoff",
+          "type": "text"
+        }
+      ],
+      "description": "Record of cumulative payoffs for an agent",
+      "examples": [
+        "LoganLedger",
+        "SageLedger"
+      ],
+      "name": "PayoffLedger"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Epoch index",
+          "name": "epoch_number",
+          "type": "text"
+        },
+        {
+          "description": "Average toxicity at epoch end",
+          "name": "toxicity_level",
+          "type": "text"
+        }
+      ],
+      "description": "Discrete time step in the 30-epoch run",
+      "examples": [
+        "Epoch1",
+        "Epoch15"
+      ],
+      "name": "SimulationEpoch"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Individual name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Functional role in simulation",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual agent or persona",
+      "examples": [
+        "Jordan Laine",
+        "Xen Diallo"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization identifier",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Purpose or function",
+          "name": "mission",
+          "type": "text"
+        }
+      ],
+      "description": "Any collective or institutional body",
+      "examples": [
+        "SWARM Benchmark",
+        "GovernanceBoard"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

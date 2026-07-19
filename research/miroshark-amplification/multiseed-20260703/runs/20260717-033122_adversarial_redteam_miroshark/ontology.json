@@ -1,0 +1,342 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent participates in governance regime or mechanism",
+      "name": "PARTICIPATES_IN",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "GovernanceRegime"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents form a coalition for coordinated action",
+      "name": "FORMS_COALITION",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "Coalition"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "Coalition"
+        },
+        {
+          "source": "HonestParticipant",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Circuit breaker triggered by high toxicity levels",
+      "name": "TRIGGERED_BY",
+      "source_targets": [
+        {
+          "source": "CircuitBreaker",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "CircuitBreaker",
+          "target": "AdaptiveAdversary"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent subject to audit by audit mechanism",
+      "name": "AUDITED_BY",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "AuditMechanism"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "AuditMechanism"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "AuditMechanism"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent reputation tracked by reputation system",
+      "name": "TRACKED_BY",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "ReputationSystem"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "ReputationSystem"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "ReputationSystem"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent responds to governance signals or actions",
+      "name": "RESPONDS_TO",
+      "source_targets": [
+        {
+          "source": "AdaptiveAdversary",
+          "target": "GovernanceRegime"
+        },
+        {
+          "source": "HonestParticipant",
+          "target": "GovernanceRegime"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents collaborate or coordinate actions",
+      "name": "COLLABORATES_WITH",
+      "source_targets": [
+        {
+          "source": "HonestParticipant",
+          "target": "HonestParticipant"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "AdaptiveAdversary"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent opposes or defects against another agent or regime",
+      "name": "OPPOSES",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "HonestParticipant"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "GovernanceRegime"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned simulation agent following stated governance norms",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "HonestParticipant"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus from the system",
+      "examples": [
+        "Nico Nagi",
+        "Oakley Ueda"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that learns governance signals and routes around them",
+      "examples": [
+        "Umi Ito",
+        "Vale Park"
+      ],
+      "name": "AdaptiveAdversary"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of the governance regime",
+          "name": "regime_name",
+          "type": "text"
+        },
+        {
+          "description": "Probability of random audits",
+          "name": "audit_probability",
+          "type": "text"
+        }
+      ],
+      "description": "Simulation governance mechanism with audit and penalty rules",
+      "examples": [
+        "SWARM Red-team Governance",
+        "Random Audit Regime"
+      ],
+      "name": "GovernanceRegime"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name or identifier of coalition",
+          "name": "coalition_name",
+          "type": "text"
+        },
+        {
+          "description": "Number of agents in coalition",
+          "name": "member_count",
+          "type": "text"
+        }
+      ],
+      "description": "Group of agents coordinating actions or sharing payoffs",
+      "examples": [
+        "Adversarial Pair",
+        "Honest Prosocial Group"
+      ],
+      "name": "Coalition"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of reputation system",
+          "name": "system_name",
+          "type": "text"
+        },
+        {
+          "description": "Reputation decay percentage per epoch",
+          "name": "decay_rate",
+          "type": "text"
+        }
+      ],
+      "description": "Mechanism tracking agent reputation scores over epochs",
+      "examples": [
+        "Reputation Ledger",
+        "Epoch Decay Tracker"
+      ],
+      "name": "ReputationSystem"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of audit mechanism",
+          "name": "mechanism_name",
+          "type": "text"
+        },
+        {
+          "description": "Multiplier applied on detected misconduct",
+          "name": "penalty_multiplier",
+          "type": "text"
+        }
+      ],
+      "description": "Random audit process with penalty enforcement",
+      "examples": [
+        "Random Audit Engine",
+        "Penalty Enforcer"
+      ],
+      "name": "AuditMechanism"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of circuit breaker",
+          "name": "breaker_name",
+          "type": "text"
+        },
+        {
+          "description": "Toxicity level triggering freeze",
+          "name": "toxicity_threshold",
+          "type": "text"
+        }
+      ],
+      "description": "Freeze mechanism triggered when toxicity exceeds threshold",
+      "examples": [
+        "Toxicity Circuit Breaker",
+        "Freeze Trigger"
+      ],
+      "name": "CircuitBreaker"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent role or archetype",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual agent or persona in the simulation",
+      "examples": [
+        "Jordan Laine",
+        "Reese Park"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Primary function or purpose",
+          "name": "function",
+          "type": "text"
+        }
+      ],
+      "description": "Any collective entity or governance body in the simulation",
+      "examples": [
+        "SWARM Benchmark Suite",
+        "Governance Authority"
+      ],
+      "name": "Organization"
+    }
+  ]
+}

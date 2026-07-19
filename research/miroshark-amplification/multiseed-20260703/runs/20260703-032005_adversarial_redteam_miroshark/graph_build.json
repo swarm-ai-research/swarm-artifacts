@@ -1,0 +1,20 @@
+{
+  "_done": true,
+  "created_at": "2026-07-02T23:20:16.464865",
+  "error": null,
+  "message": "Graph build complete",
+  "metadata": {},
+  "progress": 100,
+  "progress_detail": {},
+  "result": {
+    "chunk_count": 5,
+    "edge_count": 0,
+    "graph_id": "3c655155-efee-44d9-abf8-d9e2d47bf5e1",
+    "node_count": 50,
+    "project_id": "proj_0975d2fa1cc9"
+  },
+  "status": "completed",
+  "task_id": "191261a7-f864-4370-abf4-911ad7e4cc3b",
+  "task_type": "Build graph: swarm-adversarial_redteam",
+  "updated_at": "2026-07-02T23:20:26.018801"
+}

@@ -1,0 +1,350 @@
+{
+  "edge_types": [
+    {
+      "attributes": [],
+      "description": "Agent joins a simulation epoch or interaction round",
+      "name": "PARTICIPATES_IN",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "SimulationEpoch"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "SimulationEpoch"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "SimulationEpoch"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agents coordinate to form a coalition",
+      "name": "FORMS_COALITION",
+      "source_targets": [
+        {
+          "source": "AdversarialAgent",
+          "target": "Coalition"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "Coalition"
+        },
+        {
+          "source": "HonestAgent",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent possesses a tracked reputation score",
+      "name": "HAS_REPUTATION",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "ReputationScore"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "ReputationScore"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "ReputationScore"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent records payoff in a ledger",
+      "name": "RECEIVES_PAYOFF",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "PayoffLedger"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "PayoffLedger"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "PayoffLedger"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Governance mechanism applies rule to agent",
+      "name": "ENFORCES",
+      "source_targets": [
+        {
+          "source": "GovernanceMechanism",
+          "target": "HonestAgent"
+        },
+        {
+          "source": "GovernanceMechanism",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "GovernanceMechanism",
+          "target": "AdaptiveAdversary"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Mechanism flags coordinated agent pair",
+      "name": "DETECTS_COLLUSION",
+      "source_targets": [
+        {
+          "source": "GovernanceMechanism",
+          "target": "Coalition"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Epoch records outcomes of agent actions",
+      "name": "REPORTS_ON",
+      "source_targets": [
+        {
+          "source": "SimulationEpoch",
+          "target": "HonestAgent"
+        },
+        {
+          "source": "SimulationEpoch",
+          "target": "AdversarialAgent"
+        },
+        {
+          "source": "SimulationEpoch",
+          "target": "AdaptiveAdversary"
+        }
+      ]
+    },
+    {
+      "attributes": [],
+      "description": "Agent belongs to or is tracked by an organization",
+      "name": "AFFILIATED_WITH",
+      "source_targets": [
+        {
+          "source": "HonestAgent",
+          "target": "Organization"
+        },
+        {
+          "source": "AdversarialAgent",
+          "target": "Organization"
+        },
+        {
+          "source": "AdaptiveAdversary",
+          "target": "Organization"
+        }
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Well-intentioned simulation participant following stated norms",
+      "examples": [
+        "Avery Achebe",
+        "Blake Haider"
+      ],
+      "name": "HonestAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Agent that knowingly defects to extract surplus",
+      "examples": [
+        "Nico Nagi",
+        "Oakley Ueda"
+      ],
+      "name": "AdversarialAgent"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Agent behavioral archetype",
+          "name": "archetype",
+          "type": "text"
+        }
+      ],
+      "description": "Adversary that learns governance signals and routes around them",
+      "examples": [
+        "Umi Ito",
+        "Vale Park"
+      ],
+      "name": "AdaptiveAdversary"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Name of the mechanism",
+          "name": "mechanism_name",
+          "type": "text"
+        },
+        {
+          "description": "Configured parameter value",
+          "name": "parameter_value",
+          "type": "text"
+        }
+      ],
+      "description": "Automated rule or detector enforcing simulation governance",
+      "examples": [
+        "Random Audit",
+        "Circuit Breaker"
+      ],
+      "name": "GovernanceMechanism"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Identifier for the coalition",
+          "name": "coalition_name",
+          "type": "text"
+        },
+        {
+          "description": "Epoch when coalition formed",
+          "name": "formation_epoch",
+          "type": "text"
+        }
+      ],
+      "description": "Group of agents coordinating actions or sharing payoffs",
+      "examples": [
+        "Adversary Pair",
+        "Honest Cluster"
+      ],
+      "name": "Coalition"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent whose reputation is tracked",
+          "name": "owner_name",
+          "type": "text"
+        },
+        {
+          "description": "Current reputation value",
+          "name": "current_value",
+          "type": "text"
+        }
+      ],
+      "description": "Entity tracking agent reputation over simulation epochs",
+      "examples": [
+        "Avery Achebe Score",
+        "Nico Nagi Score"
+      ],
+      "name": "ReputationScore"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Agent receiving the payoff",
+          "name": "agent_name",
+          "type": "text"
+        },
+        {
+          "description": "Cumulative payoff amount",
+          "name": "total_amount",
+          "type": "text"
+        }
+      ],
+      "description": "Record of cumulative payoffs for an agent",
+      "examples": [
+        "Logan Zaman Ledger",
+        "Sage Wei Ledger"
+      ],
+      "name": "PayoffLedger"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Epoch index from 1 to 30",
+          "name": "epoch_number",
+          "type": "text"
+        },
+        {
+          "description": "Type of interaction round",
+          "name": "round_type",
+          "type": "text"
+        }
+      ],
+      "description": "Discrete time step in the 30-epoch simulation run",
+      "examples": [
+        "Epoch 1",
+        "Epoch 15"
+      ],
+      "name": "SimulationEpoch"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Person's full name",
+          "name": "full_name",
+          "type": "text"
+        },
+        {
+          "description": "Social or simulation role",
+          "name": "role",
+          "type": "text"
+        }
+      ],
+      "description": "Any individual capable of social media participation",
+      "examples": [
+        "Jordan Laine",
+        "Xen Diallo"
+      ],
+      "name": "Person"
+    },
+    {
+      "attributes": [
+        {
+          "description": "Organization name",
+          "name": "org_name",
+          "type": "text"
+        },
+        {
+          "description": "Organization category",
+          "name": "type",
+          "type": "text"
+        }
+      ],
+      "description": "Any organization or collective entity",
+      "examples": [
+        "SWARM Benchmark",
+        "Governance Authority"
+      ],
+      "name": "Organization"
+    }
+  ]
+}
