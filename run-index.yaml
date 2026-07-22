@@ -1,11 +1,12 @@
-generated_utc: '2026-06-03T01:37:00.896156+00:00'
-total_runs: 154
+generated_utc: '2026-07-22T17:55:00.046972+00:00'
+total_runs: 155
 by_type:
   calibration: 2
   redteam: 13
   single: 71
   study: 33
   sweep: 35
+  unknown: 1
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1413,6 +1414,12 @@ runs:
   - untagged
   date: '2026-05-24'
   status: completed
+- id: 20260718T224200Z_calibration_fidelity_seed42
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
 - id: agent_tree_demo
   slug: agent_tree_demo
   type: single
