@@ -96,6 +96,6 @@ These are the remaining actionable concerns, ordered by impact:
 
 ## Summary
 
-The framework has matured significantly. The handler/plugin architecture, boundary enforcement subsystem, and multi-domain bridge ecosystem represent substantial architectural progress. Of the original 7 design concerns, 3 are fully resolved (#2 dataclass/pydantic, #4 observable generator, and implicitly #3 weight semantics via documentation). Two architectural questions are answered (#1 v_hat/p separation, #2 sigmoid calibration). The remaining concerns — event coupling, metadata typing, and further Orchestrator decomposition — are real but non-blocking, and represent incremental cleanup rather than structural issues.
+The handler/plugin architecture, boundary enforcement subsystem, and multi-domain bridge ecosystem have advanced the design. Of the original 7 design concerns, 3 are fully resolved (#2 dataclass/pydantic, #4 observable generator, and implicitly #3 weight semantics via documentation). Two architectural questions are answered (#1 v_hat/p separation, #2 sigmoid calibration). The remaining concerns — event coupling, metadata typing, and further Orchestrator decomposition — are non-blocking and represent incremental cleanup rather than structural issues.
 
 The core insight — using soft probabilistic labels to measure adverse selection and quality gaps — remains sound and is now battle-tested across multiple bridge integrations.
