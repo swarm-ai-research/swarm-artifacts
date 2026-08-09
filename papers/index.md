@@ -76,4 +76,4 @@ Each is a self-contained report tied to a scenario, seed, and exported run data.
 - [Emergent Progressive Taxation and the Cost of Evasion in Production Economies](ai_economist_gtb.md) — AI Economist / GTB bridge.
 - [Parametric Governance Cannot Fix Structural Vulnerabilities: A Live AI Research Platform](research_swarm_governance.md)
 - [Obfuscation Atlas Integration](obfuscation_atlas_integration.md)
-- [Lessons from ARC-AGI-3 Agent Development](arc-agi-3-lessons.md)
+- [Lessons from ARC-AGI-3 Agent Development](../research/arc-agi-3-lessons.md)

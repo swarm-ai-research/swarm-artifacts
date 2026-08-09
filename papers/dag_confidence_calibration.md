@@ -89,7 +89,7 @@ The soft-label pipeline consistently separates honest from opportunistic planner
 
 This gap is stable across all 32 governance configurations, indicating the proxy pipeline performs the screening, not the governance mechanisms.
 
-![Honest vs Opportunistic Planner Quality](../runs/20260328_093825_dag_confidence_calibration/plots/honest_vs_opportunistic.png)
+![Honest vs Opportunistic Planner Quality](https://raw.githubusercontent.com/swarm-ai-research/swarm-artifacts/main/runs/20260328_093825_dag_confidence_calibration/plots/honest_vs_opportunistic.png)
 
 ### RQ2: Confidence Calibration
 
@@ -103,7 +103,7 @@ Architect's reported confidence is **negatively correlated** with actual p:
 
 The negative correlation occurs because opportunistic planners report high confidence (0.85) but produce low p scores (0.58). The proxy pipeline catches this: agents who claim high confidence but produce structurally incoherent DAGs with high failure rates get low p.
 
-![Confidence Calibration](../runs/20260328_093825_dag_confidence_calibration/plots/confidence_calibration_scatter.png)
+![Confidence Calibration](https://raw.githubusercontent.com/swarm-ai-research/swarm-artifacts/main/runs/20260328_093825_dag_confidence_calibration/plots/confidence_calibration_scatter.png)
 
 ### RQ3: Governance Lever Effects
 
@@ -120,7 +120,7 @@ The negative correlation occurs because opportunistic planners report high confi
 
 **No significant effects** were found for audit probability or staking on any metric.
 
-![Welfare vs ρ_a](../runs/20260328_093825_dag_confidence_calibration/plots/welfare_vs_rho_a.png)
+![Welfare vs ρ_a](https://raw.githubusercontent.com/swarm-ai-research/swarm-artifacts/main/runs/20260328_093825_dag_confidence_calibration/plots/welfare_vs_rho_a.png)
 
 ### Null Results
 
@@ -168,7 +168,7 @@ We compare three strategies across 10 seeds × 40 epochs:
 
 The adaptive controller converges to ρ_a ≈ 0.30 — 25% less cost pressure than the fixed-0.4 baseline — while matching its toxicity reduction and achieving marginally better welfare. The controller discovers the appropriate externality price from the toxicity signal alone, without requiring foreknowledge of the planner population mix.
 
-![Adaptive ρ_a Trajectory](../runs/20260328_104126_adaptive_rho/plots/rho_trajectory.png)
+![Adaptive ρ_a Trajectory](https://raw.githubusercontent.com/swarm-ai-research/swarm-artifacts/main/runs/20260328_104126_adaptive_rho/plots/rho_trajectory.png)
 
 The behavioral feedback loop is critical: when ρ_a increases, opportunistic planners respond by either exiting (40% exit probability at ρ_a = 1.0) or improving their DAG quality (success rate improves by up to 15 percentage points). This creates the negative feedback the controller needs to converge rather than railing to the bound.
 

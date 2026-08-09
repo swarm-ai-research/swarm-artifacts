@@ -70,8 +70,8 @@ threshold counter even as the distribution shifts left.
 | 0.35 | 1.000 ± 0.000 | 0.964 ± 0.036 |
 | 0.50 | 1.000 ± 0.000 | 0.945 ± 0.040 |
 
-![ROC](../../runs/20260524-231533_soft_vs_binary_detection/plots/roc_toxicity.png)
-![AUROC vs base rate](../../runs/20260524-231533_soft_vs_binary_detection/plots/auroc_vs_baserate.png)
+![ROC](https://raw.githubusercontent.com/swarm-ai-research/swarm-artifacts/main/runs/20260524-231533_soft_vs_binary_detection/plots/roc_toxicity.png)
+![AUROC vs base rate](https://raw.githubusercontent.com/swarm-ai-research/swarm-artifacts/main/runs/20260524-231533_soft_vs_binary_detection/plots/auroc_vs_baserate.png)
 
 ### 2.2 Time-to-detection at FPR ≤ 0.05
 
@@ -85,7 +85,7 @@ start at the first full trailing window and the scan begins no earlier than
 onset), so the reported FPR ≤ 0.05 operating point holds over exactly the
 epochs scanned and pre-onset flags are not credited as instantaneous detection.
 
-![Time-to-detection](../../runs/20260524-231533_soft_vs_binary_detection/plots/ttd.png)
+![Time-to-detection](https://raw.githubusercontent.com/swarm-ai-research/swarm-artifacts/main/runs/20260524-231533_soft_vs_binary_detection/plots/ttd.png)
 
 ### 2.3 Market adverse selection (risk = −gap; higher = more adverse)
 
@@ -96,7 +96,7 @@ epochs scanned and pre-onset flags are not credited as instantaneous detection.
 | conditional_loss | soft | −0.021 | −0.019 | −0.015 | −0.011 | −0.007 |
 | conditional_loss | binary | 0.000 | 0.000 | 0.000 | 0.001 | 0.000 |
 
-![Market adverse selection](../../runs/20260524-231533_soft_vs_binary_detection/plots/market_selection.png)
+![Market adverse selection](https://raw.githubusercontent.com/swarm-ai-research/swarm-artifacts/main/runs/20260524-231533_soft_vs_binary_detection/plots/market_selection.png)
 
 The binary variant flattens the selection signal to ≈ 0 because a gaming agent's
 quality stays above τ\*, so binarization counts its low-but-above-threshold work
@@ -109,7 +109,7 @@ as "fine."
 | soft | 0.1514 | 0.0545 |
 | binary | 0.1829 | 0.1829 |
 
-![Calibration](../../runs/20260524-231533_soft_vs_binary_detection/plots/calibration.png)
+![Calibration](https://raw.githubusercontent.com/swarm-ai-research/swarm-artifacts/main/runs/20260524-231533_soft_vs_binary_detection/plots/calibration.png)
 
 ## 3. Statistical analysis
 
