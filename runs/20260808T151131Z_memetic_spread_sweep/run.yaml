@@ -1,0 +1,47 @@
+run_id: 20260808T151131Z_memetic_spread_sweep
+slug: memetic_spread_sweep
+created_utc: '2026-08-08T15:11:31+00:00'
+provenance:
+  swarm_version: 1.9.0
+  git_sha: d8bcfc0c
+  git_dirty: false
+  python_version: 3.13.5
+  platform: darwin-arm64
+  command: python scripts/sweep_memetic_spread.py --seeds 10
+experiment:
+  type: sweep
+  hypothesis: >
+    Memetic spread of misaligned values through shared memory (Mallen 2025):
+    how do prevention (memory reset cadence; infection survives the wipe) and
+    detection (promotion gate + cross-verification + provenance) compare at
+    suppressing the value epidemic, and at what welfare cost?
+  scenario_ref: scenarios/memetic_spread.yaml
+  swept_parameters:
+    reset_cadence_epochs: [0, 2, 5, 10]
+    detection: [off, on]
+  seeds: [42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+  total_runs: 80
+  epochs_per_run: 40
+  steps_per_epoch: 10
+results:
+  status: completed
+  primary_metric: late_run_mean_infection
+  primary_result: >
+    Resets alone make the meme endemic (late-run infection 0.10-0.30 vs 0.012
+    untreated; no-reset epidemic burns out via emergent herd immunity of the
+    quality-ranked cache). Resets protect the archive (tier-3 poisoning
+    0.62 -> 0.10). Detection dominates every safety metric at ~12% welfare
+    tax. Interaction-level toxicity flat (0.287-0.292) across all cells.
+artifacts:
+  summary: summary.json
+  epoch_csvs:
+    - sweep.csv
+    - epoch_series.csv
+  plots:
+    - plots/infection_trajectories.png
+    - plots/outcomes_by_condition.png
+tags:
+  - memetic-spread
+  - memory-tiers
+  - governance
+  - beads-kgxc

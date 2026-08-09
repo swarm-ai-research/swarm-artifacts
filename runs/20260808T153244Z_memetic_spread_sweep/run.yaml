@@ -1,0 +1,51 @@
+run_id: 20260808T153244Z_memetic_spread_sweep
+slug: memetic_spread_ranking_sweep
+created_utc: '2026-08-08T15:32:44+00:00'
+provenance:
+  swarm_version: 1.9.0
+  git_sha: c66a84cb
+  git_dirty: false
+  python_version: 3.13.5
+  platform: darwin-arm64
+  command: >
+    python scripts/sweep_memetic_spread.py --seeds 10
+    --rankings quality,recency,engagement --cadences 0,2
+experiment:
+  type: sweep
+  hypothesis: >
+    Is the no-reset epidemic burnout an artifact of the quality-ranked hot
+    cache? Sweep cache ranking policy (quality/recency/engagement) against
+    reset cadence and detection (bead 2qfq).
+  scenario_ref: scenarios/memetic_spread.yaml
+  swept_parameters:
+    cache_ranking: [quality, recency, engagement]
+    reset_cadence_epochs: [0, 2]
+    detection: [off, on]
+  seeds: [42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+  total_runs: 120
+  epochs_per_run: 40
+  steps_per_epoch: 10
+results:
+  status: completed
+  primary_metric: late_run_mean_infection
+  primary_result: >
+    Burnout is an artifact of quality ranking. Recency: near-total permanent
+    capture (late infection 0.870 vs 0.012). Engagement: locked 0.485
+    plateau. Reset verdict inverts with ranking (0.870 -> 0.100 under
+    recency). Fast resets neutralize ranking entirely (cadence-2 runs
+    bitwise identical across rankings; tier-3 population never exceeds
+    cache capacity). Detection strains under recency (late 0.165, rising).
+artifacts:
+  summary: summary.json
+  epoch_csvs:
+    - sweep.csv
+    - epoch_series.csv
+  plots:
+    - plots/infection_trajectories.png
+    - plots/outcomes_by_condition.png
+tags:
+  - memetic-spread
+  - memory-tiers
+  - governance
+  - cache-ranking
+  - beads-2qfq

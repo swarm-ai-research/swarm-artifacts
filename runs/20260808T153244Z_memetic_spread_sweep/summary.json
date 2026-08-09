@@ -1,0 +1,122 @@
+{
+  "quality_off_cadence0": {
+    "peak_infection": 0.37120300459199496,
+    "mean_infection": 0.1467383412233675,
+    "late_infection": 0.011780289522703893,
+    "mean_tier3_poisoning": 0.6224310634902287,
+    "contagion_writes": 120.4,
+    "avg_toxicity": 0.2886762134961039,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 3057.2267778437445
+  },
+  "quality_off_cadence2": {
+    "peak_infection": 0.17111843961812928,
+    "mean_infection": 0.09395971062795708,
+    "late_infection": 0.10030099634980497,
+    "mean_tier3_poisoning": 0.1043216946237457,
+    "contagion_writes": 71.4,
+    "avg_toxicity": 0.28768728914688657,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 3067.996233679689
+  },
+  "quality_on_cadence0": {
+    "peak_infection": 0.07882204691510483,
+    "mean_infection": 0.02835801394128139,
+    "late_infection": 0.003435239484052403,
+    "mean_tier3_poisoning": 0.09431977628768363,
+    "contagion_writes": 21.9,
+    "avg_toxicity": 0.28700045688308107,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 2690.4330858685944
+  },
+  "quality_on_cadence2": {
+    "peak_infection": 0.032711500938625196,
+    "mean_infection": 0.005387878774499233,
+    "late_infection": 0.0054610164911647364,
+    "mean_tier3_poisoning": 0.005939511877011877,
+    "contagion_writes": 4.3,
+    "avg_toxicity": 0.2865110872898498,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 2714.686346682858
+  },
+  "recency_off_cadence0": {
+    "peak_infection": 0.915109697527433,
+    "mean_infection": 0.6832491197336464,
+    "late_infection": 0.8701326069579952,
+    "mean_tier3_poisoning": 0.6638643250807146,
+    "contagion_writes": 553.3,
+    "avg_toxicity": 0.2976154850010338,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 2943.7491014089164
+  },
+  "recency_off_cadence2": {
+    "peak_infection": 0.17111843961812928,
+    "mean_infection": 0.09395971062795708,
+    "late_infection": 0.10030099634980497,
+    "mean_tier3_poisoning": 0.1043216946237457,
+    "contagion_writes": 71.4,
+    "avg_toxicity": 0.28768728914688657,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 3067.996233679689
+  },
+  "recency_on_cadence0": {
+    "peak_infection": 0.20046462698612424,
+    "mean_infection": 0.09908065860489462,
+    "late_infection": 0.16480447310011953,
+    "mean_tier3_poisoning": 0.09192929406847436,
+    "contagion_writes": 81.5,
+    "avg_toxicity": 0.28822075567072325,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 2674.208230894296
+  },
+  "recency_on_cadence2": {
+    "peak_infection": 0.032711500938625196,
+    "mean_infection": 0.005387878774499233,
+    "late_infection": 0.0054610164911647364,
+    "mean_tier3_poisoning": 0.005939511877011877,
+    "contagion_writes": 4.3,
+    "avg_toxicity": 0.2865110872898498,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 2714.686346682858
+  },
+  "engagement_off_cadence0": {
+    "peak_infection": 0.4849883730912537,
+    "mean_infection": 0.41366744380421305,
+    "late_infection": 0.48494154783249,
+    "mean_tier3_poisoning": 0.6368383639807633,
+    "contagion_writes": 342.1,
+    "avg_toxicity": 0.29291713742010084,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 3007.075468545521
+  },
+  "engagement_off_cadence2": {
+    "peak_infection": 0.17111843961812928,
+    "mean_infection": 0.09395971062795708,
+    "late_infection": 0.10030099634980497,
+    "mean_tier3_poisoning": 0.1043216946237457,
+    "contagion_writes": 71.4,
+    "avg_toxicity": 0.28768728914688657,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 3067.996233679689
+  },
+  "engagement_on_cadence0": {
+    "peak_infection": 0.09205213393832888,
+    "mean_infection": 0.06353270818155791,
+    "late_infection": 0.08510418950873601,
+    "mean_tier3_poisoning": 0.0902688320878136,
+    "contagion_writes": 51.7,
+    "avg_toxicity": 0.2876337133800707,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 2678.35146105364
+  },
+  "engagement_on_cadence2": {
+    "peak_infection": 0.032711500938625196,
+    "mean_infection": 0.005387878774499233,
+    "late_infection": 0.0054610164911647364,
+    "mean_tier3_poisoning": 0.005939511877011877,
+    "contagion_writes": 4.3,
+    "avg_toxicity": 0.2865110872898498,
+    "avg_quality_gap": 0.0,
+    "total_welfare": 2714.686346682858
+  }
+}

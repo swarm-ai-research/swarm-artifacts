@@ -1,12 +1,12 @@
-generated_utc: '2026-07-27T03:13:21.580389+00:00'
-total_runs: 156
+generated_utc: '2026-08-09T00:52:07.726382+00:00'
+total_runs: 160
 by_type:
   calibration: 2
   redteam: 13
   single: 71
   study: 33
-  sweep: 35
-  unknown: 2
+  sweep: 37
+  unknown: 4
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1389,6 +1389,18 @@ runs:
   - claim-coordination-capability-increases-monotonically-with-screening-strength
   - claim-routing-screening-dose-response-is-u-shaped-under-tight-governance
   - claim-screening-signal-reliability-determines-routing-outcome
+- id: 20260328_093825_dag_confidence_calibration
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: 20260328_104126_adaptive_rho
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
 - id: 20260328_long_horizon_screening_replication
   slug: long_horizon_screening_replication
   type: sweep
@@ -1426,6 +1438,46 @@ runs:
   - unmigrated
   date: unknown
   status: unknown
+- id: 20260808T151131Z_memetic_spread_sweep
+  slug: memetic_spread_sweep
+  type: sweep
+  tags:
+  - memetic-spread
+  - memory-tiers
+  - governance
+  - beads-kgxc
+  date: '2026-08-08'
+  status: completed
+  total_runs: 80
+  total_configs: 8
+  primary_result: 'Resets alone make the meme endemic (late-run infection 0.10-0.30
+    vs 0.012 untreated; no-reset epidemic burns out via emergent herd immunity of
+    the quality-ranked cache). Resets protect the archive (tier-3 poisoning 0.62 ->
+    0.10). Detection dominates every safety metric at ~12% welfare tax. Interaction-level
+    toxicity flat (0.287-0.292) across all cells.
+
+    '
+- id: 20260808T153244Z_memetic_spread_sweep
+  slug: memetic_spread_ranking_sweep
+  type: sweep
+  tags:
+  - memetic-spread
+  - memory-tiers
+  - governance
+  - cache-ranking
+  - beads-2qfq
+  date: '2026-08-08'
+  status: completed
+  total_runs: 120
+  total_configs: 12
+  primary_result: 'Burnout is an artifact of quality ranking. Recency: near-total
+    permanent capture (late infection 0.870 vs 0.012). Engagement: locked 0.485 plateau.
+    Reset verdict inverts with ranking (0.870 -> 0.100 under recency). Fast resets
+    neutralize ranking entirely (cadence-2 runs bitwise identical across rankings;
+    tier-3 population never exceeds cache capacity). Detection strains under recency
+    (late 0.165, rising).
+
+    '
 - id: agent_tree_demo
   slug: agent_tree_demo
   type: single
