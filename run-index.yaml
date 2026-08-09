@@ -1,12 +1,11 @@
-generated_utc: '2026-08-09T00:52:07.726382+00:00'
+generated_utc: '2026-08-09T00:52:23.280702+00:00'
 total_runs: 160
 by_type:
   calibration: 2
   redteam: 13
-  single: 71
+  single: 74
   study: 33
-  sweep: 37
-  unknown: 4
+  sweep: 38
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1390,17 +1389,19 @@ runs:
   - claim-routing-screening-dose-response-is-u-shaped-under-tight-governance
   - claim-screening-signal-reliability-determines-routing-outcome
 - id: 20260328_093825_dag_confidence_calibration
-  type: unknown
+  slug: 093825_dag_confidence_calibration
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - calibration
+  date: '2026-03-28'
+  status: completed
 - id: 20260328_104126_adaptive_rho
-  type: unknown
+  slug: 104126_adaptive_rho
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - untagged
+  date: '2026-03-28'
+  status: completed
 - id: 20260328_long_horizon_screening_replication
   slug: long_horizon_screening_replication
   type: sweep
@@ -1427,17 +1428,20 @@ runs:
   date: '2026-05-24'
   status: completed
 - id: 20260718T224200Z_calibration_fidelity_seed42
-  type: unknown
+  slug: T224200Z_calibration_fidelity_seed42
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - calibration
+  - seed-42
+  date: '2026-07-18'
+  status: completed
 - id: 20260727T031016Z_graph_structural_roc_temporal_seed0
-  type: unknown
+  slug: T031016Z_graph_structural_roc_temporal_seed0
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - seed-0
+  date: '2026-07-27'
+  status: completed
 - id: 20260808T151131Z_memetic_spread_sweep
   slug: memetic_spread_sweep
   type: sweep
