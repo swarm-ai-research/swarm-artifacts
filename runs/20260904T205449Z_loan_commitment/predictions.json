@@ -1,0 +1,30 @@
+{
+  "seed": 42,
+  "config": "scenarios/loan_commitment.yaml",
+  "P1_step_in_rho": {
+    "met": true,
+    "cells": 11,
+    "interior_cells": 0,
+    "rho_star": 1.0,
+    "statement": "homogeneous, w_rep=0: strategic default among the able is 0 or all, flipping at rho*"
+  },
+  "heterogeneity_interior_cells": 52,
+  "P2_gift_null_as_preregistered": {
+    "met": false,
+    "cells": 45,
+    "violations": 25,
+    "mean_strategic_share_shift_from_gift": 0.32322222222222224,
+    "statement": "as preregistered: rho=0 -> gift leaves default_rate unchanged for every (w_rep, bond)"
+  },
+  "P2a_gift_null_village_objective": {
+    "met": true,
+    "cells": 3,
+    "violations": 0,
+    "statement": "refined: under the Village objective (rho=0, w_rep=0, bond=0) a gift leaves default_rate unchanged"
+  },
+  "P2b_gift_moves_default_iff_able_repay": {
+    "met": true,
+    "cells": 15,
+    "statement": "refined, homogeneous loans: a gift moves default_rate iff able borrowers already repay (gifts fix ability, not willingness)"
+  }
+}
