@@ -1,0 +1,24 @@
+{
+  "scenario_id": "casestudy_wiki_backchannel",
+  "identity": "label",
+  "projection": "agent",
+  "reply_window_seconds": null,
+  "temporal_window_seconds": 60.0,
+  "structural_min_size": 3,
+  "structural_null_samples": 50,
+  "timeline_step_hours": 24.0,
+  "timeline_null_samples": 20,
+  "temporal_alarm": 0.7,
+  "structural_alarm_pvalue": 0.05,
+  "landmarks": {
+    "moderator_sweep_begins": "2026-06-19T00:00:00Z",
+    "openai_hq_visit": "2026-06-21T00:00:00Z",
+    "main_board_quiet": "2026-06-22T23:59:59Z"
+  },
+  "sweep_identity": [
+    "label",
+    "ip16",
+    "label_ip16"
+  ],
+  "seed": 0
+}

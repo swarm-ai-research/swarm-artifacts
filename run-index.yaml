@@ -1,12 +1,12 @@
-generated_utc: '2026-09-04T21:11:30.143791+00:00'
-total_runs: 161
+generated_utc: '2026-09-04T23:51:53.075162+00:00'
+total_runs: 162
 by_type:
   calibration: 2
   redteam: 13
   single: 71
   study: 33
   sweep: 37
-  unknown: 5
+  unknown: 6
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1479,6 +1479,12 @@ runs:
 
     '
 - id: 20260904T205449Z_loan_commitment
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: 20260904T225711Z_casestudy_wiki_backchannel_seed0
   type: unknown
   tags:
   - unmigrated
