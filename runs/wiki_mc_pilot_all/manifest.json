@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "phase": "pilot",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "cells": [
+    {
+      "family": "emergence",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "task_overlap": 0.2,
+        "deadline": 6.0,
+        "referrals_enabled": false
+      },
+      "id": "emergence-000"
+    },
+    {
+      "family": "emergence",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "task_overlap": 0.2,
+        "deadline": 6.0,
+        "referrals_enabled": true
+      },
+      "id": "emergence-001"
+    },
+    {
+      "family": "emergence",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "task_overlap": 0.2,
+        "deadline": 18.0,
+        "referrals_enabled": false
+      },
+      "id": "emergence-002"
+    },
+    {
+      "family": "emergence",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "task_overlap": 0.2,
+        "deadline": 18.0,
+        "referrals_enabled": true
+      },
+      "id": "emergence-003"
+    },
+    {
+      "family": "emergence",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "task_overlap": 0.8,
+        "deadline": 6.0,
+        "referrals_enabled": false
+      },
+      "id": "emergence-004"
+    },
+    {
+      "family": "emergence",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "task_overlap": 0.8,
+        "deadline": 6.0,
+        "referrals_enabled": true
+      },
+      "id": "emergence-005"
+    },
+    {
+      "family": "emergence",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "task_overlap": 0.8,
+        "deadline": 18.0,
+        "referrals_enabled": false
+      },
+      "id": "emergence-006"
+    },
+    {
+      "family": "emergence",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "task_overlap": 0.8,
+        "deadline": 18.0,
+        "referrals_enabled": true
+      },
+      "id": "emergence-007"
+    },
+    {
+      "family": "moderation",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "moderation_policy": "none",
+        "relocation_mode": "endogenous"
+      },
+      "id": "moderation-008"
+    },
+    {
+      "family": "moderation",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "moderation_policy": "none",
+        "relocation_mode": "forced"
+      },
+      "id": "moderation-009"
+    },
+    {
+      "family": "moderation",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "moderation_policy": "ordered",
+        "relocation_mode": "endogenous"
+      },
+      "id": "moderation-010"
+    },
+    {
+      "family": "moderation",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "moderation_policy": "ordered",
+        "relocation_mode": "forced"
+      },
+      "id": "moderation-011"
+    },
+    {
+      "family": "moderation",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "moderation_policy": "random",
+        "relocation_mode": "endogenous"
+      },
+      "id": "moderation-012"
+    },
+    {
+      "family": "moderation",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "moderation_policy": "random",
+        "relocation_mode": "forced"
+      },
+      "id": "moderation-013"
+    },
+    {
+      "family": "moderation",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "moderation_policy": "lock",
+        "relocation_mode": "endogenous"
+      },
+      "id": "moderation-014"
+    },
+    {
+      "family": "moderation",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "moderation_policy": "lock",
+        "relocation_mode": "forced"
+      },
+      "id": "moderation-015"
+    },
+    {
+      "family": "moderation",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "moderation_policy": "global_lock",
+        "relocation_mode": "endogenous"
+      },
+      "id": "moderation-016"
+    },
+    {
+      "family": "moderation",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "moderation_policy": "global_lock",
+        "relocation_mode": "forced"
+      },
+      "id": "moderation-017"
+    },
+    {
+      "family": "detection",
+      "observation_fraction": 0.25,
+      "overrides": {
+        "sharing_regime": "independent"
+      },
+      "id": "detection-018"
+    },
+    {
+      "family": "detection",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "sharing_regime": "independent"
+      },
+      "id": "detection-019"
+    },
+    {
+      "family": "detection",
+      "observation_fraction": 0.25,
+      "overrides": {
+        "sharing_regime": "authorized"
+      },
+      "id": "detection-020"
+    },
+    {
+      "family": "detection",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "sharing_regime": "authorized"
+      },
+      "id": "detection-021"
+    },
+    {
+      "family": "detection",
+      "observation_fraction": 0.25,
+      "overrides": {
+        "sharing_regime": "prohibited"
+      },
+      "id": "detection-022"
+    },
+    {
+      "family": "detection",
+      "observation_fraction": 1.0,
+      "overrides": {
+        "sharing_regime": "prohibited"
+      },
+      "id": "detection-023"
+    }
+  ],
+  "base_config": {},
+  "smoke": false,
+  "detector": {
+    "threshold": 0.8,
+    "status": "pilot_default_not_tuned",
+    "meaning": "Output agreement screening, not authorization or collusion inference",
+    "coverage": "Independent submission observation probability"
+  },
+  "interval": "95% percentile bootstrap across paired seed runs, 2000 draws; exploratory, unadjusted for multiple comparisons",
+  "pairing": "Same seed and config except moderation_policy=none; model random streams provide common exogenous randomness",
+  "elapsed_seconds": 24.551433541812003,
+  "completed_pairs": 720
+}

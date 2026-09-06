@@ -1,0 +1,32 @@
+{
+  "modedeletion_detection0.065_write_pref0.7_side_host_attentionNone": {
+    "late_ungoverned": 0.3613317835849214,
+    "final_discovered": 1.0,
+    "side_teardowns": 16.4,
+    "side_sweeps": 0.0,
+    "late_substrate_gap": 0.0,
+    "final_evaders": 0.0,
+    "final_side_entries": 8.8,
+    "side_poisoned_writes": 239.8,
+    "avg_toxicity": 0.2821182717274417,
+    "total_welfare": 2577.3172194170234,
+    "mean_side_corruption": 0.04940361311375243,
+    "final_infection": 0.012851803817107172,
+    "final_side_value": 0.0
+  },
+  "moderevocation_detection0.065_write_pref0.7_side_host_attentionNone": {
+    "late_ungoverned": 0.08404953882009338,
+    "final_discovered": 0.21000000000000002,
+    "side_teardowns": 8.0,
+    "side_sweeps": 0.0,
+    "late_substrate_gap": 0.0,
+    "final_evaders": 0.0,
+    "final_side_entries": 7.1,
+    "side_poisoned_writes": 62.8,
+    "avg_toxicity": 0.28775804724617904,
+    "total_welfare": 2909.3683771863725,
+    "mean_side_corruption": 0.10037021563318002,
+    "final_infection": 0.009269509426533661,
+    "final_side_value": 0.0
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "session_id": "20260604-215012",
+  "end_time": "2026-06-05T01:50:12.888345Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/_index.md",
+    "vault/claims/claim-allocation-task-exhibits-strongest-governance-safety-tradeoff.md",
+    "vault/claims/claim-audit-rate-dominates-circuit-breaker-sensitivity-for-safety-in-allocation-task.md",
+    "vault/claims/claim-contract-screening-amplifies-coordination-effectiveness-but-degrades-routing.md",
+    "vault/claims/claim-coordination-task-governance-cost-scales-monotonically-with-enforcement-intensity.md",
+    "vault/claims/claim-governance-effectiveness-exhibits-strong-task-specific-structure.md",
+    "vault/claims/claim-long-horizon-tasks-suffer-disproportionate-governance-capability-cost.md",
+    "vault/experiments/20260304_212912_frontier_trace.md",
+    "vault/experiments/20260304_213700_screening_frontier_shift.md"
+  ]
+}
