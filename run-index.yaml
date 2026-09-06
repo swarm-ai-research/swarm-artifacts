@@ -1,12 +1,12 @@
-generated_utc: '2026-09-06T18:02:34.298330+00:00'
+generated_utc: '2026-09-06T18:31:52.881846+00:00'
 total_runs: 171
 by_type:
   calibration: 2
   redteam: 13
   single: 71
   study: 33
-  sweep: 41
-  unknown: 11
+  sweep: 46
+  unknown: 6
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1684,32 +1684,78 @@ runs:
   date: unknown
   status: completed
 - id: wiki_mc_confirm_detection
-  type: unknown
+  slug: wiki_mc_confirm_detection
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - sweep
+  - wiki_sim
+  - monte-carlo
+  - confirmation
+  - detection
+  date: '2026-09-06'
+  status: completed
+  total_runs: 2400
+  total_configs: 3
+  primary_result: Summaries only; per-seed event files (2.4 GB total) regenerate deterministically
+    from code revision + config + seed.
 - id: wiki_mc_confirm_moderation
-  type: unknown
+  slug: wiki_mc_confirm_moderation
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - sweep
+  - wiki_sim
+  - monte-carlo
+  - confirmation
+  - moderation
+  date: '2026-09-06'
+  status: completed
+  total_runs: 4000
+  total_configs: 10
+  primary_result: Summaries only; per-seed event files (2.4 GB total) regenerate deterministically
+    from code revision + config + seed.
 - id: wiki_mc_confirm_page_e00
-  type: unknown
+  slug: wiki_mc_confirm_page_e00
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - sweep
+  - wiki_sim
+  - monte-carlo
+  - confirmation
+  - moderation
+  - page-level
+  date: '2026-09-06'
+  status: completed
+  total_runs: 2400
+  total_configs: 6
+  primary_result: Summaries only; per-seed event files (2.4 GB total) regenerate deterministically
+    from code revision + config + seed.
 - id: wiki_mc_confirm_page_e50
-  type: unknown
+  slug: wiki_mc_confirm_page_e50
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - sweep
+  - wiki_sim
+  - monte-carlo
+  - confirmation
+  - moderation
+  - page-level
+  date: '2026-09-06'
+  status: completed
+  total_runs: 2400
+  total_configs: 6
+  primary_result: Summaries only; per-seed event files (2.4 GB total) regenerate deterministically
+    from code revision + config + seed.
 - id: wiki_mc_pilot_all
-  type: unknown
+  slug: wiki_mc_pilot_all
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - sweep
+  - wiki_sim
+  - monte-carlo
+  - pilot
+  date: '2026-09-06'
+  status: completed
+  total_runs: 1440
+  total_configs: 240
+  primary_result: Summaries only; per-seed event files (2.4 GB total) regenerate deterministically
+    from code revision + config + seed.

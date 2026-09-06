@@ -1,0 +1,85 @@
+run_id: wiki_mc_pilot_all
+slug: wiki_mc_pilot_all
+created_utc: '2026-09-06T17:30:00+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: f2bbd700
+  git_dirty: false
+  command: python scripts/sweep_wiki_mc.py --phase pilot ... --output runs/wiki_mc_pilot_all
+    (exact invocation in swarm docs/research/wiki-monte-carlo-results.md)
+experiment:
+  type: sweep
+  scenario_ref: swarm/bridges/wiki_sim/model.py (SimulationConfig, not a YAML scenario)
+  hypothesis: 24 cells x 30 seeds, emergence/moderation/detection families
+  swept_parameters:
+    task_overlap:
+    - 0.2
+    - 0.8
+    deadline:
+    - 6.0
+    - 18.0
+    referrals_enabled:
+    - false
+    - true
+    moderation_policy:
+    - none
+    - ordered
+    - random
+    - lock
+    - global_lock
+    relocation_mode:
+    - endogenous
+    - forced
+    sharing_regime:
+    - independent
+    - authorized
+    - prohibited
+  seeds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  total_runs: 1440
+results:
+  status: completed
+  wall_time_seconds: 24.6
+  primary_result: Summaries only; per-seed event files (2.4 GB total) regenerate deterministically
+    from code revision + config + seed.
+artifacts:
+  summary: summary.json
+  sweep_csv: paired_summary.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- sweep
+- wiki_sim
+- monte-carlo
+- pilot
