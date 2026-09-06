@@ -1,0 +1,62 @@
+{
+  "modedeletion_detection0.05_write_pref0.7_side_defender_error0.0": {
+    "late_ungoverned": 0.6909705460781782,
+    "final_discovered": 1.0,
+    "side_teardowns": 7.2,
+    "side_sweeps": 0.0,
+    "late_substrate_gap": -0.05466,
+    "final_evaders": 0.0,
+    "final_side_entries": 704.3,
+    "side_poisoned_writes": 483.2,
+    "avg_toxicity": 0.2791912390561889,
+    "total_welfare": 2140.385681128887,
+    "mean_side_corruption": 0.38859469972747057,
+    "final_infection": 0.2305848715791369,
+    "final_side_value": 0.0
+  },
+  "modedeletion_detection0.05_write_pref0.7_side_defender_error0.5": {
+    "late_ungoverned": 0.6966673958913284,
+    "final_discovered": 1.0,
+    "side_teardowns": 2.4,
+    "side_sweeps": 0.0,
+    "late_substrate_gap": -0.02516,
+    "final_evaders": 0.0,
+    "final_side_entries": 826.1,
+    "side_poisoned_writes": 505.1,
+    "avg_toxicity": 0.27933376350889577,
+    "total_welfare": 2130.559906605022,
+    "mean_side_corruption": 0.419374476952333,
+    "final_infection": 0.26007610848484897,
+    "final_side_value": 0.0
+  },
+  "moderevocation_detection0.05_write_pref0.7_side_defender_error0.0": {
+    "late_ungoverned": 0.6496588988402915,
+    "final_discovered": 0.97,
+    "side_teardowns": 4.3,
+    "side_sweeps": 0.0,
+    "late_substrate_gap": -0.06070952380952381,
+    "final_evaders": 0.0,
+    "final_side_entries": 600.0,
+    "side_poisoned_writes": 362.1,
+    "avg_toxicity": 0.2822909961196453,
+    "total_welfare": 2343.691649594855,
+    "mean_side_corruption": 0.37612715829956356,
+    "final_infection": 0.22588780993364438,
+    "final_side_value": 0.0
+  },
+  "moderevocation_detection0.05_write_pref0.7_side_defender_error0.5": {
+    "late_ungoverned": 0.6899945973616946,
+    "final_discovered": 1.0,
+    "side_teardowns": 1.4,
+    "side_sweeps": 0.0,
+    "late_substrate_gap": -0.025620000000000004,
+    "final_evaders": 0.0,
+    "final_side_entries": 817.5,
+    "side_poisoned_writes": 446.0,
+    "avg_toxicity": 0.28107348790662,
+    "total_welfare": 2201.3748029926373,
+    "mean_side_corruption": 0.3821563853738016,
+    "final_infection": 0.2592682081445273,
+    "final_side_value": 0.0
+  }
+}

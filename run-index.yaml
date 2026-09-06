@@ -1,12 +1,12 @@
-generated_utc: '2026-09-04T23:51:53.075162+00:00'
-total_runs: 162
+generated_utc: '2026-09-06T18:02:34.298330+00:00'
+total_runs: 171
 by_type:
   calibration: 2
   redteam: 13
   single: 71
   study: 33
-  sweep: 37
-  unknown: 6
+  sweep: 41
+  unknown: 11
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1484,6 +1484,54 @@ runs:
   - unmigrated
   date: unknown
   status: unknown
+- id: 20260904T210019Z_wiki_board_sweep
+  slug: wiki_board_sweep
+  type: sweep
+  tags:
+  - sweep
+  - wiki_board
+  - side_channel
+  - pi02
+  date: '2026-09-04'
+  status: completed
+  total_runs: 20
+  total_configs: 2
+- id: 20260904T210021Z_wiki_board_sweep
+  slug: wiki_board_sweep
+  type: sweep
+  tags:
+  - sweep
+  - wiki_board
+  - side_channel
+  - pi02
+  date: '2026-09-04'
+  status: completed
+  total_runs: 120
+  total_configs: 12
+- id: 20260904T210024Z_wiki_board_sweep
+  slug: wiki_board_sweep
+  type: sweep
+  tags:
+  - sweep
+  - wiki_board
+  - side_channel
+  - pi02
+  date: '2026-09-04'
+  status: completed
+  total_runs: 60
+  total_configs: 6
+- id: 20260904T210200Z_wiki_board_sweep
+  slug: wiki_board_sweep
+  type: sweep
+  tags:
+  - sweep
+  - wiki_board
+  - side_channel
+  - pi02
+  date: '2026-09-04'
+  status: completed
+  total_runs: 40
+  total_configs: 4
 - id: 20260904T225711Z_casestudy_wiki_backchannel_seed0
   type: unknown
   tags:
@@ -1635,3 +1683,33 @@ runs:
   - untagged
   date: unknown
   status: completed
+- id: wiki_mc_confirm_detection
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: wiki_mc_confirm_moderation
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: wiki_mc_confirm_page_e00
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: wiki_mc_confirm_page_e50
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: wiki_mc_pilot_all
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown

@@ -1,0 +1,52 @@
+run_id: 20260904T210019Z_wiki_board_sweep
+slug: wiki_board_sweep
+created_utc: '2026-09-04T21:00:19+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: a59b7ab4
+  git_dirty: true
+  command: scripts/sweep_side_channel.py --seeds 10 --detections 0.065 --prefs 0.7
+    --scenario scenarios/wiki_board.yaml --axis side_host_attention=null
+  note: Run predates the commit that landed scenarios/wiki_board.yaml (a59b7ab4, pi02);
+    sha is the landing commit, not the exact tree.
+experiment:
+  type: sweep
+  scenario_ref: scenarios/wiki_board.yaml
+  swept_parameters:
+    mode:
+    - deletion
+    - revocation
+    detection:
+    - 0.065
+    write_pref:
+    - 0.7
+    side_host_attention:
+    - null
+  seeds:
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  total_runs: 20
+results:
+  status: completed
+artifacts:
+  summary: summary.json
+  sweep_csv: sweep.csv
+  epoch_csvs:
+  - epoch_series.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- sweep
+- wiki_board
+- side_channel
+- pi02
