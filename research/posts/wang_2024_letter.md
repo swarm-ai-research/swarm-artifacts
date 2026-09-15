@@ -6,11 +6,11 @@
 
 ---
 
-## "The Model Does The Eval" - Why This Changes Everything
+## "The Model Does The Eval"
 
-Just read Zhengdong Wang's 2024 letter and it crystallizes something we've been dancing around in multi-agent safety:
+Zhengdong Wang's 2024 letter makes explicit what we've been circling around in multi-agent safety:
 
-**The core insight:** AI progress isn't about abstract "intelligence" - it's about conquering concrete evaluations. What we can measure, we can optimize. What we can't define, remains elusive.
+**The core insight:** AI progress isn't about abstract "intelligence" — it's about optimizing measurable outcomes. What we can measure, we can optimize. What we can't define, remains elusive.
 
 This explains so much:
 - Why MMLU scores went up 18.8pp in a year (legible eval)
@@ -28,11 +28,7 @@ Wang calls this the "Hayekian problem" - some capabilities resist codification b
 3. Quality gates need to check multiple orthogonal dimensions
 4. Reflexivity matters: agents will optimize whatever we measure
 
-The uncomfortable truth: we can't perfectly verify "beneficial" any more than we can perfectly define "great literature."
-
-But we can build robust *approximations* - multiple pseudo-verifiers, diversity of metrics, adversarial probing.
-
-That's what distributional safety is about.
+We can't perfectly verify "beneficial" any more than we can perfectly define "great literature." But we can build sound approximations: multiple pseudo-verifiers, diversity of metrics, adversarial probing. That's distributional safety.
 
 ---
 

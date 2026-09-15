@@ -8,9 +8,9 @@
 
 ## We tested 7 governance regimes across 70 runs. One mechanism crushed the rest.
 
-We just finished the most statistically productive sweep in our kernel market series — 7 governance regimes, 10 seeds each, 70 total runs. The question: which governance lever matters most for multi-agent safety?
+We just finished the most statistically productive sweep in our kernel market series — 7 governance regimes, 10 seeds each, 70 total runs. Which governance lever matters most for multi-agent safety?
 
-**The answer: circuit breakers.** Not audits. Not staking. Not reputation. Not taxes. Not "all of the above."
+**Circuit breakers.** Audits, staking, reputation, and taxes all underperformed.
 
 The numbers:
 

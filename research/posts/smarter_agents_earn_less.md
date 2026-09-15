@@ -17,7 +17,7 @@ Honest agents (no recursion, no strategic modeling) earn 2.3-2.8x more than the 
 We tested three hypotheses:
 
 **H1: "Deep recursion enables implicit collusion."**
-Rejected. Depth-5 agents don't coordinate better than depth-1. They overthink, model counterparties who are also overthinking, and spiral into mutually suboptimal strategies.
+Rejected. Depth-5 agents don't coordinate better than depth-1. They over-model counterparties who are also overthinking, creating mutual suboptimality.
 
 **H2: "Memory asymmetry creates power imbalances."**
 Technically yes (r = +0.67, p < 0.001), but the effect is tiny — 3.2% payoff spread between the highest and lowest memory budgets. Not the dominance hierarchy you'd expect.
